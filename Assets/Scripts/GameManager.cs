@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Unity.Cinemachine;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,6 +24,15 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI objectiveText;
 
+    public Transform[] cardSlots;
+    public List<GameObject> placedCards = new List<GameObject>();
+    
+
+    public List<GameObject> deckPrefabs;
+    public List<GameObject> handCards;
+    public int handSize = 4;
+    public Transform[] handSlots;
+
 
 
     void Start()
@@ -41,6 +51,17 @@ public class GameManager : MonoBehaviour
                 beatScroll.scrollStart = true;
                 music.Play();
                 objectiveText.text = "Objective: " + objectiveScore;
+            }
+            foreach (Transform slot in cardSlots)
+            {
+                CardSlot slotData = slot.GetComponent<CardSlot>();
+
+                if (slotData.isOccupied && slot.childCount > 0)
+                {
+                    GameObject card = slot.GetChild(0).gameObject;
+
+                    Instantiate(card, slotData.gameplayPoint.position, Quaternion.identity);
+                }
             }
         }
 
@@ -95,5 +116,64 @@ public class GameManager : MonoBehaviour
 
         }
 
+    }
+    public void PlaceCardInSlot(GameObject card)
+    {
+      
+        HandSlot handSlot = card.GetComponentInParent<HandSlot>();
+        if (handSlot != null)
+        {
+            handSlot.currentCard = null;
+        }
+
+       
+        foreach (Transform slot in cardSlots)
+        {
+            CardSlot slotData = slot.GetComponent<CardSlot>();
+
+            if (!slotData.isOccupied)
+            {
+                card.transform.position = slot.position;
+                card.transform.SetParent(slot);
+
+                slotData.isOccupied = true;
+                placedCards.Add(card);
+
+                return;
+            }
+        }
+
+        Debug.Log("No hay espacio en slots");
+    }
+    public void ShuffleDeck()
+    {
+        for (int i = 0; i < deckPrefabs.Count; i++)
+        {
+            int rand = Random.Range(i, deckPrefabs.Count);
+
+            var temp = deckPrefabs[i];
+            deckPrefabs[i] = deckPrefabs[rand];
+            deckPrefabs[rand] = temp;
+        }
+    }
+
+    public void DrawHand()
+    {
+        for (int i = 0; i < handSlots.Length; i++)
+        {
+            if (i >= deckPrefabs.Count) return;
+
+            Transform slot = handSlots[i];
+            HandSlot slotData = slot.GetComponent<HandSlot>();
+
+            if (slotData.currentCard != null)
+            {
+                Destroy(slotData.currentCard);
+            }
+
+            GameObject newCard = Instantiate(deckPrefabs[i], slot.position, Quaternion.identity, slot);
+
+            slotData.currentCard = newCard;
+        }
     }
 }

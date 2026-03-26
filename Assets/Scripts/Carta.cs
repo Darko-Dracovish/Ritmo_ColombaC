@@ -19,6 +19,10 @@ public class Carta : MonoBehaviour
         }
     }
 
+    void OnMouseDown()
+    {
+        GameManager.instance.PlaceCardInSlot(gameObject);
+    }
 
-    
+
 }

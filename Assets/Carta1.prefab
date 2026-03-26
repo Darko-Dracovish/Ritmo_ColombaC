@@ -825,6 +825,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5797959832998856409}
+  - component: {fileID: 9063063878803004603}
   m_Layer: 0
   m_Name: Carta1
   m_TagString: Untagged
@@ -848,6 +849,21 @@ Transform:
   - {fileID: 5056491950771435825}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9063063878803004603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4628378887485878479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5a834d535baf7d49a17305c94f0d3aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Carta
+  cardName: Sample
+  noteScore: 10
+  notes: []
 --- !u!1 &4707961400752857564
 GameObject:
   m_ObjectHideFlags: 0
@@ -1098,7 +1114,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5056491950771435825}
   - component: {fileID: 1962642593520438337}
-  - component: {fileID: 7780830666517413883}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -1180,23 +1195,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7780830666517413883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8092290091925177448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5a834d535baf7d49a17305c94f0d3aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Carta
-  cardName: sample
-  noteScore: 10
-  notes:
-  - {fileID: 2464941374110132009}
-  - {fileID: 6453504071162062172}
-  - {fileID: 3963993035969793861}
-  - {fileID: 5991479706351552962}
-  - {fileID: 113848082337966029}

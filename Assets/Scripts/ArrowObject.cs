@@ -7,10 +7,6 @@ public class ArrowObject : MonoBehaviour
     public KeyCode keyToPress;
     private bool hit;
     public int points;
-    void Start()
-    {
-        
-    }
 
  
     void Update()
