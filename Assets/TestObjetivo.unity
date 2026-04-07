@@ -318,7 +318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
   Priority:
     Enabled: 1
-    m_Value: 0
+    m_Value: 10
   OutputChannel: 1
   StandbyUpdate: 2
   m_StreamingVersion: 20241001
@@ -453,7 +453,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: a9452137cf11da2478179005e996282c, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -862,7 +862,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
   Priority:
     Enabled: 1
-    m_Value: 10
+    m_Value: 0
   OutputChannel: 1
   StandbyUpdate: 2
   m_StreamingVersion: 20241001
@@ -1481,6 +1481,12 @@ MonoBehaviour:
   objectiveScore: 40
   scoreText: {fileID: 141014930}
   objectiveText: {fileID: 615729576}
+  cardSlots: []
+  placedCards: []
+  deckPrefabs: []
+  handCards: []
+  handSize: 4
+  handSlots: []
 --- !u!4 &1733440948
 Transform:
   m_ObjectHideFlags: 0
@@ -1603,7 +1609,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.4
+  orthographic size: 18.828754
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1628,7 +1634,7 @@ Transform:
   m_GameObject: {fileID: 1961849172}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3921, y: 1.8199999, z: -10}
+  m_LocalPosition: {x: -43.6, y: -0.25887942, z: -47.724552}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

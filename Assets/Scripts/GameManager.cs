@@ -60,22 +60,21 @@ public class GameManager : MonoBehaviour
                 {
                     GameObject card = slot.GetChild(0).gameObject;
 
-                    Instantiate(card, slotData.gameplayPoint.position, Quaternion.identity);
+                    Instantiate(card, slotData.gameplaypoint.position, Quaternion.identity);
                 }
             }
         }
 
         if (Input.GetKeyDown(KeyCode.O)) 
         {
-            mainCamera.Priority = 0;
             cardCamera.Priority = 10;
-
+            mainCamera.Priority = 0;
+            
         }
         if (Input.GetKeyDown(KeyCode.P))
         {
-       
-            cardCamera.Priority = 0;
             mainCamera.Priority = 10;
+            cardCamera.Priority = 0;
         }
     }
 

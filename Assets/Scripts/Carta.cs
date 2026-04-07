@@ -8,7 +8,7 @@ public class Carta : MonoBehaviour
 {
     [Header("Info")]
     public string cardName;
-    public int noteScore = 10;
+    public int noteScore;
     public List<ArrowObject> notes;
 
     void Start()
@@ -21,7 +21,7 @@ public class Carta : MonoBehaviour
 
     void OnMouseDown()
     {
-        GameManager.instance.PlaceCardInSlot(gameObject);
+   //     GameManager.instance.PlaceCardInSlot(gameObject);
     }
 
 
