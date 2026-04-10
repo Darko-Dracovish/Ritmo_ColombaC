@@ -75,6 +75,7 @@ public class GameManager : MonoBehaviour
         {
             mainCamera.Priority = 10;
             cardCamera.Priority = 0;
+            Debug.Log("P");
         }
     }
 

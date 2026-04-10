@@ -695,8 +695,8 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Ritmo_ColombaC
-  metroPackageVersion: 
+  metroPackageName: RitmoColombaC
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -704,7 +704,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: Ritmo_ColombaC
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: Ritmo_ColombaC
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
