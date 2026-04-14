@@ -18,11 +18,4 @@ public class Carta : MonoBehaviour
             note.points = noteScore;
         }
     }
-
-    void OnMouseDown()
-    {
-   //     GameManager.instance.PlaceCardInSlot(gameObject);
-    }
-
-
 }

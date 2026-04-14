@@ -15,7 +15,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public CinemachineVirtualCameraBase mainCamera;
     public CinemachineVirtualCameraBase cardCamera;
-    
+    public CinemachineVirtualCameraBase hubCamera;
+
 
     public int currentScore;
  
@@ -38,6 +39,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         instance = this;
+        ShuffleDeck(); 
+        DrawHand();
     }
 
 
@@ -69,13 +72,30 @@ public class GameManager : MonoBehaviour
         {
             cardCamera.Priority = 10;
             mainCamera.Priority = 0;
+            hubCamera.Priority = 0;
             
         }
         if (Input.GetKeyDown(KeyCode.P))
         {
             mainCamera.Priority = 10;
             cardCamera.Priority = 0;
+            hubCamera.Priority = 0;
             Debug.Log("P");
+        }
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            cardCamera.Priority = 0;
+            mainCamera.Priority = 0;
+            hubCamera.Priority = 10;
+
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            ShuffleDeck();
+            Debug.Log("Shuffle");
+            DrawHand(); 
+            Debug.Log("Drawing");
+
         }
     }
 
@@ -147,33 +167,41 @@ public class GameManager : MonoBehaviour
     }
     public void ShuffleDeck()
     {
-        for (int i = 0; i < deckPrefabs.Count; i++)
-        {
-            int rand = Random.Range(i, deckPrefabs.Count);
+        
+        
+            for (int i = 0; i < deckPrefabs.Count; i++)
+            {
+                int rand = Random.Range(i, deckPrefabs.Count);
 
-            var temp = deckPrefabs[i];
-            deckPrefabs[i] = deckPrefabs[rand];
-            deckPrefabs[rand] = temp;
-        }
+                var temp = deckPrefabs[i];
+                deckPrefabs[i] = deckPrefabs[rand];
+                deckPrefabs[rand] = temp;
+            }
+           
+        
     }
 
     public void DrawHand()
     {
-        for (int i = 0; i < handSlots.Length; i++)
+        
         {
-            if (i >= deckPrefabs.Count) return;
-
-            Transform slot = handSlots[i];
-            HandSlot slotData = slot.GetComponent<HandSlot>();
-
-            if (slotData.currentCard != null)
+            for (int i = 0; i < handSlots.Length; i++)
             {
-                Destroy(slotData.currentCard);
+                if (i >= deckPrefabs.Count) return;
+
+                Transform slot = handSlots[i];
+                HandSlot slotData = slot.GetComponent<HandSlot>();
+
+                if (slotData.currentCard != null)
+                {
+                    Destroy(slotData.currentCard);
+                }
+
+                GameObject newCard = Instantiate(deckPrefabs[i], slot.position, Quaternion.identity, slot);
+
+                slotData.currentCard = newCard;
             }
-
-            GameObject newCard = Instantiate(deckPrefabs[i], slot.position, Quaternion.identity, slot);
-
-            slotData.currentCard = newCard;
+            
         }
     }
 }

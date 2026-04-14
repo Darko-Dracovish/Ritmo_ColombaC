@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Activate
   - Ender
+  - Starter
+  - Finisher
   layers:
   - Default
   - TransparentFX

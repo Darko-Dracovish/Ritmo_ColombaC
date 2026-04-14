@@ -1034,7 +1034,7 @@ GameObject:
   - component: {fileID: 770278246626076238}
   m_Layer: 0
   m_Name: Carta4
-  m_TagString: Untagged
+  m_TagString: Finisher
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1069,7 +1069,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Carta
   cardName: Sample4
   noteScore: 25
-  notes: []
+  notes:
+  - {fileID: 4354538226458820270}
+  - {fileID: 2464941374110132009}
+  - {fileID: 6453504071162062172}
+  - {fileID: 3963993035969793861}
+  - {fileID: 5991479706351552962}
+  - {fileID: 113848082337966029}
 --- !u!61 &-6098973400216090784
 BoxCollider2D:
   m_ObjectHideFlags: 0

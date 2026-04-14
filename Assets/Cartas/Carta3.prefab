@@ -865,7 +865,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Carta
   cardName: Sample3
   noteScore: 15
-  notes: []
+  notes:
+  - {fileID: 2464941374110132009}
+  - {fileID: 6453504071162062172}
+  - {fileID: 3963993035969793861}
+  - {fileID: 5991479706351552962}
+  - {fileID: 113848082337966029}
 --- !u!61 &3352150520116465715
 BoxCollider2D:
   m_ObjectHideFlags: 0

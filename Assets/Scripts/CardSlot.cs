@@ -31,7 +31,26 @@ public class CardSlot : MonoBehaviour
             oldSlot.isOccupied = false;
         }
 
-       
+        if (card.CompareTag("Starter"))
+        {
+            Carta carta = card.GetComponent<Carta>();
+            if (carta != null)
+            {
+                carta.noteScore = carta.noteScore * 2;
+            }
+            Debug.Log("Si compara Starter");
+        }
+
+        if (card.CompareTag("Finisher"))
+        {
+            Carta carta = card.GetComponent<Carta>();
+            if (carta != null)
+            {
+                carta.noteScore = carta.noteScore * 2;
+            }
+            Debug.Log("Si compara Finisher");
+        }
+
         card.transform.position = transform.position;
         card.transform.SetParent(transform);
 
@@ -47,7 +66,8 @@ public class CardSlot : MonoBehaviour
             Destroy(spawnedCard);
         }
 
-        
+       
+
         spawnedCard = Instantiate(card, gameplaypoint.position, Quaternion.identity);
     }
 
@@ -61,5 +81,8 @@ public class CardSlot : MonoBehaviour
             Destroy(spawnedCard);
         }
     }
-
+    public void OnTriggerEnter2D(Collider2D card)
+    {
+        
+    }
 }
