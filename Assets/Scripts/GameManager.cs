@@ -11,10 +11,11 @@ public class GameManager : MonoBehaviour
     public enum GameState
     {
         Hub,
-        DeckBuilding,
+        Build,
         Playing,
         Dialogue,
-        SongSelect
+        SongSelect,
+        Deck
     }
 
     public GameState currentState;
@@ -31,9 +32,10 @@ public class GameManager : MonoBehaviour
     [Header("Cameras")]
     public CinemachineVirtualCameraBase mainCamera;   
     public CinemachineVirtualCameraBase cardCamera;   
-    public CinemachineVirtualCameraBase hubCamera;    
+    public CinemachineVirtualCameraBase hubCamera;
+    public CinemachineVirtualCameraBase deckCamera;
 
-   
+
     [Header("Score")]
     public int currentScore;
     public int objectiveScore = 30;
@@ -41,14 +43,10 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI objectiveText;
 
-    
-    [Header("Card Slots")]
-    public Transform[] cardSlots;
-    public List<GameObject> placedCards = new List<GameObject>();
-
-   
     [Header("Deck")]
     public List<GameObject> deckPrefabs;
+    public List<GameObject> collectionPrefabs;
+    public int maxSize =8;
 
     [Header("Hand")]
     public int handSize = 4;
@@ -79,7 +77,7 @@ public class GameManager : MonoBehaviour
                 HubInput();
                 break;
 
-            case GameState.DeckBuilding:
+            case GameState.Build:
                 DeckInput();
                 break;
 
@@ -106,6 +104,7 @@ public class GameManager : MonoBehaviour
         mainCamera.Priority = 0;
         cardCamera.Priority = 0;
         hubCamera.Priority = 0;
+        deckCamera.Priority = 0;
 
         switch (currentState)
         {
@@ -113,7 +112,7 @@ public class GameManager : MonoBehaviour
                 hubCamera.Priority = 10;
                 break;
 
-            case GameState.DeckBuilding:
+            case GameState.Build:
                 cardCamera.Priority = 10;
                 break;
 
@@ -128,6 +127,10 @@ public class GameManager : MonoBehaviour
             case GameState.SongSelect:
                 hubCamera.Priority = 10;
                 break;
+
+            case GameState.Deck:
+                deckCamera.Priority = 10;
+                break;
         }
 
         Debug.Log("Estado actual: " + currentState);
@@ -140,10 +143,13 @@ public class GameManager : MonoBehaviour
             ChangeState(GameState.Hub);
 
         if (Input.GetKeyDown(KeyCode.O))
-            ChangeState(GameState.DeckBuilding);
+            ChangeState(GameState.Build);
 
         if (Input.GetKeyDown(KeyCode.P))
             ChangeState(GameState.Playing);
+
+        if (Input.GetKeyDown(KeyCode.U))
+            ChangeState(GameState.Deck);
     }
 
   
@@ -270,7 +276,7 @@ public class GameManager : MonoBehaviour
 
     public void OpenDeckBuilder()
     {
-        ChangeState(GameState.DeckBuilding);
+        ChangeState(GameState.Deck);
     }
 
     public void OpenGameplay()
@@ -286,5 +292,10 @@ public class GameManager : MonoBehaviour
     public void OpenSongSelect()
     {
         ChangeState(GameState.SongSelect);
+    }
+
+    public void OpenBuild()
+    {
+        ChangeState(GameState.Build);
     }
 }
