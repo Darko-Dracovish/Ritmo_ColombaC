@@ -1,114 +1,206 @@
-using JetBrains.Annotations;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 using Unity.Cinemachine;
 using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
 
+  
+    public enum GameState
+    {
+        Hub,
+        DeckBuilding,
+        Playing,
+        Dialogue,
+        SongSelect
+    }
+
+    public GameState currentState;
+
+  
+    [Header("Audio")]
     public AudioSource music;
     public bool musicStart;
 
+    [Header("Rhythm")]
     public ArrowControl beatScroll;
-    public static GameManager instance;
-    public CinemachineVirtualCameraBase mainCamera;
-    public CinemachineVirtualCameraBase cardCamera;
-    public CinemachineVirtualCameraBase hubCamera;
 
+   
+    [Header("Cameras")]
+    public CinemachineVirtualCameraBase mainCamera;   
+    public CinemachineVirtualCameraBase cardCamera;   
+    public CinemachineVirtualCameraBase hubCamera;    
 
+   
+    [Header("Score")]
     public int currentScore;
- 
     public int objectiveScore = 30;
 
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI objectiveText;
 
+    
+    [Header("Card Slots")]
     public Transform[] cardSlots;
     public List<GameObject> placedCards = new List<GameObject>();
-    
 
+   
+    [Header("Deck")]
     public List<GameObject> deckPrefabs;
-    public List<GameObject> handCards;
+
+    [Header("Hand")]
     public int handSize = 4;
     public Transform[] handSlots;
 
-
-
+ 
     void Start()
     {
         instance = this;
-        ShuffleDeck(); 
+
+        ShuffleDeck();
         DrawHand();
+
+        ChangeState(GameState.Hub);
+        UpdateScoreUI();
     }
 
-
+   
     void Update()
     {
-        if (!musicStart)
+        
+        DebugStateInputs();
+
+        
+        switch (currentState)
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-               musicStart = true;
-                beatScroll.scrollStart = true;
-                music.Play();
-                objectiveText.text = "Objective: " + objectiveScore;
-            }
-            foreach (Transform slot in cardSlots)
-            {
-                CardSlot slotData = slot.GetComponent<CardSlot>();
+            case GameState.Hub:
+                HubInput();
+                break;
 
-                if (slotData.isOccupied && slot.childCount > 0)
-                {
-                    GameObject card = slot.GetChild(0).gameObject;
+            case GameState.DeckBuilding:
+                DeckInput();
+                break;
 
-                    Instantiate(card, slotData.gameplaypoint.position, Quaternion.identity);
-                }
-            }
+            case GameState.Playing:
+                PlayingInput();
+                break;
+
+            case GameState.Dialogue:
+                DialogueInput();
+                break;
+
+            case GameState.SongSelect:
+                SongSelectInput();
+                break;
+        }
+    }
+
+    
+    public void ChangeState(GameState newState)
+    {
+        currentState = newState;
+
+       
+        mainCamera.Priority = 0;
+        cardCamera.Priority = 0;
+        hubCamera.Priority = 0;
+
+        switch (currentState)
+        {
+            case GameState.Hub:
+                hubCamera.Priority = 10;
+                break;
+
+            case GameState.DeckBuilding:
+                cardCamera.Priority = 10;
+                break;
+
+            case GameState.Playing:
+                mainCamera.Priority = 10;
+                break;
+
+            case GameState.Dialogue:
+                hubCamera.Priority = 10;
+                break;
+
+            case GameState.SongSelect:
+                hubCamera.Priority = 10;
+                break;
         }
 
-        if (Input.GetKeyDown(KeyCode.O)) 
-        {
-            cardCamera.Priority = 10;
-            mainCamera.Priority = 0;
-            hubCamera.Priority = 0;
-            
-        }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            mainCamera.Priority = 10;
-            cardCamera.Priority = 0;
-            hubCamera.Priority = 0;
-            Debug.Log("P");
-        }
+        Debug.Log("Estado actual: " + currentState);
+    }
+
+    
+    void DebugStateInputs()
+    {
         if (Input.GetKeyDown(KeyCode.I))
-        {
-            cardCamera.Priority = 0;
-            mainCamera.Priority = 0;
-            hubCamera.Priority = 10;
+            ChangeState(GameState.Hub);
 
-        }
+        if (Input.GetKeyDown(KeyCode.O))
+            ChangeState(GameState.DeckBuilding);
+
+        if (Input.GetKeyDown(KeyCode.P))
+            ChangeState(GameState.Playing);
+    }
+
+  
+    void HubInput()
+    {
+        
+    }
+
+    void DeckInput()
+    {
         if (Input.GetKeyDown(KeyCode.R))
         {
             ShuffleDeck();
-            Debug.Log("Shuffle");
-            DrawHand(); 
-            Debug.Log("Drawing");
-
+            DrawHand();
+            Debug.Log("Nueva mano");
         }
     }
 
- public void NoteHit(int puntaje)
+    void PlayingInput()
     {
-        Debug.Log("Hit");
-        currentScore += puntaje;
-        scoreText.text = "Score: " + currentScore;
+        if (!musicStart && Input.GetKeyDown(KeyCode.E))
+        {
+            StartSong();
+        }
     }
 
-    public void NoteHitGood()
+    void DialogueInput()
     {
+        
+    }
 
+    void SongSelectInput()
+    {
+        
+    }
+
+   
+    void StartSong()
+    {
+        musicStart = true;
+
+        if (beatScroll != null)
+            beatScroll.scrollStart = true;
+
+        if (music != null)
+            music.Play();
+
+        objectiveText.text = "Objective: " + objectiveScore;
+    }
+
+    
+    public void NoteHit(int puntaje)
+    {
+        currentScore += puntaje;
+        UpdateScoreUI();
+
+        Debug.Log("Hit +" + puntaje);
     }
 
     public void NoteMiss()
@@ -116,92 +208,83 @@ public class GameManager : MonoBehaviour
         Debug.Log("Miss");
     }
 
-    
+    void UpdateScoreUI()
+    {
+        if (scoreText != null)
+            scoreText.text = "Score: " + currentScore;
+    }
+
     public void ObjectiveScore()
     {
-
         if (currentScore >= objectiveScore)
-        {
             Debug.Log("Objective Met");
-          
-        }
-
     }
+
     public void ObjectiveScoreFail()
     {
-
         if (currentScore < objectiveScore)
-        {
             Debug.Log("Objective Fail");
-
-        }
-
     }
-    public void PlaceCardInSlot(GameObject card)
-    {
-      
-        HandSlot handSlot = card.GetComponentInParent<HandSlot>();
-        if (handSlot != null)
-        {
-            handSlot.currentCard = null;
-        }
-
-       
-        foreach (Transform slot in cardSlots)
-        {
-            CardSlot slotData = slot.GetComponent<CardSlot>();
-
-            if (!slotData.isOccupied)
-            {
-                card.transform.position = slot.position;
-                card.transform.SetParent(slot);
-
-                slotData.isOccupied = true;
-                placedCards.Add(card);
-
-                return;
-            }
-        }
-
-        Debug.Log("No hay espacio en slots");
-    }
+ 
     public void ShuffleDeck()
     {
-        
-        
-            for (int i = 0; i < deckPrefabs.Count; i++)
-            {
-                int rand = Random.Range(i, deckPrefabs.Count);
+        for (int i = 0; i < deckPrefabs.Count; i++)
+        {
+            int rand = Random.Range(i, deckPrefabs.Count);
 
-                var temp = deckPrefabs[i];
-                deckPrefabs[i] = deckPrefabs[rand];
-                deckPrefabs[rand] = temp;
-            }
-           
-        
+            GameObject temp = deckPrefabs[i];
+            deckPrefabs[i] = deckPrefabs[rand];
+            deckPrefabs[rand] = temp;
+        }
     }
 
+    
     public void DrawHand()
     {
-        
+        for (int i = 0; i < handSlots.Length; i++)
         {
-            for (int i = 0; i < handSlots.Length; i++)
+            if (i >= deckPrefabs.Count)
+                return;
+
+            Transform slot = handSlots[i];
+            HandSlot slotData = slot.GetComponent<HandSlot>();
+
+           
+            if (slotData.currentCard != null)
             {
-                if (i >= deckPrefabs.Count) return;
-
-                Transform slot = handSlots[i];
-                HandSlot slotData = slot.GetComponent<HandSlot>();
-
-                if (slotData.currentCard != null)
-                {
-                    Destroy(slotData.currentCard);
-                }
-
-                GameObject newCard = Instantiate(deckPrefabs[i], slot.position, Quaternion.identity, slot);
-
-                slotData.currentCard = newCard;
+                Destroy(slotData.currentCard);
             }
-            
+
+            GameObject newCard =
+                Instantiate(deckPrefabs[i], slot.position, Quaternion.identity, slot);
+
+            slotData.currentCard = newCard;
         }
+    }
+
+ 
+    public void OpenHub()
+    {
+        ChangeState(GameState.Hub);
+    }
+
+    public void OpenDeckBuilder()
+    {
+        ChangeState(GameState.DeckBuilding);
+    }
+
+    public void OpenGameplay()
+    {
+        ChangeState(GameState.Playing);
+    }
+
+    public void OpenDialogue()
+    {
+        ChangeState(GameState.Dialogue);
+    }
+
+    public void OpenSongSelect()
+    {
+        ChangeState(GameState.SongSelect);
     }
 }

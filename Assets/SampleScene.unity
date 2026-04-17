@@ -370,7 +370,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: ff39ef6d683e28c4187a074f402ddfe4, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1593,6 +1593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 900717021ba54754e93de63c40c512e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  currentState: 0
   music: {fileID: 131312986}
   musicStart: 0
   beatScroll: {fileID: 464623811}
@@ -1606,12 +1607,7 @@ MonoBehaviour:
   cardSlots: []
   placedCards: []
   deckPrefabs:
-  - {fileID: 4628378887485878479, guid: 0f0b976a437241c4f98e3ae528ba554b, type: 3}
-  - {fileID: 4628378887485878479, guid: 3596adef27e140f4db9fb536ee709c48, type: 3}
-  - {fileID: 4628378887485878479, guid: bc8528e33f2a68c4a9535d0e929c1636, type: 3}
-  - {fileID: 4628378887485878479, guid: b76f6e63bbef67242bc53d32a2bf422a, type: 3}
-  handCards:
-  - {fileID: 4628378887485878479, guid: 0f0b976a437241c4f98e3ae528ba554b, type: 3}
+  - {fileID: 4628378887485878479, guid: 98dc8175d35760d4ea876158c4738137, type: 3}
   - {fileID: 4628378887485878479, guid: 3596adef27e140f4db9fb536ee709c48, type: 3}
   - {fileID: 4628378887485878479, guid: bc8528e33f2a68c4a9535d0e929c1636, type: 3}
   - {fileID: 4628378887485878479, guid: b76f6e63bbef67242bc53d32a2bf422a, type: 3}

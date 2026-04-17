@@ -1,88 +1,118 @@
-using JetBrains.Annotations;
 using UnityEngine;
 
 public class CardSlot : MonoBehaviour
 {
+    [Header("Estado del Slot")]
     public bool isOccupied = false;
 
+    [Header("Lugar donde aparece la copia para gameplay")]
     public Transform gameplaypoint;
+
     private GameObject spawnedCard;
 
-
-
+ 
     public bool CanAcceptCard()
     {
         return !isOccupied;
     }
 
+    
     public void SetCard(GameObject card)
     {
-      
+        if (card == null) return;
+
+        
         HandSlot hand = card.GetComponentInParent<HandSlot>();
+
         if (hand != null)
         {
             hand.currentCard = null;
         }
 
-   
+      
         CardSlot oldSlot = card.GetComponentInParent<CardSlot>();
-        if (oldSlot != null)
+
+        if (oldSlot != null && oldSlot != this)
         {
-            oldSlot.isOccupied = false;
+            oldSlot.ClearSlot();
         }
 
-        if (card.CompareTag("Starter"))
-        {
-            Carta carta = card.GetComponent<Carta>();
-            if (carta != null)
-            {
-                carta.noteScore = carta.noteScore * 2;
-            }
-            Debug.Log("Si compara Starter");
-        }
-
-        if (card.CompareTag("Finisher"))
-        {
-            Carta carta = card.GetComponent<Carta>();
-            if (carta != null)
-            {
-                carta.noteScore = carta.noteScore * 2;
-            }
-            Debug.Log("Si compara Finisher");
-        }
-
+      
         card.transform.position = transform.position;
         card.transform.SetParent(transform);
 
         isOccupied = true;
+
+        
         SpawnGameplayCard(card);
     }
 
+  
+    int GetModifiedScore(GameObject card)
+    {
+        Carta carta = card.GetComponent<Carta>();
+
+        if (carta == null)
+            return 0;
+
+        int finalScore = carta.noteScore;
+
+        
+        if (card.CompareTag(gameObject.tag))
+        {
+            finalScore *= 2;
+            Debug.Log("Bonus activado por tag: " + gameObject.tag);
+        }
+
+        return finalScore;
+    }
+
+
     void SpawnGameplayCard(GameObject card)
     {
-        
+        if (gameplaypoint == null) return;
+
         if (spawnedCard != null)
         {
             Destroy(spawnedCard);
         }
 
        
-
         spawnedCard = Instantiate(card, gameplaypoint.position, Quaternion.identity);
+
+        Carta originalCarta = card.GetComponent<Carta>();
+        Carta nuevaCarta = spawnedCard.GetComponent<Carta>();
+
+        if (originalCarta != null && nuevaCarta != null)
+        {
+            nuevaCarta.noteScore = originalCarta.noteScore;
+
+            if (card.CompareTag(gameObject.tag))
+            {
+                nuevaCarta.noteScore *= 2;
+                Debug.Log("Bonus aplicado: " + nuevaCarta.noteScore);
+            }
+        }
     }
+
 
     public void ClearSlot()
     {
         isOccupied = false;
 
-       
         if (spawnedCard != null)
         {
             Destroy(spawnedCard);
         }
     }
-    public void OnTriggerEnter2D(Collider2D card)
+
+    
+    private void OnDrawGizmos()
     {
-        
+        if (gameplaypoint != null)
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(gameplaypoint.position, 0.2f);
+        }
     }
 }
