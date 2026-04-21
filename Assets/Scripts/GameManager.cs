@@ -43,10 +43,20 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI objectiveText;
 
-    [Header("Deck")]
-    public List<GameObject> deckPrefabs;
-    public List<GameObject> collectionPrefabs;
-    public int maxSize =8;
+    [Header("Colección completa")]
+    public List<GameObject> collectionCards = new List<GameObject>();
+
+    [Header("Mazo activo")]
+    public List<GameObject> deckPrefabs = new List<GameObject>();
+
+    public int maxDeckSize = 8;
+
+    [Header("UI")]
+    public GameObject gameplayCanvas;
+    public GameObject deckCanvas;
+    public GameObject dialogueCanvas;
+    public DeckBuilderUI deckUI;
+
 
     [Header("Hand")]
     public int handSize = 4;
@@ -62,9 +72,13 @@ public class GameManager : MonoBehaviour
 
         ChangeState(GameState.Hub);
         UpdateScoreUI();
+
+        if (deckUI != null)
+            deckUI.RefreshUI();
+
     }
 
-   
+
     void Update()
     {
         
@@ -134,9 +148,33 @@ public class GameManager : MonoBehaviour
         }
 
         Debug.Log("Estado actual: " + currentState);
+        UpdateCanvases();
     }
 
-    
+    void UpdateCanvases()
+    {
+        gameplayCanvas.SetActive(false);
+        deckCanvas.SetActive(false);
+        dialogueCanvas.SetActive(false);
+
+        switch (currentState)
+        {
+            case GameState.Playing:
+                gameplayCanvas.SetActive(true);
+                break;
+
+            case GameState.Deck:
+                deckCanvas.SetActive(true);
+                deckUI.RefreshUI();
+                break;
+
+            case GameState.Dialogue:
+                dialogueCanvas.SetActive(true);
+                break;
+        }
+    }
+
+
     void DebugStateInputs()
     {
         if (Input.GetKeyDown(KeyCode.I))
@@ -268,8 +306,34 @@ public class GameManager : MonoBehaviour
         }
     }
 
- 
-    public void OpenHub()
+    public void AddCardToDeck(GameObject cardPrefab)
+    {
+        if (deckPrefabs.Count >= maxDeckSize)
+        {
+            Debug.Log("Deck lleno");
+            return;
+        }
+
+        deckPrefabs.Add(cardPrefab);
+
+        if (deckUI != null)
+            deckUI.RefreshUI();
+    }
+
+    public void RemoveCardFromDeck(GameObject cardPrefab)
+    {
+        if (deckPrefabs.Contains(cardPrefab))
+        {
+            deckPrefabs.Remove(cardPrefab);
+
+            if (deckUI != null)
+                deckUI.RefreshUI();
+        }
+    }
+
+
+
+public void OpenHub()
     {
         ChangeState(GameState.Hub);
     }
