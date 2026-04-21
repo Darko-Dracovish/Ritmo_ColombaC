@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-  
     public enum GameState
     {
         Hub,
@@ -20,7 +19,6 @@ public class GameManager : MonoBehaviour
 
     public GameState currentState;
 
-  
     [Header("Audio")]
     public AudioSource music;
     public bool musicStart;
@@ -28,13 +26,11 @@ public class GameManager : MonoBehaviour
     [Header("Rhythm")]
     public ArrowControl beatScroll;
 
-   
     [Header("Cameras")]
-    public CinemachineVirtualCameraBase mainCamera;   
-    public CinemachineVirtualCameraBase cardCamera;   
+    public CinemachineVirtualCameraBase mainCamera;
+    public CinemachineVirtualCameraBase cardCamera;
     public CinemachineVirtualCameraBase hubCamera;
     public CinemachineVirtualCameraBase deckCamera;
-
 
     [Header("Score")]
     public int currentScore;
@@ -55,14 +51,17 @@ public class GameManager : MonoBehaviour
     public GameObject gameplayCanvas;
     public GameObject deckCanvas;
     public GameObject dialogueCanvas;
-    public DeckBuilderUI deckUI;
 
+    public GameObject hubCanvas;
+    public GameObject buildCanvas;
+    public GameObject songCanvas;
+
+    public DeckBuilderUI deckUI;
 
     [Header("Hand")]
     public int handSize = 4;
     public Transform[] handSlots;
 
- 
     void Start()
     {
         instance = this;
@@ -72,19 +71,12 @@ public class GameManager : MonoBehaviour
 
         ChangeState(GameState.Hub);
         UpdateScoreUI();
-
-        if (deckUI != null)
-            deckUI.RefreshUI();
-
     }
-
 
     void Update()
     {
-        
         DebugStateInputs();
 
-        
         switch (currentState)
         {
             case GameState.Hub:
@@ -109,12 +101,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    
     public void ChangeState(GameState newState)
     {
         currentState = newState;
 
-       
         mainCamera.Priority = 0;
         cardCamera.Priority = 0;
         hubCamera.Priority = 0;
@@ -157,23 +147,39 @@ public class GameManager : MonoBehaviour
         deckCanvas.SetActive(false);
         dialogueCanvas.SetActive(false);
 
+        if (hubCanvas != null) hubCanvas.SetActive(false);
+        if (buildCanvas != null) buildCanvas.SetActive(false);
+        if (songCanvas != null) songCanvas.SetActive(false);
+
         switch (currentState)
         {
-            case GameState.Playing:
-                gameplayCanvas.SetActive(true);
+            case GameState.Hub:
+                if (hubCanvas != null) hubCanvas.SetActive(true);
                 break;
 
-            case GameState.Deck:
-                deckCanvas.SetActive(true);
-                deckUI.RefreshUI();
+            case GameState.Build:
+                if (buildCanvas != null) buildCanvas.SetActive(true);
+                break;
+
+            case GameState.Playing:
+                gameplayCanvas.SetActive(true);
                 break;
 
             case GameState.Dialogue:
                 dialogueCanvas.SetActive(true);
                 break;
+
+            case GameState.SongSelect:
+                if (songCanvas != null) songCanvas.SetActive(true);
+                break;
+
+            case GameState.Deck:
+                deckCanvas.SetActive(true);
+                if (deckUI != null)
+                    deckUI.InitializeUI();
+                break;
         }
     }
-
 
     void DebugStateInputs()
     {
@@ -190,11 +196,7 @@ public class GameManager : MonoBehaviour
             ChangeState(GameState.Deck);
     }
 
-  
-    void HubInput()
-    {
-        
-    }
+    void HubInput() { }
 
     void DeckInput()
     {
@@ -209,22 +211,13 @@ public class GameManager : MonoBehaviour
     void PlayingInput()
     {
         if (!musicStart && Input.GetKeyDown(KeyCode.E))
-        {
             StartSong();
-        }
     }
 
-    void DialogueInput()
-    {
-        
-    }
+    void DialogueInput() { }
 
-    void SongSelectInput()
-    {
-        
-    }
+    void SongSelectInput() { }
 
-   
     void StartSong()
     {
         musicStart = true;
@@ -238,13 +231,10 @@ public class GameManager : MonoBehaviour
         objectiveText.text = "Objective: " + objectiveScore;
     }
 
-    
     public void NoteHit(int puntaje)
     {
         currentScore += puntaje;
         UpdateScoreUI();
-
-        Debug.Log("Hit +" + puntaje);
     }
 
     public void NoteMiss()
@@ -269,7 +259,7 @@ public class GameManager : MonoBehaviour
         if (currentScore < objectiveScore)
             Debug.Log("Objective Fail");
     }
- 
+
     public void ShuffleDeck()
     {
         for (int i = 0; i < deckPrefabs.Count; i++)
@@ -282,7 +272,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    
     public void DrawHand()
     {
         for (int i = 0; i < handSlots.Length; i++)
@@ -293,11 +282,8 @@ public class GameManager : MonoBehaviour
             Transform slot = handSlots[i];
             HandSlot slotData = slot.GetComponent<HandSlot>();
 
-           
             if (slotData.currentCard != null)
-            {
                 Destroy(slotData.currentCard);
-            }
 
             GameObject newCard =
                 Instantiate(deckPrefabs[i], slot.position, Quaternion.identity, slot);
@@ -316,8 +302,7 @@ public class GameManager : MonoBehaviour
 
         deckPrefabs.Add(cardPrefab);
 
-        if (deckUI != null)
-            deckUI.RefreshUI();
+           
     }
 
     public void RemoveCardFromDeck(GameObject cardPrefab)
@@ -326,40 +311,13 @@ public class GameManager : MonoBehaviour
         {
             deckPrefabs.Remove(cardPrefab);
 
-            if (deckUI != null)
-                deckUI.RefreshUI();
         }
     }
 
-
-
-public void OpenHub()
-    {
-        ChangeState(GameState.Hub);
-    }
-
-    public void OpenDeckBuilder()
-    {
-        ChangeState(GameState.Deck);
-    }
-
-    public void OpenGameplay()
-    {
-        ChangeState(GameState.Playing);
-    }
-
-    public void OpenDialogue()
-    {
-        ChangeState(GameState.Dialogue);
-    }
-
-    public void OpenSongSelect()
-    {
-        ChangeState(GameState.SongSelect);
-    }
-
-    public void OpenBuild()
-    {
-        ChangeState(GameState.Build);
-    }
+    public void OpenHub() => ChangeState(GameState.Hub);
+    public void OpenDeckBuilder() => ChangeState(GameState.Deck);
+    public void OpenGameplay() => ChangeState(GameState.Playing);
+    public void OpenDialogue() => ChangeState(GameState.Dialogue);
+    public void OpenSongSelect() => ChangeState(GameState.SongSelect);
+    public void OpenBuild() => ChangeState(GameState.Build);
 }

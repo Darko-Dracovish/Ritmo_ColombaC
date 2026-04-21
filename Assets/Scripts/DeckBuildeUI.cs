@@ -1,43 +1,62 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class DeckBuilderUI : MonoBehaviour
 {
-    [Header("Panels")]
-    public Transform collectionPanel;
-    public Transform activeDeckPanel;
+    [Header("Carta Containers")]
+    public Transform collectionContent;
+    public Transform activeDeckContent;
 
     [Header("Prefab UI Carta")]
     public GameObject cardButtonPrefab;
 
-    public void RefreshUI()
+    private List<CardUI> collectionPool = new();
+    private List<CardUI> deckPool = new();
+
+    public void InitializeUI()
     {
-        ClearPanel(collectionPanel);
-        ClearPanel(activeDeckPanel);
+        RefreshPanel(collectionContent, GameManager.instance.collectionCards, collectionPool, false);
+        RefreshPanel(activeDeckContent, GameManager.instance.deckPrefabs, deckPool, true);
+    }
 
-        foreach (GameObject card in GameManager.instance.collectionCards)
-        {
-            CreateCard(card, collectionPanel, false);
-        }
+    public void RefreshDeckPanel()
+    {
+        RefreshPanel(activeDeckContent, GameManager.instance.deckPrefabs, deckPool, true);
 
-        foreach (GameObject card in GameManager.instance.deckPrefabs)
+        // Actualiza estado visual de la colección sin recrearla
+        foreach (CardUI ui in collectionPool)
         {
-            CreateCard(card, activeDeckPanel, true);
+            if (ui.gameObject.activeSelf)
+                ui.SetInDeckState(GameManager.instance.deckPrefabs.Contains(ui.GetPrefab()));
         }
     }
 
-    void CreateCard(GameObject cardPrefab, Transform parent, bool inDeck)
+    void RefreshPanel(Transform parent, List<GameObject> cards, List<CardUI> pool, bool inDeck)
     {
-        GameObject obj = Instantiate(cardButtonPrefab, parent);
+        // Desactiva todos primero
+        foreach (CardUI ui in pool)
+            ui.gameObject.SetActive(false);
 
-        CardUI cardUI = obj.GetComponent<CardUI>();
-        cardUI.Setup(cardPrefab, inDeck);
-    }
-
-    void ClearPanel(Transform panel)
-    {
-        for (int i = panel.childCount - 1; i >= 0; i--)
+        for (int i = 0; i < cards.Count; i++)
         {
-            Destroy(panel.GetChild(i).gameObject);
+            CardUI ui;
+
+            if (i < pool.Count)
+            {
+                // Reusar existente
+                ui = pool[i];
+                ui.gameObject.SetActive(true);
+            }
+            else
+            {
+                // Crear nuevo solo si no alcanza el pool
+                GameObject obj = Instantiate(cardButtonPrefab, parent);
+                obj.transform.localScale = Vector3.one;
+                ui = obj.GetComponent<CardUI>();
+                pool.Add(ui);
+            }
+
+            ui.Setup(cards[i], inDeck);
         }
     }
 }
