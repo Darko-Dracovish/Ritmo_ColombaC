@@ -23,7 +23,6 @@ public class DeckBuilderUI : MonoBehaviour
     {
         RefreshPanel(activeDeckContent, GameManager.instance.deckPrefabs, deckPool, true);
 
-        // Actualiza estado visual de la colección sin recrearla
         foreach (CardUI ui in collectionPool)
         {
             if (ui.gameObject.activeSelf)
@@ -33,7 +32,6 @@ public class DeckBuilderUI : MonoBehaviour
 
     void RefreshPanel(Transform parent, List<GameObject> cards, List<CardUI> pool, bool inDeck)
     {
-        // Desactiva todos primero
         foreach (CardUI ui in pool)
             ui.gameObject.SetActive(false);
 
@@ -43,16 +41,22 @@ public class DeckBuilderUI : MonoBehaviour
 
             if (i < pool.Count)
             {
-                // Reusar existente
                 ui = pool[i];
                 ui.gameObject.SetActive(true);
             }
             else
             {
-                // Crear nuevo solo si no alcanza el pool
                 GameObject obj = Instantiate(cardButtonPrefab, parent);
+                obj.transform.localPosition = Vector3.zero;
                 obj.transform.localScale = Vector3.one;
                 ui = obj.GetComponent<CardUI>();
+
+                if (ui == null)
+                {
+                    Debug.LogError($"CardUI no encontrado en prefab: {cards[i].name}");
+                    continue;
+                }
+
                 pool.Add(ui);
             }
 

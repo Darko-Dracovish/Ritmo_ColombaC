@@ -9,12 +9,7 @@ public class GameManager : MonoBehaviour
 
     public enum GameState
     {
-        Hub,
-        Build,
-        Playing,
-        Dialogue,
-        SongSelect,
-        Deck
+        Hub, Build, Playing, Dialogue, SongSelect, Deck
     }
 
     public GameState currentState;
@@ -35,40 +30,43 @@ public class GameManager : MonoBehaviour
     [Header("Score")]
     public int currentScore;
     public int objectiveScore = 30;
-
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI objectiveText;
 
-    [Header("Colección completa")]
+    [Header("Colección desbloqueada")]
     public List<GameObject> collectionCards = new List<GameObject>();
+
+    [Header("Colección completa")]
+    public List<GameObject> totalcollectionCards = new List<GameObject>();
 
     [Header("Mazo activo")]
     public List<GameObject> deckPrefabs = new List<GameObject>();
-
     public int maxDeckSize = 8;
 
     [Header("UI")]
     public GameObject gameplayCanvas;
     public GameObject deckCanvas;
     public GameObject dialogueCanvas;
-
     public GameObject hubCanvas;
     public GameObject buildCanvas;
     public GameObject songCanvas;
-
     public DeckBuilderUI deckUI;
 
     [Header("Hand")]
     public int handSize = 4;
     public Transform[] handSlots;
 
-    void Start()
+    [Header("Desafío activo")]
+    public List<GameObject> challengeRewards = new List<GameObject>();
+    public int challengeObjectiveScore;
+
+    void Awake()
     {
         instance = this;
+    }
 
-        ShuffleDeck();
-        DrawHand();
-
+    void Start()
+    {    
         ChangeState(GameState.Hub);
         UpdateScoreUI();
     }
@@ -79,25 +77,11 @@ public class GameManager : MonoBehaviour
 
         switch (currentState)
         {
-            case GameState.Hub:
-                HubInput();
-                break;
-
-            case GameState.Build:
-                DeckInput();
-                break;
-
-            case GameState.Playing:
-                PlayingInput();
-                break;
-
-            case GameState.Dialogue:
-                DialogueInput();
-                break;
-
-            case GameState.SongSelect:
-                SongSelectInput();
-                break;
+            case GameState.Hub: HubInput(); break;
+            case GameState.Build: DeckInput(); break;
+            case GameState.Playing: PlayingInput(); break;
+            case GameState.Dialogue: DialogueInput(); break;
+            case GameState.SongSelect: SongSelectInput(); break;
         }
     }
 
@@ -112,29 +96,12 @@ public class GameManager : MonoBehaviour
 
         switch (currentState)
         {
-            case GameState.Hub:
-                hubCamera.Priority = 10;
-                break;
-
-            case GameState.Build:
-                cardCamera.Priority = 10;
-                break;
-
-            case GameState.Playing:
-                mainCamera.Priority = 10;
-                break;
-
-            case GameState.Dialogue:
-                hubCamera.Priority = 10;
-                break;
-
-            case GameState.SongSelect:
-                hubCamera.Priority = 10;
-                break;
-
-            case GameState.Deck:
-                deckCamera.Priority = 10;
-                break;
+            case GameState.Hub: hubCamera.Priority = 10; break;
+            case GameState.Build: cardCamera.Priority = 10; break;
+            case GameState.Playing: mainCamera.Priority = 10; break;
+            case GameState.Dialogue: hubCamera.Priority = 10; break;
+            case GameState.SongSelect: hubCamera.Priority = 10; break;
+            case GameState.Deck: deckCamera.Priority = 10; break;
         }
 
         Debug.Log("Estado actual: " + currentState);
@@ -146,7 +113,6 @@ public class GameManager : MonoBehaviour
         gameplayCanvas.SetActive(false);
         deckCanvas.SetActive(false);
         dialogueCanvas.SetActive(false);
-
         if (hubCanvas != null) hubCanvas.SetActive(false);
         if (buildCanvas != null) buildCanvas.SetActive(false);
         if (songCanvas != null) songCanvas.SetActive(false);
@@ -156,44 +122,33 @@ public class GameManager : MonoBehaviour
             case GameState.Hub:
                 if (hubCanvas != null) hubCanvas.SetActive(true);
                 break;
-
             case GameState.Build:
                 if (buildCanvas != null) buildCanvas.SetActive(true);
+                ShuffleDeck();
+                DrawHand();
                 break;
-
             case GameState.Playing:
                 gameplayCanvas.SetActive(true);
                 break;
-
             case GameState.Dialogue:
                 dialogueCanvas.SetActive(true);
                 break;
-
             case GameState.SongSelect:
                 if (songCanvas != null) songCanvas.SetActive(true);
                 break;
-
             case GameState.Deck:
                 deckCanvas.SetActive(true);
-                if (deckUI != null)
-                    deckUI.InitializeUI();
+                if (deckUI != null) deckUI.InitializeUI();
                 break;
         }
     }
 
     void DebugStateInputs()
     {
-        if (Input.GetKeyDown(KeyCode.I))
-            ChangeState(GameState.Hub);
-
-        if (Input.GetKeyDown(KeyCode.O))
-            ChangeState(GameState.Build);
-
-        if (Input.GetKeyDown(KeyCode.P))
-            ChangeState(GameState.Playing);
-
-        if (Input.GetKeyDown(KeyCode.U))
-            ChangeState(GameState.Deck);
+        if (Input.GetKeyDown(KeyCode.I)) ChangeState(GameState.Hub);
+        if (Input.GetKeyDown(KeyCode.O)) ChangeState(GameState.Build);
+        if (Input.GetKeyDown(KeyCode.P)) ChangeState(GameState.Playing);
+        if (Input.GetKeyDown(KeyCode.U)) ChangeState(GameState.Deck);
     }
 
     void HubInput() { }
@@ -215,19 +170,13 @@ public class GameManager : MonoBehaviour
     }
 
     void DialogueInput() { }
-
     void SongSelectInput() { }
 
     void StartSong()
     {
         musicStart = true;
-
-        if (beatScroll != null)
-            beatScroll.scrollStart = true;
-
-        if (music != null)
-            music.Play();
-
+        if (beatScroll != null) beatScroll.scrollStart = true;
+        if (music != null) music.Play();
         objectiveText.text = "Objective: " + objectiveScore;
     }
 
@@ -265,7 +214,6 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < deckPrefabs.Count; i++)
         {
             int rand = Random.Range(i, deckPrefabs.Count);
-
             GameObject temp = deckPrefabs[i];
             deckPrefabs[i] = deckPrefabs[rand];
             deckPrefabs[rand] = temp;
@@ -276,8 +224,7 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < handSlots.Length; i++)
         {
-            if (i >= deckPrefabs.Count)
-                return;
+            if (i >= deckPrefabs.Count) return;
 
             Transform slot = handSlots[i];
             HandSlot slotData = slot.GetComponent<HandSlot>();
@@ -285,9 +232,7 @@ public class GameManager : MonoBehaviour
             if (slotData.currentCard != null)
                 Destroy(slotData.currentCard);
 
-            GameObject newCard =
-                Instantiate(deckPrefabs[i], slot.position, Quaternion.identity, slot);
-
+            GameObject newCard = Instantiate(deckPrefabs[i], slot.position, Quaternion.identity, slot);
             slotData.currentCard = newCard;
         }
     }
@@ -299,18 +244,49 @@ public class GameManager : MonoBehaviour
             Debug.Log("Deck lleno");
             return;
         }
-
         deckPrefabs.Add(cardPrefab);
-
-           
     }
 
     public void RemoveCardFromDeck(GameObject cardPrefab)
     {
         if (deckPrefabs.Contains(cardPrefab))
-        {
             deckPrefabs.Remove(cardPrefab);
+    }
 
+    public void UnlockCard(GameObject cardPrefab)
+    {
+        if (!collectionCards.Contains(cardPrefab))
+        {
+            collectionCards.Add(cardPrefab);
+            Debug.Log("Carta desbloqueada: " + cardPrefab.name);
+        }
+    }
+
+    public void StartChallenge(List<GameObject> cards, List<GameObject> rewards, int objective)
+    {
+        challengeRewards = rewards;
+        challengeObjectiveScore = objective;
+
+        CardSlot[] slots = FindObjectsByType<CardSlot>(FindObjectsSortMode.InstanceID);
+
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (i >= cards.Count) break;
+            GameObject card = Instantiate(cards[i]);
+            slots[i].SetCard(card);
+        }
+
+        ChangeState(GameState.Playing);
+    }
+
+    public void CheckChallengeCompletion()
+    {
+        if (currentScore >= challengeObjectiveScore)
+        {
+            foreach (GameObject reward in challengeRewards)
+                UnlockCard(reward);
+
+            Debug.Log("Desafío completado, cartas desbloqueadas");
         }
     }
 
