@@ -1,7 +1,8 @@
-using UnityEngine;
+Ôªøusing UnityEngine;
 using TMPro;
 using Unity.Cinemachine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -33,10 +34,10 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI objectiveText;
 
-    [Header("ColecciÛn desbloqueada")]
+    [Header("Colecci√≥n desbloqueada")]
     public List<GameObject> collectionCards = new List<GameObject>();
 
-    [Header("ColecciÛn completa")]
+    [Header("Colecci√≥n completa")]
     public List<GameObject> totalcollectionCards = new List<GameObject>();
 
     [Header("Mazo activo")]
@@ -56,7 +57,7 @@ public class GameManager : MonoBehaviour
     public int handSize = 4;
     public Transform[] handSlots;
 
-    [Header("DesafÌo activo")]
+    [Header("Desaf√≠o activo")]
     public List<GameObject> challengeRewards = new List<GameObject>();
     public int challengeObjectiveScore;
 
@@ -65,8 +66,13 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
+    private Vector3 lineStartPosition;
+
     void Start()
-    {    
+    {
+        if (beatScroll != null)
+            lineStartPosition = beatScroll.transform.localPosition;
+
         ChangeState(GameState.Hub);
         UpdateScoreUI();
     }
@@ -137,10 +143,16 @@ public class GameManager : MonoBehaviour
                 if (songCanvas != null) songCanvas.SetActive(true);
                 break;
             case GameState.Deck:
-                deckCanvas.SetActive(true);
-                if (deckUI != null) deckUI.InitializeUI();
+                StartCoroutine(OpenDeckWithDelay());
                 break;
         }
+    }
+
+    IEnumerator OpenDeckWithDelay()
+    {
+        yield return new WaitForSeconds(1f);
+        deckCanvas.SetActive(true);
+        if (deckUI != null) deckUI.InitializeUI();
     }
 
     void DebugStateInputs()
@@ -152,6 +164,39 @@ public class GameManager : MonoBehaviour
     }
 
     void HubInput() { }
+
+    public void ResetGame()
+    {
+        currentScore = 0;
+        musicStart = false;
+        UpdateScoreUI();
+
+        if (beatScroll != null)
+        {
+            beatScroll.scrollStart = false;
+            beatScroll.transform.localPosition = lineStartPosition; //  posici√≥n original
+        }
+
+        if (music != null)
+            music.Stop();
+
+        foreach (Transform slot in handSlots)
+        {
+            HandSlot slotData = slot.GetComponent<HandSlot>();
+            if (slotData != null && slotData.currentCard != null)
+            {
+                Destroy(slotData.currentCard);
+                slotData.currentCard = null;
+            }
+        }
+
+        CardSlot[] cardSlots = FindObjectsByType<CardSlot>(FindObjectsSortMode.None);
+        foreach (CardSlot slot in cardSlots)
+            slot.ClearSlot();
+
+        ShuffleDeck();
+        DrawHand();
+    }
 
     void DeckInput()
     {
@@ -286,7 +331,7 @@ public class GameManager : MonoBehaviour
             foreach (GameObject reward in challengeRewards)
                 UnlockCard(reward);
 
-            Debug.Log("DesafÌo completado, cartas desbloqueadas");
+            Debug.Log("Desaf√≠o completado, cartas desbloqueadas");
         }
     }
 

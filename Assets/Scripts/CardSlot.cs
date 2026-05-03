@@ -103,10 +103,19 @@ public class CardSlot : MonoBehaviour
         if (spawnedCard != null)
         {
             Destroy(spawnedCard);
+            spawnedCard = null;
+        }
+
+        // Eliminar carta visual del slot, preservando gameplaypoint
+        for (int i = transform.childCount - 1; i >= 0; i--)
+        {
+            GameObject child = transform.GetChild(i).gameObject;
+            if (child != gameplaypoint.gameObject)
+                Destroy(child);
         }
     }
 
-    
+
     private void OnDrawGizmos()
     {
         if (gameplaypoint != null)

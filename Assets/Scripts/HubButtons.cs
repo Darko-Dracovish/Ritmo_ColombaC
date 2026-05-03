@@ -7,5 +7,6 @@ public class HubButtons : MonoBehaviour
     public void OnMouseDown()
     {
         GameManager.instance.ChangeState(targetState);
+        Debug.Log("Click en botón: " + gameObject.name + " | Target: " + targetState);
     }
 }
