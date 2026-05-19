@@ -525,7 +525,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2001,7 +2001,7 @@ MonoBehaviour:
   - {fileID: 4628378887485878479, guid: 543bc154117355d40b1dab9baa9300c8, type: 3}
   challengeObjective: 500
   isLocked: 1
-  lockedMessage: Para bailar pulsa "E"
+  lockedMessage: No estoy interesad
   lockedPanel: {fileID: 728402183}
   lockedText: {fileID: 890585950}
 --- !u!95 &396312268
@@ -2819,7 +2819,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_fontColor: {r: 0.32156864, g: 0.04705883, b: 0.8705883, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3131,7 +3131,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -14.53, y: 7.98}
+  m_AnchoredPosition: {x: 63.940006, y: -16.01}
   m_SizeDelta: {x: 12.4356, y: 3.5727}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &606744849
@@ -3750,7 +3750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.9150943, g: 0.09064613, b: 0.6863094, a: 0.7529412}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3975,7 +3975,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.79, y: 0}
   m_AnchorMax: {x: 1, y: 0.1}
-  m_AnchoredPosition: {x: -0.5, y: 12.999985}
+  m_AnchoredPosition: {x: -0.5, y: 55.4}
   m_SizeDelta: {x: 1, y: 25.999996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &802199241
@@ -4025,8 +4025,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17.94
-  m_fontSizeBase: 17.94
+  m_fontSize: 64
+  m_fontSizeBase: 64
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4253,7 +4253,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_fontColor: {r: 0.32156864, g: 0.04705883, b: 0.8705883, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4731,7 +4731,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5327,8 +5327,8 @@ Transform:
   m_GameObject: {fileID: 977499801}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.25, y: 7.42, z: 0}
-  m_LocalScale: {x: 0.44315, y: 0.44315, z: 0.44315}
+  m_LocalPosition: {x: -4.27, y: 7.8533, z: 0}
+  m_LocalScale: {x: 0.46713322, y: 0.46824378, z: 0.46273723}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 268463639}
@@ -5380,7 +5380,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.21769333, y: 0.23854202}
+  m_Offset: {x: 0.21769905, y: -1.1079974}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5390,7 +5390,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 10.578405, y: 4.102097}
+  m_Size: {x: 9.354277, y: 9.243424}
   m_EdgeRadius: 0
 --- !u!212 &977499805
 SpriteRenderer:
@@ -5439,8 +5439,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3286163911610860551, guid: c6646f59823a0c54ba5b3ed9dddb4b1c, type: 3}
-  m_Color: {r: 0.15137735, g: 0.9716981, b: 0.0045834924, a: 1}
+  m_Sprite: {fileID: 3286163911610860551, guid: 3ce5a056422475f46b7caf9d9e4281f1, type: 3}
+  m_Color: {r: 0.9575472, g: 1, b: 0.9575472, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6483,7 +6483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.9150943, g: 0.09064613, b: 0.6863094, a: 0.7529412}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6536,7 +6536,7 @@ Transform:
   m_GameObject: {fileID: 1224523545}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.77, y: 7.59, z: 0}
+  m_LocalPosition: {x: 62.7, y: -16.4, z: 0}
   m_LocalScale: {x: 0.39012, y: 0.39012, z: 0.39012}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7274,7 +7274,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.22, y: 0.1}
-  m_AnchoredPosition: {x: 0, y: 8}
+  m_AnchoredPosition: {x: 0, y: 18.2}
   m_SizeDelta: {x: 0, y: 15.999996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1512861624
@@ -7326,8 +7326,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17.94
-  m_fontSizeBase: 17.94
+  m_fontSize: 64
+  m_fontSizeBase: 64
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7511,7 +7511,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_fontColor: {r: 0.32156864, g: 0.04705883, b: 0.8705883, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -7907,7 +7907,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.9150943, g: 0.09064613, b: 0.6863094, a: 0.49803922}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8315,7 +8315,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.27, y: -8.98}
+  m_AnchoredPosition: {x: -1.65, y: -8.45}
   m_SizeDelta: {x: 12.4356, y: 3.5727}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1869800389
@@ -8338,7 +8338,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Desaf\xEDa para llenar tu mazo"
+  m_text: "Busca desaf\xEDos para conseguir cartas\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8347,8 +8347,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278514431
+  m_fontColor: {r: 1, g: 0.9490196, b: 0.015686275, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -8403,7 +8403,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -6.3115907, w: 0}
+  m_margin: {x: -7.4331656, y: 0.86688995, z: -11.523509, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -8994,7 +8994,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12.01, y: 8.11}
+  m_AnchoredPosition: {x: -2.66, y: 4.15}
   m_SizeDelta: {x: 12.4356, y: 3.5727}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2080639172
@@ -9026,8 +9026,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278512639
+  m_fontColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -9546,7 +9546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.9150943, g: 0.09064613, b: 0.6863094, a: 0.49803922}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9824,7 +9824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4b081efaabb0049b3b7888a2c3b07a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HubButtons
-  targetState: 0
+  targetState: 1
 --- !u!212 &2120467861
 SpriteRenderer:
   m_ObjectHideFlags: 0
