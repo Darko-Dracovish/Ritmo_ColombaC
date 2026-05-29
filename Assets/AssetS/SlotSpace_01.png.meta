@@ -1,0 +1,897 @@
+fileFormatVersion: 2
+guid: 92fa460900a3e914eb6058d566551f68
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5137053790721841386
+    second: SlotSpace_01_0
+  - first:
+      213: -1955847048582214068
+    second: SlotSpace_01_1
+  - first:
+      213: 3629350962736846516
+    second: SlotSpace_01_2
+  - first:
+      213: 2016886558721301248
+    second: SlotSpace_01_3
+  - first:
+      213: -4969236242026513107
+    second: SlotSpace_01_4
+  - first:
+      213: -4384355934859969810
+    second: SlotSpace_01_5
+  - first:
+      213: -122352460094284838
+    second: SlotSpace_01_6
+  - first:
+      213: -3275350614004461588
+    second: SlotSpace_01_7
+  - first:
+      213: -8896132894806283444
+    second: SlotSpace_01_8
+  - first:
+      213: 3972853341718141756
+    second: SlotSpace_01_9
+  - first:
+      213: 5463033105359681847
+    second: SlotSpace_01_10
+  - first:
+      213: -1436930890258688620
+    second: SlotSpace_01_11
+  - first:
+      213: -4764891492566175854
+    second: SlotSpace_01_12
+  - first:
+      213: -4220744662001084903
+    second: SlotSpace_01_13
+  - first:
+      213: -6600721328638101957
+    second: SlotSpace_01_14
+  - first:
+      213: -8214050841687277928
+    second: SlotSpace_01_15
+  - first:
+      213: -8203484953422343687
+    second: SlotSpace_01_16
+  - first:
+      213: -390384256661004546
+    second: SlotSpace_01_17
+  - first:
+      213: -8267015852594242076
+    second: SlotSpace_01_18
+  - first:
+      213: 2988675725305726921
+    second: SlotSpace_01_19
+  - first:
+      213: 4886498499984271627
+    second: SlotSpace_01_20
+  - first:
+      213: -1727135355225159487
+    second: SlotSpace_01_21
+  - first:
+      213: -6213313000590619355
+    second: SlotSpace_01_22
+  - first:
+      213: 2373030880700715552
+    second: SlotSpace_01_23
+  - first:
+      213: 2282121735115467408
+    second: SlotSpace_01_24
+  - first:
+      213: 6414491661687144063
+    second: SlotSpace_01_25
+  - first:
+      213: 5050199746838635212
+    second: SlotSpace_01_26
+  - first:
+      213: -8326322580224132674
+    second: SlotSpace_01_27
+  - first:
+      213: 3401641399612400077
+    second: SlotSpace_01_28
+  - first:
+      213: 4323408159085263284
+    second: SlotSpace_01_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SlotSpace_01_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 182
+        width: 240
+        height: 318
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae89c04943b7a4740800000000000000
+      internalID: 5137053790721841386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotSpace_01_1
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 475
+        width: 59
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4ec24ac87f6bd4e0800000000000000
+      internalID: -1955847048582214068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotSpace_01_2
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 475
+        width: 59
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b6d623b87b0e5230800000000000000
+      internalID: 3629350962736846516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotSpace_01_3
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 452
+        width: 49
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00bd7d4a3ab6dfb10800000000000000
+      internalID: 2016886558721301248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotSpace_01_4
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 183
+        width: 245
+        height: 317
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2d330d47f9b90bb0800000000000000
+      internalID: -4969236242026513107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotSpace_01_5
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 475
+        width: 59
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eeabbcda183a723c0800000000000000
+      internalID: -4384355934859969810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotSpace_01_6
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 475
+        width: 59
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adb5fa6f5115d4ef0800000000000000
+      internalID: -122352460094284838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotSpace_01_7
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 452
+        width: 49
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cef086958fd9b82d0800000000000000
+      internalID: -3275350614004461588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotSpace_01_8
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 415
+        width: 22
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4b676214469a8480800000000000000
+      internalID: -8896132894806283444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotSpace_01_9
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 389
+        width: 22
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3b55d1b019622730800000000000000
+      internalID: 3972853341718141756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotSpace_01_10
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 415
+        width: 22
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 739b9293aa790db40800000000000000
+      internalID: 5463033105359681847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotSpace_01_11
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 389
+        width: 22
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 495585fe7fefe0ce0800000000000000
+      internalID: -1436930890258688620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotSpace_01_12
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 352
+        width: 22
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29fef48de64bfddb0800000000000000
+      internalID: -4764891492566175854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotSpace_01_13
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 326
+        width: 22
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9169cc5a717ec65c0800000000000000
+      internalID: -4220744662001084903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotSpace_01_14
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 352
+        width: 22
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b367e297ce68564a0800000000000000
+      internalID: -6600721328638101957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotSpace_01_15
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 326
+        width: 22
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89e3b368744d10e80800000000000000
+      internalID: -8214050841687277928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotSpace_01_16
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 289
+        width: 22
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f1dff616ed572e80800000000000000
+      internalID: -8203484953422343687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotSpace_01_17
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 263
+        width: 22
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efed0df3693159af0800000000000000
+      internalID: -390384256661004546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotSpace_01_18
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 289
+        width: 22
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4edd891f1e8a54d80800000000000000
+      internalID: -8267015852594242076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotSpace_01_19
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 263
+        width: 22
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c74eabccb8e97920800000000000000
+      internalID: 2988675725305726921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotSpace_01_20
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 226
+        width: 22
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b09aa07fe7450d340800000000000000
+      internalID: 4886498499984271627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotSpace_01_21
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 194
+        width: 59
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c849c09b8bf708e0800000000000000
+      internalID: -1727135355225159487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotSpace_01_22
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 226
+        width: 22
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52dca79deb0e5c9a0800000000000000
+      internalID: -6213313000590619355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotSpace_01_23
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 193
+        width: 59
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 022d23d5303bee020800000000000000
+      internalID: 2373030880700715552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotSpace_01_24
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 194
+        width: 33
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09a61cb70a9bbaf10800000000000000
+      internalID: 2282121735115467408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotSpace_01_25
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 194
+        width: 59
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7e319d4e2ad40950800000000000000
+      internalID: 6414491661687144063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotSpace_01_26
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 194
+        width: 59
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc2a513a9e9e51640800000000000000
+      internalID: 5050199746838635212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotSpace_01_27
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 194
+        width: 33
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb93d606ab5f27c80800000000000000
+      internalID: -8326322580224132674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotSpace_01_28
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 194
+        width: 59
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc1e82d84de053f20800000000000000
+      internalID: 3401641399612400077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SlotSpace_01_29
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 194
+        width: 59
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b97d4570d4dffb30800000000000000
+      internalID: 4323408159085263284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: a7bcb4a8a8e7e814fbb9ad176b2af176
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SlotSpace_01_0: 5137053790721841386
+      SlotSpace_01_1: -1955847048582214068
+      SlotSpace_01_10: 5463033105359681847
+      SlotSpace_01_11: -1436930890258688620
+      SlotSpace_01_12: -4764891492566175854
+      SlotSpace_01_13: -4220744662001084903
+      SlotSpace_01_14: -6600721328638101957
+      SlotSpace_01_15: -8214050841687277928
+      SlotSpace_01_16: -8203484953422343687
+      SlotSpace_01_17: -390384256661004546
+      SlotSpace_01_18: -8267015852594242076
+      SlotSpace_01_19: 2988675725305726921
+      SlotSpace_01_2: 3629350962736846516
+      SlotSpace_01_20: 4886498499984271627
+      SlotSpace_01_21: -1727135355225159487
+      SlotSpace_01_22: -6213313000590619355
+      SlotSpace_01_23: 2373030880700715552
+      SlotSpace_01_24: 2282121735115467408
+      SlotSpace_01_25: 6414491661687144063
+      SlotSpace_01_26: 5050199746838635212
+      SlotSpace_01_27: -8326322580224132674
+      SlotSpace_01_28: 3401641399612400077
+      SlotSpace_01_29: 4323408159085263284
+      SlotSpace_01_3: 2016886558721301248
+      SlotSpace_01_4: -4969236242026513107
+      SlotSpace_01_5: -4384355934859969810
+      SlotSpace_01_6: -122352460094284838
+      SlotSpace_01_7: -3275350614004461588
+      SlotSpace_01_8: -8896132894806283444
+      SlotSpace_01_9: 3972853341718141756
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
