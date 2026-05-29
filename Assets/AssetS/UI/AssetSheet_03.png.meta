@@ -99,11 +99,24 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AssetSheet_03_0
+      name: DialogoCuadro
       rect:
         serializedVersion: 2
         x: 56
@@ -125,7 +138,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AssetSheet_03_1
+      name: DialogoBurbuja
       rect:
         serializedVersion: 2
         x: 382
@@ -160,8 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      AssetSheet_03_0: -5544690792303785295
-      AssetSheet_03_1: -6616263263926525056
+      DialogoBurbuja: -6616263263926525056
+      DialogoCuadro: -5544690792303785295
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

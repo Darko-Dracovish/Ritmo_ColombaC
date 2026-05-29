@@ -116,7 +116,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AssetSheet_05a_0
+      name: BotonFlecha_Naranja
       rect:
         serializedVersion: 2
         x: 49
@@ -124,7 +124,7 @@ TextureImporter:
         width: 502
         height: 352
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -138,7 +138,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AssetSheet_05a_1
+      name: BotonFlecha_Azul
       rect:
         serializedVersion: 2
         x: 0
@@ -146,7 +146,7 @@ TextureImporter:
         width: 502
         height: 352
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -163,7 +163,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: cc9142a93088c6f43ad7dbe5cf178b7c
     internalID: 0
     vertices: []
     indices: 
@@ -173,8 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      AssetSheet_05a_0: -3039096798662941930
-      AssetSheet_05a_1: -1911243785194378353
+      BotonFlecha_Azul: -1911243785194378353
+      BotonFlecha_Naranja: -3039096798662941930
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

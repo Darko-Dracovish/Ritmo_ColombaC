@@ -102,19 +102,32 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HitSheet_0
+      name: HitNormal
       rect:
         serializedVersion: 2
-        x: 136
-        y: 391
+        x: 137
+        y: 392
         width: 248
         height: 91
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -128,7 +141,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HitSheet_1
+      name: HitMiss
       rect:
         serializedVersion: 2
         x: 64
@@ -136,7 +149,7 @@ TextureImporter:
         width: 372
         height: 91
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -150,7 +163,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HitSheet_2
+      name: HitPerfect
       rect:
         serializedVersion: 2
         x: 2
@@ -158,7 +171,7 @@ TextureImporter:
         width: 496
         height: 69
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -175,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 1e573b533da1147429dc5e46459f6934
     internalID: 0
     vertices: []
     indices: 
@@ -185,9 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      HitSheet_0: 2919649386127651155
-      HitSheet_1: 3447875546059415837
-      HitSheet_2: -4031922871933941976
+      HitMiss: 3447875546059415837
+      HitNormal: 2919649386127651155
+      HitPerfect: -4031922871933941976
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

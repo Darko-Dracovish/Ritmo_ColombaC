@@ -210,11 +210,24 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AssetSheet_02_0
+      name: PunteadoCirculo
       rect:
         serializedVersion: 2
         x: 10
@@ -236,7 +249,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AssetSheet_02_8
+      name: PunteadoOvalo
       rect:
         serializedVersion: 2
         x: 150
@@ -258,7 +271,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AssetSheet_02_10
+      name: PunteadoCuadro
       rect:
         serializedVersion: 2
         x: 369
@@ -280,7 +293,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AssetSheet_02_22
+      name: TextBox
       rect:
         serializedVersion: 2
         x: 10
@@ -302,7 +315,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AssetSheet_02_37
+      name: PunteadoFlecha
       rect:
         serializedVersion: 2
         x: 86
@@ -337,9 +350,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      AssetSheet_02_0: 3196772597437251280
       AssetSheet_02_1: -762340788553266718
-      AssetSheet_02_10: 9208968574756371713
       AssetSheet_02_11: -6185376065141348523
       AssetSheet_02_12: 7399346976150993013
       AssetSheet_02_13: 7883411358979909195
@@ -352,7 +363,6 @@ TextureImporter:
       AssetSheet_02_2: -8271738121628028881
       AssetSheet_02_20: 6929923948504367762
       AssetSheet_02_21: -2595560800467000750
-      AssetSheet_02_22: -1247202524083616072
       AssetSheet_02_23: -4108083807949118572
       AssetSheet_02_24: 9074030704488557907
       AssetSheet_02_25: 4446830658825722360
@@ -368,14 +378,17 @@ TextureImporter:
       AssetSheet_02_34: -6217950561195133215
       AssetSheet_02_35: -6479805811883164044
       AssetSheet_02_36: -12388258659384329
-      AssetSheet_02_37: -7353051997232755834
       AssetSheet_02_38: -4016722232751158714
       AssetSheet_02_4: 6174294213941730977
       AssetSheet_02_5: 8715080720096112047
       AssetSheet_02_6: 2675765273881410716
       AssetSheet_02_7: -4071447343954039037
-      AssetSheet_02_8: -854053940308425563
       AssetSheet_02_9: 7225740457730317787
+      PunteadoCirculo: 3196772597437251280
+      PunteadoCuadro: 9208968574756371713
+      PunteadoFlecha: -7353051997232755834
+      PunteadoOvalo: -854053940308425563
+      TextBox: -1247202524083616072
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

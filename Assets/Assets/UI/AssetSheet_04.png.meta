@@ -131,7 +131,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AssetSheet_04_0
+      name: React_HeartRosa
       rect:
         serializedVersion: 2
         x: 5
@@ -153,7 +153,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AssetSheet_04_1
+      name: React_HeartAmarillo
       rect:
         serializedVersion: 2
         x: 254
@@ -175,7 +175,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AssetSheet_04_2
+      name: React_HeartVerde
       rect:
         serializedVersion: 2
         x: 0
@@ -197,7 +197,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AssetSheet_04_6
+      name: React_Enojo
       rect:
         serializedVersion: 2
         x: 230
@@ -232,13 +232,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      AssetSheet_04_0: 7865354333754578365
-      AssetSheet_04_1: -6694892448300173032
-      AssetSheet_04_2: -5481178061485715454
       AssetSheet_04_3: 8944859487710711457
       AssetSheet_04_4: 582339709315696727
       AssetSheet_04_5: -4342188475113107914
-      AssetSheet_04_6: -1985828019394188896
+      React_Enojo: -1985828019394188896
+      React_HeartAmarillo: -6694892448300173032
+      React_HeartRosa: 7865354333754578365
+      React_HeartVerde: -5481178061485715454
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

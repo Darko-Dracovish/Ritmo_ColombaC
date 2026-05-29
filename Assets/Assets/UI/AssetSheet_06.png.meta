@@ -116,7 +116,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AssetSheet_06_0
+      name: DiscoNormal
       rect:
         serializedVersion: 2
         x: 0
@@ -124,7 +124,7 @@ TextureImporter:
         width: 429
         height: 957
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -138,7 +138,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AssetSheet_06_1
+      name: DiscoRota
       rect:
         serializedVersion: 2
         x: 493
@@ -146,7 +146,7 @@ TextureImporter:
         width: 453
         height: 975
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -163,7 +163,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d7852fbe098920a469bf117d8b6401a0
     internalID: 0
     vertices: []
     indices: 
@@ -173,8 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      AssetSheet_06_0: -3205019841617116365
-      AssetSheet_06_1: -1657778744985495860
+      DiscoNormal: -3205019841617116365
+      DiscoRota: -1657778744985495860
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

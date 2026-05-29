@@ -1,0 +1,576 @@
+fileFormatVersion: 2
+guid: a5e92404ae32d5c48967f7c17d64100b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3798018451851770435
+    second: AssetSheet_01 (1)_0
+  - first:
+      213: -948010741917668085
+    second: AssetSheet_01 (1)_1
+  - first:
+      213: -1226246119356437968
+    second: AssetSheet_01 (1)_2
+  - first:
+      213: 6107261558204160816
+    second: AssetSheet_01 (1)_3
+  - first:
+      213: 2487705244636440920
+    second: AssetSheet_01 (1)_4
+  - first:
+      213: -8574675996145554774
+    second: AssetSheet_01 (1)_5
+  - first:
+      213: -6129185419190505007
+    second: AssetSheet_01 (1)_6
+  - first:
+      213: -8787518595363634295
+    second: AssetSheet_01 (1)_7
+  - first:
+      213: -1357591900951778623
+    second: AssetSheet_01 (1)_8
+  - first:
+      213: 5124829994365255000
+    second: AssetSheet_01 (1)_9
+  - first:
+      213: 3702718050161890545
+    second: AssetSheet_01 (1)_10
+  - first:
+      213: -2431354871908735217
+    second: AssetSheet_01 (1)_11
+  - first:
+      213: 8210543772799132753
+    second: AssetSheet_01 (1)_12
+  - first:
+      213: -1540321422648925641
+    second: AssetSheet_01 (1)_13
+  - first:
+      213: 9181975313759076769
+    second: AssetSheet_01 (1)_14
+  - first:
+      213: -3989793724820747536
+    second: AssetSheet_01 (1)_15
+  - first:
+      213: 8915990872210540449
+    second: AssetSheet_01 (1)_16
+  - first:
+      213: 756603253974854134
+    second: AssetSheet_01 (1)_17
+  - first:
+      213: -3481256622035029973
+    second: AssetSheet_01 (1)_18
+  - first:
+      213: -6160975900621317688
+    second: AssetSheet_01 (1)_19
+  - first:
+      213: -6522742919108814969
+    second: AssetSheet_01 (1)_20
+  - first:
+      213: 8187598980396946438
+    second: AssetSheet_01 (1)_21
+  - first:
+      213: -1131288368061502955
+    second: AssetSheet_01 (1)_22
+  - first:
+      213: -2068085100912821544
+    second: AssetSheet_01 (1)_23
+  - first:
+      213: -8465517156784645289
+    second: AssetSheet_01 (1)_24
+  - first:
+      213: 8952065675118253346
+    second: AssetSheet_01 (1)_25
+  - first:
+      213: -4573947048699497769
+    second: AssetSheet_01 (1)_26
+  - first:
+      213: 3921857261856120837
+    second: AssetSheet_01 (1)_27
+  - first:
+      213: -7698749010149164394
+    second: AssetSheet_01 (1)_28
+  - first:
+      213: 5864067916986254769
+    second: AssetSheet_01 (1)_29
+  - first:
+      213: -7686147942272500984
+    second: AssetSheet_01 (1)_30
+  - first:
+      213: -3497170371261155154
+    second: AssetSheet_01 (1)_31
+  - first:
+      213: 3305570177026482348
+    second: AssetSheet_01 (1)_32
+  - first:
+      213: -7439499016565453850
+    second: AssetSheet_01 (1)_33
+  - first:
+      213: 1490593795332729130
+    second: AssetSheet_01 (1)_34
+  - first:
+      213: 2918592709739486354
+    second: AssetSheet_01 (1)_35
+  - first:
+      213: -5414176457703984612
+    second: AssetSheet_01 (1)_36
+  - first:
+      213: 5831826459565520592
+    second: AssetSheet_01 (1)_37
+  - first:
+      213: 6170970206740006893
+    second: AssetSheet_01 (1)_38
+  - first:
+      213: -9054302099066684476
+    second: AssetSheet_01 (1)_39
+  - first:
+      213: 2301028201886013626
+    second: AssetSheet_01 (1)_40
+  - first:
+      213: 2946339364332109770
+    second: AssetSheet_01 (1)_41
+  - first:
+      213: -6175044935018350081
+    second: AssetSheet_01 (1)_42
+  - first:
+      213: 3475567887139252497
+    second: AssetSheet_01 (1)_43
+  - first:
+      213: -5796471236562462370
+    second: AssetSheet_01 (1)_44
+  - first:
+      213: -1487634792360087902
+    second: AssetSheet_01 (1)_45
+  - first:
+      213: -2817971135832367673
+    second: AssetSheet_01 (1)_46
+  - first:
+      213: 6357339218446582576
+    second: AssetSheet_01 (1)_47
+  - first:
+      213: -9122094870527088628
+    second: AssetSheet_01 (1)_48
+  - first:
+      213: 6862109035958684909
+    second: AssetSheet_01 (1)_49
+  - first:
+      213: 3988208691887526623
+    second: AssetSheet_01 (1)_50
+  - first:
+      213: -8409963018563781828
+    second: AssetSheet_01 (1)_51
+  - first:
+      213: 6299730459039016182
+    second: AssetSheet_01 (1)_52
+  - first:
+      213: -5273724495707941807
+    second: AssetSheet_01 (1)_53
+  - first:
+      213: 7256072820879302420
+    second: AssetSheet_01 (1)_54
+  - first:
+      213: 7881831550855243081
+    second: AssetSheet_01 (1)_55
+  - first:
+      213: -549155268557149528
+    second: AssetSheet_01 (1)_56
+  - first:
+      213: -6885815448417882744
+    second: AssetSheet_01 (1)_57
+  - first:
+      213: 4640571838883915538
+    second: AssetSheet_01 (1)_58
+  - first:
+      213: 2779640815139853107
+    second: AssetSheet_01 (1)_59
+  - first:
+      213: -1225379398434812439
+    second: AssetSheet_01 (1)_60
+  - first:
+      213: 4419628105960728091
+    second: AssetSheet_01 (1)_61
+  - first:
+      213: 1453754472329305979
+    second: AssetSheet_01 (1)_62
+  - first:
+      213: -1641110797385793411
+    second: AssetSheet_01 (1)_63
+  - first:
+      213: 1211992004124883886
+    second: AssetSheet_01 (1)_64
+  - first:
+      213: 4455345849906786564
+    second: AssetSheet_01 (1)_65
+  - first:
+      213: 1550363491852969128
+    second: AssetSheet_01 (1)_66
+  - first:
+      213: -3365110681919700678
+    second: AssetSheet_01 (1)_67
+  - first:
+      213: -6540871885411656770
+    second: AssetSheet_01 (1)_68
+  - first:
+      213: -7626357066551783204
+    second: AssetSheet_01 (1)_69
+  - first:
+      213: -1071349141153325346
+    second: AssetSheet_01 (1)_70
+  - first:
+      213: 5519375970089569317
+    second: AssetSheet_01 (1)_71
+  - first:
+      213: 3641000424377179572
+    second: AssetSheet_01 (1)_72
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LineaEnd
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 827
+        width: 908
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db50ffe375aba4bc0800000000000000
+      internalID: -3798018451851770435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LineaStart
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 703
+        width: 908
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0d2eb4c04df7d2f0800000000000000
+      internalID: -948010741917668085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BotonPluma
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 535
+        width: 356
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03aee80c6af7bfee0800000000000000
+      internalID: -1226246119356437968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 510
+        width: 350
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03b582f870a51c450800000000000000
+      internalID: 6107261558204160816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BotonAlas
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 319
+        width: 229
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85d78643abd0f1740800000000000000
+      internalID: 5124829994365255000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BotonPlay
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 91
+        width: 225
+        height: 189
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29c111c2b9ce08820800000000000000
+      internalID: 2918592709739486354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SliderBoton
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 0
+        width: 57
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ed0631fde39efee0800000000000000
+      internalID: -1225379398434812439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 0e4f02334d54e87458d453b1a11c4ef6
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      AssetSheet_01 (1)_10: 3702718050161890545
+      AssetSheet_01 (1)_11: -2431354871908735217
+      AssetSheet_01 (1)_12: 8210543772799132753
+      AssetSheet_01 (1)_13: -1540321422648925641
+      AssetSheet_01 (1)_14: 9181975313759076769
+      AssetSheet_01 (1)_15: -3989793724820747536
+      AssetSheet_01 (1)_16: 8915990872210540449
+      AssetSheet_01 (1)_17: 756603253974854134
+      AssetSheet_01 (1)_18: -3481256622035029973
+      AssetSheet_01 (1)_19: -6160975900621317688
+      AssetSheet_01 (1)_20: -6522742919108814969
+      AssetSheet_01 (1)_21: 8187598980396946438
+      AssetSheet_01 (1)_22: -1131288368061502955
+      AssetSheet_01 (1)_23: -2068085100912821544
+      AssetSheet_01 (1)_24: -8465517156784645289
+      AssetSheet_01 (1)_25: 8952065675118253346
+      AssetSheet_01 (1)_26: -4573947048699497769
+      AssetSheet_01 (1)_27: 3921857261856120837
+      AssetSheet_01 (1)_28: -7698749010149164394
+      AssetSheet_01 (1)_29: 5864067916986254769
+      AssetSheet_01 (1)_30: -7686147942272500984
+      AssetSheet_01 (1)_31: -3497170371261155154
+      AssetSheet_01 (1)_32: 3305570177026482348
+      AssetSheet_01 (1)_33: -7439499016565453850
+      AssetSheet_01 (1)_34: 1490593795332729130
+      AssetSheet_01 (1)_36: -5414176457703984612
+      AssetSheet_01 (1)_37: 5831826459565520592
+      AssetSheet_01 (1)_38: 6170970206740006893
+      AssetSheet_01 (1)_39: -9054302099066684476
+      AssetSheet_01 (1)_4: 2487705244636440920
+      AssetSheet_01 (1)_40: 2301028201886013626
+      AssetSheet_01 (1)_41: 2946339364332109770
+      AssetSheet_01 (1)_42: -6175044935018350081
+      AssetSheet_01 (1)_43: 3475567887139252497
+      AssetSheet_01 (1)_44: -5796471236562462370
+      AssetSheet_01 (1)_45: -1487634792360087902
+      AssetSheet_01 (1)_46: -2817971135832367673
+      AssetSheet_01 (1)_47: 6357339218446582576
+      AssetSheet_01 (1)_48: -9122094870527088628
+      AssetSheet_01 (1)_49: 6862109035958684909
+      AssetSheet_01 (1)_5: -8574675996145554774
+      AssetSheet_01 (1)_50: 3988208691887526623
+      AssetSheet_01 (1)_51: -8409963018563781828
+      AssetSheet_01 (1)_52: 6299730459039016182
+      AssetSheet_01 (1)_53: -5273724495707941807
+      AssetSheet_01 (1)_54: 7256072820879302420
+      AssetSheet_01 (1)_55: 7881831550855243081
+      AssetSheet_01 (1)_56: -549155268557149528
+      AssetSheet_01 (1)_57: -6885815448417882744
+      AssetSheet_01 (1)_58: 4640571838883915538
+      AssetSheet_01 (1)_59: 2779640815139853107
+      AssetSheet_01 (1)_6: -6129185419190505007
+      AssetSheet_01 (1)_61: 4419628105960728091
+      AssetSheet_01 (1)_62: 1453754472329305979
+      AssetSheet_01 (1)_63: -1641110797385793411
+      AssetSheet_01 (1)_64: 1211992004124883886
+      AssetSheet_01 (1)_65: 4455345849906786564
+      AssetSheet_01 (1)_66: 1550363491852969128
+      AssetSheet_01 (1)_67: -3365110681919700678
+      AssetSheet_01 (1)_68: -6540871885411656770
+      AssetSheet_01 (1)_69: -7626357066551783204
+      AssetSheet_01 (1)_7: -8787518595363634295
+      AssetSheet_01 (1)_70: -1071349141153325346
+      AssetSheet_01 (1)_71: 5519375970089569317
+      AssetSheet_01 (1)_72: 3641000424377179572
+      AssetSheet_01 (1)_8: -1357591900951778623
+      BotonAlas: 5124829994365255000
+      BotonPlay: 2918592709739486354
+      BotonPluma: -1226246119356437968
+      LineaEnd: -3798018451851770435
+      LineaStart: -948010741917668085
+      Slider: 6107261558204160816
+      SliderBoton: -1225379398434812439
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
