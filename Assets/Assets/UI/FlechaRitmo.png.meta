@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 30e95a5692c93dc418681a2f644ebd02
+guid: 0a7f4861aba9ee34caddc2f7325e66b9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7754546910143839492
-    second: MazoBase_0
+      213: -6189429073816142285
+    second: FlechaRitmo_0
+  - first:
+      213: 3248312395318562339
+    second: FlechaRitmo_1
+  - first:
+      213: 1927386084160831407
+    second: FlechaRitmo_2
+  - first:
+      213: -5320133529169841564
+    second: FlechaRitmo_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +122,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MazoBase_0
+      name: FlechaRitmo_1
       rect:
         serializedVersion: 2
-        x: 369
-        y: 15
-        width: 1441
-        height: 1920
+        x: 59
+        y: 38
+        width: 397
+        height: 418
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 40df935545fad9b60800000000000000
-      internalID: 7754546910143839492
+      spriteID: 32e067ac9e2541d20800000000000000
+      internalID: 3248312395318562339
       vertices: []
       indices: 
       edges: []
@@ -138,7 +147,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8e249e27654cd6b4e910645824aa9caf
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +157,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MazoBase_0: 7754546910143839492
+      FlechaRitmo_0: -6189429073816142285
+      FlechaRitmo_1: 3248312395318562339
+      FlechaRitmo_2: 1927386084160831407
+      FlechaRitmo_3: -5320133529169841564
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,28 @@
 fileFormatVersion: 2
-guid: 30e95a5692c93dc418681a2f644ebd02
+guid: 1b5d8195cfff06e4abfca855f0b7fa41
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7754546910143839492
-    second: MazoBase_0
+      213: 7865354333754578365
+    second: AssetSheet_04_0
+  - first:
+      213: -6694892448300173032
+    second: AssetSheet_04_1
+  - first:
+      213: -5481178061485715454
+    second: AssetSheet_04_2
+  - first:
+      213: 8944859487710711457
+    second: AssetSheet_04_3
+  - first:
+      213: 582339709315696727
+    second: AssetSheet_04_4
+  - first:
+      213: -4342188475113107914
+    second: AssetSheet_04_5
+  - first:
+      213: -1985828019394188896
+    second: AssetSheet_04_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +131,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MazoBase_0
+      name: AssetSheet_04_0
       rect:
         serializedVersion: 2
-        x: 369
-        y: 15
-        width: 1441
-        height: 1920
+        x: 5
+        y: 270
+        width: 220
+        height: 203
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 40df935545fad9b60800000000000000
-      internalID: 7754546910143839492
+      spriteID: db55508181a572d60800000000000000
+      internalID: 7865354333754578365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetSheet_04_1
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 270
+        width: 219
+        height: 203
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8197f911ac6f613a0800000000000000
+      internalID: -6694892448300173032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetSheet_04_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 219
+        height: 202
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 200da76f791fee3b0800000000000000
+      internalID: -5481178061485715454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetSheet_04_6
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 0
+        width: 246
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a9edfe00fbe074e0800000000000000
+      internalID: -1985828019394188896
       vertices: []
       indices: 
       edges: []
@@ -138,7 +222,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e5e75be9e8dee824081efebef8a2e4e6
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +232,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MazoBase_0: 7754546910143839492
+      AssetSheet_04_0: 7865354333754578365
+      AssetSheet_04_1: -6694892448300173032
+      AssetSheet_04_2: -5481178061485715454
+      AssetSheet_04_3: 8944859487710711457
+      AssetSheet_04_4: 582339709315696727
+      AssetSheet_04_5: -4342188475113107914
+      AssetSheet_04_6: -1985828019394188896
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c8d9fb49315275a4dbf5fd380ab43ebb
+guid: c2e36743e9da9b44c8e1b15df84a2502
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1806276481379013711
-    second: Pajara3 Idle 1_0
+      213: 37561456765932629
+    second: Baile MF-3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pajara3 Idle 1_0
+      name: Baile MF-3_0
       rect:
         serializedVersion: 2
-        x: 227
-        y: 160
-        width: 1159
-        height: 1632
+        x: 112
+        y: 63
+        width: 1163
+        height: 2060
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1bbe2493c11dee6e0800000000000000
-      internalID: -1806276481379013711
+      spriteID: 55497c722f1758000800000000000000
+      internalID: 37561456765932629
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Pajara3 Idle 1_0: -1806276481379013711
+      Baile MF-3_0: 37561456765932629
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

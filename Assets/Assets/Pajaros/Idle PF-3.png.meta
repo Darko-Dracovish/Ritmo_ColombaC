@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 30e95a5692c93dc418681a2f644ebd02
+guid: 10130bfbf561564478e5624f89fbfc4b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7754546910143839492
-    second: MazoBase_0
+      213: 7633709669831604140
+    second: Idle PF-3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MazoBase_0
+      name: Idle PF-3_0
       rect:
         serializedVersion: 2
-        x: 369
-        y: 15
-        width: 1441
-        height: 1920
+        x: 264
+        y: 34
+        width: 1171
+        height: 1853
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 40df935545fad9b60800000000000000
-      internalID: 7754546910143839492
+      spriteID: ca7f6c4ef7260f960800000000000000
+      internalID: 7633709669831604140
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MazoBase_0: 7754546910143839492
+      Idle PF-3_0: 7633709669831604140
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

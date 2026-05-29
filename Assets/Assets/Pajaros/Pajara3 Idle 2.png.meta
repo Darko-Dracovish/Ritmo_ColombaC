@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 417b49fd7b6f57346b971c8bac32b758
+guid: e721286578789314eabc80783080f1da
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -764450104353896108
-    second: Pajara1 Idle 3_0
+      213: 8037917232446189160
+    second: Pajara3 Idle 2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,11 +96,24 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pajara1 Idle 3_0
+      name: Pajara3 Idle 2_0
       rect:
         serializedVersion: 2
         x: 226
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 459c9792ea02465f0800000000000000
-      internalID: -764450104353896108
+      spriteID: 86e22fdd22b6c8f60800000000000000
+      internalID: 8037917232446189160
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Pajara1 Idle 3_0: -764450104353896108
+      Pajara3 Idle 2_0: 8037917232446189160
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

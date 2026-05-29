@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: ee76102a58cba0c4082f080351a6523e
+guid: 65b5996e3e19a984aa0b3aa5f1b20447
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -571306045905712468
-    second: Pajara1 Idle 2_0
+      213: -3039096798662941930
+    second: AssetSheet_05a_0
+  - first:
+      213: -1911243785194378353
+    second: AssetSheet_05a_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +49,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -96,17 +99,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pajara1 Idle 2_0
+      name: AssetSheet_05a_0
       rect:
         serializedVersion: 2
-        x: 175
-        y: 160
-        width: 1243
-        height: 1619
+        x: 49
+        y: 489
+        width: 502
+        height: 352
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +131,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: caac1cb9d205218f0800000000000000
-      internalID: -571306045905712468
+      spriteID: 6132bad3095f2d5d0800000000000000
+      internalID: -3039096798662941930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetSheet_05a_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 502
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8be05057e5e975e0800000000000000
+      internalID: -1911243785194378353
       vertices: []
       indices: 
       edges: []
@@ -125,7 +163,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Pajara1 Idle 2_0: -571306045905712468
+      AssetSheet_05a_0: -3039096798662941930
+      AssetSheet_05a_1: -1911243785194378353
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
