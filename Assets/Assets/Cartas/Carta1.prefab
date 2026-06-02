@@ -1099,6 +1099,7 @@ GameObject:
   - component: {fileID: 9063063878803004603}
   - component: {fileID: -7547300303648196252}
   - component: {fileID: 4915466565922567811}
+  - component: {fileID: -300991346285375250}
   m_Layer: 0
   m_Name: Carta1
   m_TagString: Starter
@@ -1200,6 +1201,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd9886b69ff634a4da7148ede0204b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DragDrop
+--- !u!114 &-300991346285375250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4628378887485878479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d518ab55708b32d4da1d5ff9037ce092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MouseActions
+  onMouseOver:
+    m_PersistentCalls:
+      m_Calls: []
+  onMouseExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onMouseEnter:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4707961400752857564
 GameObject:
   m_ObjectHideFlags: 0

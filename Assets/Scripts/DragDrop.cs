@@ -1,3 +1,4 @@
+using DG.Tweening;
 using TMPro;
 using Unity.Cinemachine;
 using UnityEngine;
@@ -9,7 +10,17 @@ public class DragDrop : MonoBehaviour
 
     Vector3 startPosition;
     Transform startParent;
+  // public float shakeTime;
+  //  public float shakeStrength;
+  //  public float shakeVibrate;
+  //  public float shakeRandom;
 
+
+    private void OnMouseOver()
+    {
+        difference = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - (Vector2)transform.position;
+        //transform.DOShakeRotation(shakeTime, shakeStrength, shakeVibrate, shakeRandom).SetEase(Ease.OutBounce);
+    }
     private void OnMouseDown()
     {
         difference = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - (Vector2)transform.position;
@@ -18,6 +29,7 @@ public class DragDrop : MonoBehaviour
         startParent = transform.parent;
 
         Debug.Log("Click");
+        
     }
 
     private void OnMouseDrag()
@@ -37,6 +49,8 @@ public class DragDrop : MonoBehaviour
         if (closestSlot != null && closestSlot.CanAcceptCard())
         {
             closestSlot.SetCard(gameObject);
+          
+         
         }
         else
         {

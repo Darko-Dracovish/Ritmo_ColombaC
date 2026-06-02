@@ -14,6 +14,6 @@ public class DiscoTween : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //AL APRETAR BOTON "?" ACTIVA CAMARA CORRECTA, LO REVISA, Y LA ANIMACIÓN OCURRE
+        //AL APRETAR BOTON "?" ACTIVA OVERLAY, PLANO + OSCURO PARA DIFERENCIAR DEL FONDO Y ENCIMA LA ANIM
     }
 }

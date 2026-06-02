@@ -18,4 +18,5 @@ public class Carta : MonoBehaviour
             note.points = noteScore;
         }
     }
+    
 }
