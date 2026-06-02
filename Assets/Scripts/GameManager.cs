@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
         if (beatScroll != null)
             lineStartPosition = beatScroll.transform.localPosition;
 
-        ChangeState(GameState.Hub);
+        ChangeState(GameState.Dialogue);
         UpdateScoreUI();
     }
 
