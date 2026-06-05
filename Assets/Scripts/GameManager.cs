@@ -3,6 +3,7 @@ using TMPro;
 using Unity.Cinemachine;
 using System.Collections.Generic;
 using System.Collections;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
@@ -61,6 +62,22 @@ public class GameManager : MonoBehaviour
     public List<GameObject> challengeRewards = new List<GameObject>();
     public int challengeObjectiveScore;
 
+    [Header("Tween")] //ANIMS
+    public Transform deckGO; //ANIM CARTAS APARECE DESDE ACA, SE LE ASIGNARIA EL ASSET DEL MAZO
+    public float reactScale;
+    public float reactTime;
+
+    [Header("Tween Objects")] //ANIMS
+    public GameObject corYell;
+    public GameObject corPink;
+    public GameObject corGre;
+    public GameObject angry;
+    Tween feedbackAngry;
+    Tween feedbackYell;
+    Tween feedbackGre;
+    Tween feedbackPink;
+
+
     void Awake()
     {
         instance = this;
@@ -70,6 +87,11 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        feedbackAngry = angry.transform.DOScale(reactScale, reactTime).SetEase(Ease.OutElastic).OnComplete(() => angry.SetActive(false)).Pause(); //ANIM
+        feedbackYell = corYell.transform.DOScale(reactScale, reactTime).SetEase(Ease.OutElastic).OnComplete(() => angry.SetActive(false)).Pause(); //ANIM
+        feedbackGre = corGre.transform.DOScale(reactScale, reactTime).SetEase(Ease.OutElastic).OnComplete(() => angry.SetActive(false)).Pause(); //ANIM
+        feedbackPink = corPink.transform.DOScale(reactScale, reactTime).SetEase(Ease.OutElastic).OnComplete(() => angry.SetActive(false)).Pause(); //ANIM
+
         if (beatScroll != null)
             lineStartPosition = beatScroll.transform.localPosition;
 
@@ -229,11 +251,20 @@ public class GameManager : MonoBehaviour
     {
         currentScore += puntaje;
         UpdateScoreUI();
+        //corYell.SetActive(true); //ANIM
+        //corPink.SetActive(true); //ANIM
+        //corGre.SetActive(true); //ANIM
+        //feedbackGre.Restart(); //ANIM
+        //feedbackPink.Restart(); //ANIM
+        //feedbackYell.Restart();
     }
 
     public void NoteMiss()
     {
         Debug.Log("Miss");
+        angry.SetActive(true); //ANIM
+        feedbackAngry.Restart(); //ANIM
+
     }
 
     public void UpdateScoreUI()
@@ -277,8 +308,11 @@ public class GameManager : MonoBehaviour
             if (slotData.currentCard != null)
                 Destroy(slotData.currentCard);
 
-            GameObject newCard = Instantiate(deckPrefabs[i], slot.position, Quaternion.identity, slot);
-            slotData.currentCard = newCard;
+            GameObject newCard = Instantiate(deckPrefabs[i], deckGO.position, Quaternion.identity, slot);
+            slotData.currentCard = newCard; //newCard EN VEZ DE SLOT POSITION, ESO VA ABAJO EN EL DOMove
+            newCard.transform.DORotate(Vector3.forward * 20, .2f).SetEase(Ease.InBack); //ANIM CARTAS
+            newCard.transform.DOMove(slot.position, .5f).OnComplete(() => newCard.transform.DORotate(Vector3.zero, .2f).SetEase(Ease.OutBack)); //ANIM CARTAS
+
         }
     }
 
