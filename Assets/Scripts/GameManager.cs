@@ -40,6 +40,9 @@ public class GameManager : MonoBehaviour
     [Header("Colección completa")]
     public List<GameObject> totalcollectionCards = new List<GameObject>();
 
+    [Header("Espacios Cartas")]
+    public CardSlot[] cardSlots;
+
     [Header("Mazo activo")]
     public List<GameObject> deckPrefabs = new List<GameObject>();
     public int maxDeckSize = 8;
@@ -60,6 +63,7 @@ public class GameManager : MonoBehaviour
     [Header("Desafío activo")]
     public List<GameObject> challengeRewards = new List<GameObject>();
     public int challengeObjectiveScore;
+    public GameObject lineEnd;
 
     void Awake()
     {
@@ -175,6 +179,7 @@ public class GameManager : MonoBehaviour
         {
             beatScroll.scrollStart = false;
             beatScroll.transform.localPosition = lineStartPosition; //  posición original
+            lineEnd.transform.localPosition = new Vector3(-51, -126, 0);
         }
 
         if (music != null)
@@ -217,7 +222,7 @@ public class GameManager : MonoBehaviour
     void DialogueInput() { }
     void SongSelectInput() { }
 
-    void StartSong()
+    public void StartSong()
     {
         musicStart = true;
         if (beatScroll != null) beatScroll.scrollStart = true;
@@ -312,16 +317,17 @@ public class GameManager : MonoBehaviour
         challengeRewards = rewards;
         challengeObjectiveScore = objective;
 
-        CardSlot[] slots = FindObjectsByType<CardSlot>(FindObjectsSortMode.InstanceID);
-
-        for (int i = 0; i < slots.Length; i++)
+        for (int i = 0; i < cardSlots.Length; i++)
         {
             if (i >= cards.Count) break;
             GameObject card = Instantiate(cards[i]);
-            slots[i].SetCard(card);
+            cardSlots[i].SetCard(card);
         }
 
         ChangeState(GameState.Playing);
+
+        lineEnd.transform.localPosition = new Vector3(-51, -36, 0);
+
     }
 
     public void CheckChallengeCompletion()
@@ -330,6 +336,8 @@ public class GameManager : MonoBehaviour
         {
             foreach (GameObject reward in challengeRewards)
                 UnlockCard(reward);
+
+            OpenDialogue();
 
             Debug.Log("Desafío completado, cartas desbloqueadas");
         }
