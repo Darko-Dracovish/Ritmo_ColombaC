@@ -9,6 +9,7 @@ public class DragDrop : MonoBehaviour
 
     Vector3 startPosition;
     Transform startParent;
+    private CardSlot originSlot;
 
     private void OnMouseDown()
     {
@@ -16,6 +17,8 @@ public class DragDrop : MonoBehaviour
 
         startPosition = transform.position;
         startParent = transform.parent;
+        originSlot = transform.GetComponentInParent<CardSlot>();
+        Debug.Log("originSlot: " + (originSlot != null ? originSlot.name : "NULL"));
 
         Debug.Log("Click");
     }
@@ -32,6 +35,13 @@ public class DragDrop : MonoBehaviour
 
     void TryPlaceCard()
     {
+        Descarte discard = FindClosestDiscard();
+        if (discard != null)
+        {
+            discard.DiscardCard(gameObject, originSlot);
+            return;
+        }
+
         CardSlot closestSlot = FindClosestSlot();
 
         if (closestSlot != null && closestSlot.CanAcceptCard())
@@ -40,10 +50,22 @@ public class DragDrop : MonoBehaviour
         }
         else
         {
-            
             transform.position = startPosition;
             transform.SetParent(startParent);
         }
+    }
+
+    Descarte FindClosestDiscard()
+    {
+        Descarte[] zones = FindObjectsByType<Descarte>(FindObjectsSortMode.None);
+        foreach (Descarte zone in zones)
+        {
+            float distance = Vector2.Distance(transform.position, zone.transform.position);
+            Debug.Log($"Distancia a zona de descarte: {distance}");
+            if (distance < 5f) // ajusta seg�n el tama�o de tu zona
+                return zone;
+        }
+        return null;
     }
 
     CardSlot FindClosestSlot()

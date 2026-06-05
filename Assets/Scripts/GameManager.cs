@@ -236,7 +236,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Miss");
     }
 
-    void UpdateScoreUI()
+    public void UpdateScoreUI()
     {
         if (scoreText != null)
             scoreText.text = "Score: " + currentScore;
