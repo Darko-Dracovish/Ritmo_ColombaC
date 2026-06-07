@@ -5,31 +5,49 @@ using UnityEngine.EventSystems;
 
 public class DragDrop : MonoBehaviour
 {
+    [Header("Cara oculta")]
+    public GameObject cardBack;  // Arrastra aquí el GameObject que representa el dorso de la carta
+
+    [HideInInspector] public bool isFaceDown = false;
+
     Vector2 difference = Vector2.zero;
 
     Vector3 startPosition;
     Transform startParent;
     private CardSlot originSlot;
 
+    public void SetFaceDown(bool faceDown)
+    {
+        isFaceDown = faceDown;
+        if (cardBack != null)
+            cardBack.SetActive(faceDown);
+    }
+
     private void OnMouseDown()
     {
+        if (isFaceDown)
+        {
+            SetFaceDown(false);
+            return;
+        }
+
         difference = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - (Vector2)transform.position;
 
         startPosition = transform.position;
         startParent = transform.parent;
         originSlot = transform.GetComponentInParent<CardSlot>();
         Debug.Log("originSlot: " + (originSlot != null ? originSlot.name : "NULL"));
-
-        Debug.Log("Click");
     }
 
     private void OnMouseDrag()
     {
+        if (isFaceDown) return;
         transform.position = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - difference;
     }
 
     private void OnMouseUp()
     {
+        if (isFaceDown) return;
         TryPlaceCard();
     }
 

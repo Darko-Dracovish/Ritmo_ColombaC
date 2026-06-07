@@ -1,2 +1,13 @@
 fileFormatVersion: 2
 guid: fa634ee12115432439df88c7bd5fd7ef
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - gameplaypoint: {instanceID: 0}
+  - cardBackCover: {fileID: 4659184719932483966, guid: bfe66fd70ce6faa49898b99d7461bee6, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -57,6 +57,10 @@ public class GameManager : MonoBehaviour
     public int handSize = 4;
     public Transform[] handSlots;
 
+    [Header("Cartas ocultas en secuencia")]
+    public int hiddenCardCount = 4;
+    public List<GameObject> hiddenCardPool = new List<GameObject>(); // Arrastra aquí los prefabs que pueden salir ocultos
+
     [Header("Desafío activo")]
     public List<GameObject> challengeRewards = new List<GameObject>();
     public int challengeObjectiveScore;
@@ -130,11 +134,14 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.Build:
                 if (buildCanvas != null) buildCanvas.SetActive(true);
+                ClearAllSlots();
                 ShuffleDeck();
                 DrawHand();
+                PlaceHiddenCards();
                 break;
             case GameState.Playing:
                 gameplayCanvas.SetActive(true);
+                RevealHiddenCards();
                 break;
             case GameState.Dialogue:
                 dialogueCanvas.SetActive(true);
@@ -267,6 +274,15 @@ public class GameManager : MonoBehaviour
 
     public void DrawHand()
     {
+        // Barajamos los índices para elegir 4 al azar
+        List<int> indices = new List<int>();
+        for (int i = 0; i < deckPrefabs.Count; i++) indices.Add(i);
+        for (int i = indices.Count - 1; i > 0; i--)
+        {
+            int j = Random.Range(0, i + 1);
+            int temp = indices[i]; indices[i] = indices[j]; indices[j] = temp;
+        }
+
         for (int i = 0; i < handSlots.Length; i++)
         {
             if (i >= deckPrefabs.Count) return;
@@ -277,8 +293,13 @@ public class GameManager : MonoBehaviour
             if (slotData.currentCard != null)
                 Destroy(slotData.currentCard);
 
-            GameObject newCard = Instantiate(deckPrefabs[i], slot.position, Quaternion.identity, slot);
+            GameObject newCard = Instantiate(deckPrefabs[indices[i]], slot.position, Quaternion.identity, slot);
             slotData.currentCard = newCard;
+
+            // Colocar boca abajo
+            DragDrop drag = newCard.GetComponent<DragDrop>();
+            if (drag != null)
+                drag.SetFaceDown(true);
         }
     }
 
@@ -341,4 +362,66 @@ public class GameManager : MonoBehaviour
     public void OpenDialogue() => ChangeState(GameState.Dialogue);
     public void OpenSongSelect() => ChangeState(GameState.SongSelect);
     public void OpenBuild() => ChangeState(GameState.Build);
+
+    // Limpia todos los CardSlots al iniciar una nueva ronda de construcción
+    void ClearAllSlots()
+    {
+        CardSlot[] allSlots = FindObjectsByType<CardSlot>(FindObjectsSortMode.None);
+        foreach (CardSlot slot in allSlots)
+            slot.ClearSlot();
+    }
+
+    // Coloca cartas al azar boca abajo en slots libres al entrar a Build
+    void PlaceHiddenCards()
+    {
+        Debug.Log($"[PlaceHiddenCards] hiddenCardPool tiene {hiddenCardPool.Count} cartas.");
+
+        if (hiddenCardPool.Count == 0)
+        {
+            Debug.LogWarning("[PlaceHiddenCards] hiddenCardPool está vacío. Asigna prefabs en el GameManager.");
+            return;
+        }
+
+        CardSlot[] allSlots = FindObjectsByType<CardSlot>(FindObjectsSortMode.None);
+        Debug.Log($"[PlaceHiddenCards] CardSlots encontrados: {allSlots.Length}");
+
+        // Slots disponibles (vacíos)
+        List<CardSlot> freeSlots = new List<CardSlot>();
+        foreach (CardSlot slot in allSlots)
+            if (!slot.isOccupied) freeSlots.Add(slot);
+
+        // Barajar slots libres
+        for (int i = freeSlots.Count - 1; i > 0; i--)
+        {
+            int j = Random.Range(0, i + 1);
+            CardSlot temp = freeSlots[i]; freeSlots[i] = freeSlots[j]; freeSlots[j] = temp;
+        }
+
+        // Barajar el pool para tomar al azar (con repetición si hay menos cartas que slots)
+        List<GameObject> shuffled = new List<GameObject>(hiddenCardPool);
+        for (int i = shuffled.Count - 1; i > 0; i--)
+        {
+            int j = Random.Range(0, i + 1);
+            GameObject temp = shuffled[i]; shuffled[i] = shuffled[j]; shuffled[j] = temp;
+        }
+
+        int count = Mathf.Min(hiddenCardCount, freeSlots.Count);
+        for (int i = 0; i < count; i++)
+        {
+            // Si hay menos prefabs que slots, repite ciclando el pool
+            GameObject prefab = shuffled[i % shuffled.Count];
+            freeSlots[i].SetCardFaceDown(prefab);
+        }
+
+        Debug.Log($"Cartas ocultas colocadas: {count}");
+    }
+
+    // Revela todas las cartas ocultas al pasar a Playing
+    void RevealHiddenCards()
+    {
+        CardSlot[] allSlots = FindObjectsByType<CardSlot>(FindObjectsSortMode.None);
+        Debug.Log($"[RevealHiddenCards] Intentando revelar en {allSlots.Length} slots.");
+        foreach (CardSlot slot in allSlots)
+            slot.Reveal();
+    }
 }
