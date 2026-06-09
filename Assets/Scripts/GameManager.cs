@@ -72,10 +72,7 @@ public class GameManager : MonoBehaviour
     public GameObject corPink;
     public GameObject corGre;
     public GameObject angry;
-    Tween feedbackAngry;
-    Tween feedbackYell;
-    Tween feedbackGre;
-    Tween feedbackPink;
+    
 
 
     void Awake()
@@ -87,10 +84,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        feedbackAngry = angry.transform.DOScale(reactScale, reactTime).SetEase(Ease.OutElastic).OnComplete(() => angry.SetActive(false)).Pause(); //ANIM
-        feedbackYell = corYell.transform.DOScale(reactScale, reactTime).SetEase(Ease.OutElastic).OnComplete(() => angry.SetActive(false)).Pause(); //ANIM
-        feedbackGre = corGre.transform.DOScale(reactScale, reactTime).SetEase(Ease.OutElastic).OnComplete(() => angry.SetActive(false)).Pause(); //ANIM
-        feedbackPink = corPink.transform.DOScale(reactScale, reactTime).SetEase(Ease.OutElastic).OnComplete(() => angry.SetActive(false)).Pause(); //ANIM
+       
 
         if (beatScroll != null)
             lineStartPosition = beatScroll.transform.localPosition;
@@ -251,20 +245,22 @@ public class GameManager : MonoBehaviour
     {
         currentScore += puntaje;
         UpdateScoreUI();
-        //corYell.SetActive(true); //ANIM
-        //corPink.SetActive(true); //ANIM
-        //corGre.SetActive(true); //ANIM
-        //feedbackGre.Restart(); //ANIM
-        //feedbackPink.Restart(); //ANIM
-        //feedbackYell.Restart();
+        corYell.SetActive(true); //ANIM
+        corPink.SetActive(true); //ANIM
+        corGre.SetActive(true); //ANIM
+      
+    corYell.transform.DOScale(reactScale, reactTime).SetEase(Ease.OutElastic).OnComplete(() => corYell.SetActive(false)); //ANIM
+        corGre.transform.DOScale(reactScale, reactTime).SetEase(Ease.OutElastic).OnComplete(() => corGre.SetActive(false)); //ANIM
+     corPink.transform.DOScale(reactScale, reactTime).SetEase(Ease.OutElastic).OnComplete(() => corPink.SetActive(false)); //ANIM
+        
     }
 
     public void NoteMiss()
     {
         Debug.Log("Miss");
         angry.SetActive(true); //ANIM
-        feedbackAngry.Restart(); //ANIM
-
+        angry.transform.DOScale(reactScale, reactTime).SetEase(Ease.OutElastic).OnComplete(() => angry.SetActive(false)); //ANIM
+        
     }
 
     public void UpdateScoreUI()
