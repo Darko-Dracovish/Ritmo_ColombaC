@@ -41,7 +41,7 @@ public class ArrowControl : MonoBehaviour
             scrollStart = false;
             GameManager.instance.ObjectiveScore();
             GameManager.instance.ObjectiveScoreFail();
-            GameManager.instance.CheckChallengeCompletion();
+            GameManager.instance.CheckCompletion();
             GameManager.instance.ResetGame();
             GameManager.instance.ChangeState(GameManager.GameState.Dialogue);
         }

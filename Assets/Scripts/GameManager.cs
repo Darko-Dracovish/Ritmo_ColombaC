@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     public int objectiveScore = 30;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI objectiveText;
+    public TextMeshProUGUI messageText; // Texto temporal para notificaciones (ej. "Nuevo objetivo")
 
     [Header("Colección desbloqueada")]
     public List<GameObject> collectionCards = new List<GameObject>();
@@ -64,10 +65,14 @@ public class GameManager : MonoBehaviour
     public int hiddenCardCount = 4;
     public List<GameObject> hiddenCardPool = new List<GameObject>(); // Arrastra aquí los prefabs que pueden salir ocultos
 
-    [Header("Desafío activo")]
+    [Header("Sesión activa")]
     public List<GameObject> challengeRewards = new List<GameObject>();
     public int challengeObjectiveScore;
     public GameObject lineEnd;
+
+    public enum SessionType { Ninguna, Desafio, Nivel }
+    [HideInInspector] public SessionType currentSession = SessionType.Ninguna;
+    [HideInInspector] public NPCDialogue activeNPC;
 
     void Awake()
     {
@@ -125,7 +130,7 @@ public class GameManager : MonoBehaviour
     void UpdateCanvases()
     {
         gameplayCanvas.SetActive(false);
-        deckCanvas.SetActive(false);
+        if (deckCanvas != null) deckCanvas.SetActive(false);
         dialogueCanvas.SetActive(false);
         if (hubCanvas != null) hubCanvas.SetActive(false);
         if (buildCanvas != null) buildCanvas.SetActive(false);
@@ -162,7 +167,7 @@ public class GameManager : MonoBehaviour
     IEnumerator OpenDeckWithDelay()
     {
         yield return new WaitForSeconds(1f);
-        deckCanvas.SetActive(true);
+        if (deckCanvas != null) deckCanvas.SetActive(true);
         if (deckUI != null) deckUI.InitializeUI();
     }
 
@@ -310,6 +315,11 @@ public class GameManager : MonoBehaviour
 
     public void AddCardToDeck(GameObject cardPrefab)
     {
+        if (deckPrefabs.Contains(cardPrefab))
+        {
+            Debug.Log("La carta ya está en el mazo");
+            return;
+        }
         if (deckPrefabs.Count >= maxDeckSize)
         {
             Debug.Log("Deck lleno");
@@ -333,11 +343,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void StartChallenge(List<GameObject> cards, List<GameObject> rewards, int objective)
+    // Inicia un desafío: secuencia prehecha, el jugador la toca para ganar cartas
+    public void StartChallenge(List<GameObject> cards, List<GameObject> rewards, int objective, NPCDialogue npc)
     {
+        currentSession = SessionType.Desafio;
+        activeNPC = npc;
         challengeRewards = rewards;
         challengeObjectiveScore = objective;
 
+        ClearAllSlots();
         for (int i = 0; i < cardSlots.Length; i++)
         {
             if (i >= cards.Count) break;
@@ -345,23 +359,71 @@ public class GameManager : MonoBehaviour
             cardSlots[i].SetCard(card);
         }
 
+        if (lineEnd != null)
+            lineEnd.transform.localPosition = new Vector3(-51, -36, 0);
+
         ChangeState(GameState.Playing);
-
-        lineEnd.transform.localPosition = new Vector3(-51, -36, 0);
-
     }
 
-    public void CheckChallengeCompletion()
+    // El NPC de nivel fija el objetivo — el jugador decide cuándo ir a Build
+    public void StartLevel(int objective, NPCDialogue npc)
     {
-        if (currentScore >= challengeObjectiveScore)
+        currentSession = SessionType.Nivel;
+        activeNPC = npc;
+        objectiveScore = objective;
+        Debug.Log($"Nuevo objetivo fijado: {objective} puntos");
+    }
+
+    // Llamar desde el botón de fin de canción / resultado
+    public void CheckCompletion()
+    {
+        if (currentSession == SessionType.Desafio)
         {
-            foreach (GameObject reward in challengeRewards)
-                UnlockCard(reward);
+            if (currentScore >= challengeObjectiveScore)
+            {
+                foreach (GameObject reward in challengeRewards)
+                    UnlockCard(reward);
 
-            OpenDialogue();
-
-            Debug.Log("Desafío completado, cartas desbloqueadas");
+                activeNPC?.UnlockNext();
+                Debug.Log("Desafío completado — cartas desbloqueadas y NPCs siguientes habilitados.");
+            }
+            else
+            {
+                Debug.Log("Desafío fallido.");
+            }
         }
+        else if (currentSession == SessionType.Nivel)
+        {
+            if (currentScore >= objectiveScore)
+            {
+                activeNPC?.UnlockNext();
+                Debug.Log("Nivel completado — progresión desbloqueada.");
+            }
+            else
+            {
+                Debug.Log("Nivel fallido.");
+            }
+        }
+
+        currentSession = SessionType.Ninguna;
+        activeNPC = null;
+        OpenHub();
+    }
+
+    public void ShowMessage(string msg, float duration = 3f)
+    {
+        if (messageText != null)
+            StartCoroutine(ShowMessageCoroutine(msg, duration));
+        else
+            Debug.Log($"[Mensaje] {msg}");
+    }
+
+    IEnumerator ShowMessageCoroutine(string msg, float duration)
+    {
+        messageText.text = msg;
+        messageText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(duration);
+        messageText.gameObject.SetActive(false);
     }
 
     public void OpenHub() => ChangeState(GameState.Hub);

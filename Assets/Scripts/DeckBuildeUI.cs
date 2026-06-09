@@ -3,15 +3,18 @@ using System.Collections.Generic;
 
 public class DeckBuilderUI : MonoBehaviour
 {
-    [Header("Carta Containers")]
-    public Transform collectionContent;
-    public Transform activeDeckContent;
+    [Header("Contenedores (transforms de mundo)")]
+    public Transform collectionContent;   // Donde se muestran las cartas de la colección
+    public Transform activeDeckContent;   // Donde se muestran las cartas del mazo activo
 
-    [Header("Prefab UI Carta")]
-    public GameObject cardButtonPrefab;
+    [Header("Layout")]
+    public float cardSpacingX = 5f;       // Separación horizontal entre cartas
+    public float cardSpacingY = 7f;       // Separación vertical entre filas
+    public int cardsPerRow = 4;           // Cuántas cartas por fila
+    public float previewScale = 0.4f;     // Tamaño de las cartas
 
-    private List<CardUI> collectionPool = new();
-    private List<CardUI> deckPool = new();
+    private List<DeckCardPreview> collectionPool = new();
+    private List<DeckCardPreview> deckPool = new();
 
     public void InitializeUI()
     {
@@ -21,46 +24,39 @@ public class DeckBuilderUI : MonoBehaviour
 
     public void RefreshDeckPanel()
     {
+        // Refrescar ambos paneles para reflejar el estado actual del mazo
         RefreshPanel(activeDeckContent, GameManager.instance.deckPrefabs, deckPool, true);
-
-        foreach (CardUI ui in collectionPool)
-        {
-            if (ui.gameObject.activeSelf)
-                ui.SetInDeckState(GameManager.instance.deckPrefabs.Contains(ui.GetPrefab()));
-        }
+        RefreshPanel(collectionContent, GameManager.instance.collectionCards, collectionPool, false);
     }
 
-    void RefreshPanel(Transform parent, List<GameObject> cards, List<CardUI> pool, bool inDeck)
+    void RefreshPanel(Transform parent, List<GameObject> cards, List<DeckCardPreview> pool, bool inDeck)
     {
-        foreach (CardUI ui in pool)
-            ui.gameObject.SetActive(false);
+        // Destruir todo lo anterior para garantizar que refleje el estado actual
+        foreach (DeckCardPreview p in pool)
+            if (p != null) Destroy(p.gameObject);
+        pool.Clear();
 
         for (int i = 0; i < cards.Count; i++)
         {
-            CardUI ui;
+            GameObject obj = Instantiate(cards[i], parent);
+            obj.transform.localRotation = Quaternion.identity;
+            obj.transform.localScale = Vector3.one * previewScale;
 
-            if (i < pool.Count)
-            {
-                ui = pool[i];
-                ui.gameObject.SetActive(true);
-            }
-            else
-            {
-                GameObject obj = Instantiate(cardButtonPrefab, parent);
-                obj.transform.localPosition = Vector3.zero;
-                obj.transform.localScale = Vector3.one;
-                ui = obj.GetComponent<CardUI>();
+            DeckCardPreview preview = obj.GetComponent<DeckCardPreview>();
+            if (preview == null)
+                preview = obj.AddComponent<DeckCardPreview>();
 
-                if (ui == null)
-                {
-                    Debug.LogError($"CardUI no encontrado en prefab: {cards[i].name}");
-                    continue;
-                }
+            int col = i % cardsPerRow;
+            int row = i / cardsPerRow;
+            obj.transform.localPosition = new Vector3(col * cardSpacingX, -row * cardSpacingY, 0f);
 
-                pool.Add(ui);
-            }
-
-            ui.Setup(cards[i], inDeck);
+            preview.Setup(cards[i], inDeck);
+            pool.Add(preview);
         }
+
+        // Recalcular límite de scroll si el contenedor tiene WorldScroll
+        WorldScroll scroller = parent.GetComponent<WorldScroll>();
+        if (scroller != null)
+            scroller.ResetScroll(cards.Count, cardsPerRow, cardSpacingY);
     }
 }
