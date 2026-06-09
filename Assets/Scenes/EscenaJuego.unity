@@ -7079,10 +7079,10 @@ MonoBehaviour:
   - {fileID: 4628378887485878479, guid: e304b113ec5526848b6d9393e26a1fb7, type: 3}
   - {fileID: 4628378887485878479, guid: 78ded6b6989313642949567bd327c813, type: 3}
   - {fileID: 4628378887485878479, guid: 543bc154117355d40b1dab9baa9300c8, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 4628378887485878479, guid: 6ea505cb9137c184485922199ace004d, type: 3}
+  - {fileID: 4628378887485878479, guid: 89a668186b39389479f1928d62a2b7a3, type: 3}
+  - {fileID: 4628378887485878479, guid: 69278ff0c39380f4a9bfc161fc8302ad, type: 3}
+  - {fileID: 4628378887485878479, guid: 0d3b1a19f690dac4ba7f5c4e417ded21, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -8089,9 +8089,9 @@ MonoBehaviour:
   collectionContent: {fileID: 229288063}
   activeDeckContent: {fileID: 773814905}
   cardSpacingX: 3
-  cardSpacingY: 3.75
+  cardSpacingY: 4
   cardsPerRow: 2
-  previewScale: 0.4
+  previewScale: 0.425
 --- !u!1 &1057866838
 GameObject:
   m_ObjectHideFlags: 0
@@ -8455,15 +8455,15 @@ MonoBehaviour:
   dialogueText: {fileID: 122359431}
   dialogue: "Eres muy poco radical para mi desaf\xEDo"
   challengeCards:
-  - {fileID: 4628378887485878479, guid: 21eef9586144d064e9c88f080299baaa, type: 3}
-  - {fileID: 4628378887485878479, guid: e304b113ec5526848b6d9393e26a1fb7, type: 3}
-  - {fileID: 4628378887485878479, guid: 78ded6b6989313642949567bd327c813, type: 3}
-  - {fileID: 4628378887485878479, guid: 543bc154117355d40b1dab9baa9300c8, type: 3}
+  - {fileID: 4628378887485878479, guid: 89a668186b39389479f1928d62a2b7a3, type: 3}
+  - {fileID: 4628378887485878479, guid: 69278ff0c39380f4a9bfc161fc8302ad, type: 3}
+  - {fileID: 4628378887485878479, guid: 6ea505cb9137c184485922199ace004d, type: 3}
+  - {fileID: 4628378887485878479, guid: 0d3b1a19f690dac4ba7f5c4e417ded21, type: 3}
   challengeRewards:
-  - {fileID: 4628378887485878479, guid: 21eef9586144d064e9c88f080299baaa, type: 3}
-  - {fileID: 4628378887485878479, guid: e304b113ec5526848b6d9393e26a1fb7, type: 3}
-  - {fileID: 4628378887485878479, guid: 78ded6b6989313642949567bd327c813, type: 3}
-  - {fileID: 4628378887485878479, guid: 543bc154117355d40b1dab9baa9300c8, type: 3}
+  - {fileID: 4628378887485878479, guid: 89a668186b39389479f1928d62a2b7a3, type: 3}
+  - {fileID: 4628378887485878479, guid: 69278ff0c39380f4a9bfc161fc8302ad, type: 3}
+  - {fileID: 4628378887485878479, guid: 6ea505cb9137c184485922199ace004d, type: 3}
+  - {fileID: 4628378887485878479, guid: 0d3b1a19f690dac4ba7f5c4e417ded21, type: 3}
   challengeObjective: 500
   levelObjective: 0
   unlockOnComplete:
