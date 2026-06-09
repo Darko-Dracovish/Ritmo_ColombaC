@@ -97,6 +97,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+       
+
         if (beatScroll != null)
             lineStartPosition = beatScroll.transform.localPosition;
 

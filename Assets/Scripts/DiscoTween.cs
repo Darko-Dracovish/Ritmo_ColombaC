@@ -9,10 +9,11 @@ public class DiscoTween : MonoBehaviour
     void Start()
     {
         transform.DOMoveY(movdisco, movetime).SetEase(Ease.OutBack);
+        // Llamar cuando se activen los settings
     }
 
     void Update()
     {
-        // AL APRETAR BOTON "?" ACTIVA OVERLAY
+        // Al apretar botón "?" activa overlay
     }
 }

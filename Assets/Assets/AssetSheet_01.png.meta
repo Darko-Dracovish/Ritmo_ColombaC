@@ -1,0 +1,472 @@
+fileFormatVersion: 2
+guid: 374a1b032a4cb2b4297f23bac042eff2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3992401636165142859
+    second: AssetSheet_01_0
+  - first:
+      213: -441712366582641923
+    second: AssetSheet_01_1
+  - first:
+      213: -1440655805485869752
+    second: AssetSheet_01_2
+  - first:
+      213: 1132517577503518390
+    second: AssetSheet_01_3
+  - first:
+      213: -2838851047924942
+    second: AssetSheet_01_4
+  - first:
+      213: 4911734723346970750
+    second: AssetSheet_01_5
+  - first:
+      213: 375881671284106169
+    second: AssetSheet_01_6
+  - first:
+      213: -1880106205302292277
+    second: AssetSheet_01_7
+  - first:
+      213: 3360708435223317130
+    second: AssetSheet_01_8
+  - first:
+      213: -4588757810086895399
+    second: AssetSheet_01_9
+  - first:
+      213: 2349732457630129281
+    second: AssetSheet_01_10
+  - first:
+      213: -4425116610202478624
+    second: AssetSheet_01_11
+  - first:
+      213: -9056626247593769664
+    second: AssetSheet_01_12
+  - first:
+      213: -911867656985713513
+    second: AssetSheet_01_13
+  - first:
+      213: 2804580825203734187
+    second: AssetSheet_01_14
+  - first:
+      213: 3053842432824089384
+    second: AssetSheet_01_15
+  - first:
+      213: 8457199323888395422
+    second: AssetSheet_01_16
+  - first:
+      213: 8383127812405078571
+    second: AssetSheet_01_17
+  - first:
+      213: 7371528384069658023
+    second: AssetSheet_01_18
+  - first:
+      213: 23182742737372007
+    second: AssetSheet_01_19
+  - first:
+      213: -7170644222123855664
+    second: AssetSheet_01_20
+  - first:
+      213: 2158611287925514847
+    second: AssetSheet_01_21
+  - first:
+      213: -1058265385255264546
+    second: AssetSheet_01_22
+  - first:
+      213: 8835800455740234032
+    second: AssetSheet_01_23
+  - first:
+      213: 3980198421920547670
+    second: AssetSheet_01_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LineEnd
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 858
+        width: 903
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b630b35dd32898c0800000000000000
+      internalID: -3992401636165142859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LineStart
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 734
+        width: 904
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfac1f061f8bed9f0800000000000000
+      internalID: -441712366582641923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlechaPata
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 506
+        width: 224
+        height: 226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6beabf48cb287bf00800000000000000
+      internalID: 1132517577503518390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SliderVol
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 525
+        width: 345
+        height: 153
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e783c0815bcf92440800000000000000
+      internalID: 4911734723346970750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boton_AlaYellow
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 531
+        width: 223
+        height: 127
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b328767366673500800000000000000
+      internalID: 375881671284106169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boton_AlaPink
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 333
+        width: 223
+        height: 127
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc003f41e5588e5e0800000000000000
+      internalID: -1880106205302292277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boton_PlumaBase
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 311
+        width: 482
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8a052b1482a3ae20800000000000000
+      internalID: 3360708435223317130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boton_PlayYellow
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 103
+        width: 207
+        height: 185
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d0a87185157150c0800000000000000
+      internalID: -4588757810086895399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boton_PlayRosado
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 98
+        width: 206
+        height: 185
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba6f326b66fdbe620800000000000000
+      internalID: 2804580825203734187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boton_PlayAzul
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 92
+        width: 210
+        height: 185
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 763c7c9e49c525000800000000000000
+      internalID: 23182742737372007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SliderBoton
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 14
+        width: 60
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 653052270618c3730800000000000000
+      internalID: 3980198421920547670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ddb3c79b86f4da14e95a80f359a0350a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      AssetSheet_01_10: 2349732457630129281
+      AssetSheet_01_11: -4425116610202478624
+      AssetSheet_01_12: -9056626247593769664
+      AssetSheet_01_13: -911867656985713513
+      AssetSheet_01_15: 3053842432824089384
+      AssetSheet_01_16: 8457199323888395422
+      AssetSheet_01_17: 8383127812405078571
+      AssetSheet_01_18: 7371528384069658023
+      AssetSheet_01_2: -1440655805485869752
+      AssetSheet_01_20: -7170644222123855664
+      AssetSheet_01_21: 2158611287925514847
+      AssetSheet_01_22: -1058265385255264546
+      AssetSheet_01_23: 8835800455740234032
+      AssetSheet_01_4: -2838851047924942
+      Boton_AlaPink: -1880106205302292277
+      Boton_AlaYellow: 375881671284106169
+      Boton_PlayAzul: 23182742737372007
+      Boton_PlayRosado: 2804580825203734187
+      Boton_PlayYellow: -4588757810086895399
+      Boton_PlumaBase: 3360708435223317130
+      FlechaPata: 1132517577503518390
+      LineEnd: -3992401636165142859
+      LineStart: -441712366582641923
+      SliderBoton: 3980198421920547670
+      SliderVol: 4911734723346970750
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
