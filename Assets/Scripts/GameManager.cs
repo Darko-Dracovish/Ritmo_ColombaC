@@ -66,14 +66,16 @@ public class GameManager : MonoBehaviour
     public Transform deckGO; //ANIM CARTAS APARECE DESDE ACA, SE LE ASIGNARIA EL ASSET DEL MAZO
     public float reactScale;
     public float reactTime;
+    public float reactTextScale;
+    public float reactTextTime;
 
     [Header("Tween Objects")] //ANIMS
     public GameObject corYell;
     public GameObject corPink;
     public GameObject corGre;
     public GameObject angry;
-    
-
+    public GameObject hit;
+    public GameObject miss;
 
     void Awake()
     {
@@ -248,19 +250,20 @@ public class GameManager : MonoBehaviour
         corYell.SetActive(true); //ANIM
         corPink.SetActive(true); //ANIM
         corGre.SetActive(true); //ANIM
-      
-    corYell.transform.DOScale(reactScale, reactTime).SetEase(Ease.OutElastic).OnComplete(() => corYell.SetActive(false)); //ANIM
+        hit.SetActive(true);
+        corYell.transform.DOScale(reactScale, reactTime).SetEase(Ease.OutElastic).OnComplete(() => corYell.SetActive(false)); //ANIM
         corGre.transform.DOScale(reactScale, reactTime).SetEase(Ease.OutElastic).OnComplete(() => corGre.SetActive(false)); //ANIM
      corPink.transform.DOScale(reactScale, reactTime).SetEase(Ease.OutElastic).OnComplete(() => corPink.SetActive(false)); //ANIM
-        
+        hit.transform.DOScale(reactTextScale, reactTextTime).SetEase(Ease.OutElastic).OnComplete(() => hit.SetActive(false));
     }
 
     public void NoteMiss()
     {
         Debug.Log("Miss");
         angry.SetActive(true); //ANIM
+        miss.SetActive(true);
         angry.transform.DOScale(reactScale, reactTime).SetEase(Ease.OutElastic).OnComplete(() => angry.SetActive(false)); //ANIM
-        
+        miss.transform.DOScale(reactTextScale, reactTextTime).SetEase(Ease.OutElastic).OnComplete(() => miss.SetActive(false));
     }
 
     public void UpdateScoreUI()
