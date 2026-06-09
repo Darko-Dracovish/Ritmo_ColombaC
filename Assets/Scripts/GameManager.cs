@@ -166,7 +166,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator OpenDeckWithDelay()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0f);
         if (deckCanvas != null) deckCanvas.SetActive(true);
         if (deckUI != null) deckUI.InitializeUI();
     }
@@ -371,6 +371,7 @@ public class GameManager : MonoBehaviour
         currentSession = SessionType.Nivel;
         activeNPC = npc;
         objectiveScore = objective;
+        OpenDeckBuilder();
         Debug.Log($"Nuevo objetivo fijado: {objective} puntos");
     }
 

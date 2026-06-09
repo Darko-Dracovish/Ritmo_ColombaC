@@ -164,14 +164,4 @@ public class CardSlot : MonoBehaviour
                 Destroy(child);
         }
     }
-
-
-    private void OnDrawGizmos()
-    {
-        if (gameplaypoint != null)
-        {
-            Gizmos.color = isFaceDown ? Color.yellow : Color.green;
-            Gizmos.DrawWireSphere(gameplaypoint.position, 0.2f);
-        }
-    }
 }

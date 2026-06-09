@@ -80,7 +80,7 @@ public class DragDrop : MonoBehaviour
         {
             float distance = Vector2.Distance(transform.position, zone.transform.position);
             Debug.Log($"Distancia a zona de descarte: {distance}");
-            if (distance < 5f) // ajusta seg�n el tama�o de tu zona
+            if (distance < 3f) // ajusta seg�n el tama�o de tu zona
                 return zone;
         }
         return null;
