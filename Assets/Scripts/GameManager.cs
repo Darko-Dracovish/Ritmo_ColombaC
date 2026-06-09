@@ -3,6 +3,7 @@ using TMPro;
 using Unity.Cinemachine;
 using System.Collections.Generic;
 using System.Collections;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
@@ -64,6 +65,19 @@ public class GameManager : MonoBehaviour
     [Header("Cartas ocultas en secuencia")]
     public int hiddenCardCount = 4;
     public List<GameObject> hiddenCardPool = new List<GameObject>(); // Arrastra aquí los prefabs que pueden salir ocultos
+
+    [Header("Tween — Feedback visual")]
+    public Transform deckGO;
+    public float reactScale = 1.2f;
+    public float reactTime = 0.3f;
+    public float reactTextScale = 1.2f;
+    public float reactTextTime = 0.3f;
+    public GameObject corYell;
+    public GameObject corPink;
+    public GameObject corGre;
+    public GameObject angry;
+    public GameObject hit;
+    public GameObject miss;
 
     [Header("Sesión activa")]
     public List<GameObject> challengeRewards = new List<GameObject>();
@@ -246,10 +260,17 @@ public class GameManager : MonoBehaviour
     {
         currentScore += puntaje;
         UpdateScoreUI();
+
+        if (corYell != null) { corYell.SetActive(true); corYell.transform.DOScale(reactScale, reactTime).SetEase(Ease.OutElastic).OnComplete(() => corYell.SetActive(false)); }
+        if (corPink != null) { corPink.SetActive(true); corPink.transform.DOScale(reactScale, reactTime).SetEase(Ease.OutElastic).OnComplete(() => corPink.SetActive(false)); }
+        if (corGre  != null) { corGre.SetActive(true);  corGre.transform.DOScale(reactScale, reactTime).SetEase(Ease.OutElastic).OnComplete(() => corGre.SetActive(false)); }
+        if (hit     != null) { hit.SetActive(true);     hit.transform.DOScale(reactTextScale, reactTextTime).SetEase(Ease.OutElastic).OnComplete(() => hit.SetActive(false)); }
     }
 
     public void NoteMiss()
     {
+        if (angry != null) { angry.SetActive(true); angry.transform.DOScale(reactScale, reactTime).SetEase(Ease.OutElastic).OnComplete(() => angry.SetActive(false)); }
+        if (miss  != null) { miss.SetActive(true);  miss.transform.DOScale(reactTextScale, reactTextTime).SetEase(Ease.OutElastic).OnComplete(() => miss.SetActive(false)); }
         Debug.Log("Miss");
     }
 
@@ -284,7 +305,7 @@ public class GameManager : MonoBehaviour
 
     public void DrawHand()
     {
-        // Barajamos los índices para elegir 4 al azar
+        // Barajamos los índices para elegir al azar
         List<int> indices = new List<int>();
         for (int i = 0; i < deckPrefabs.Count; i++) indices.Add(i);
         for (int i = indices.Count - 1; i > 0; i--)
@@ -303,8 +324,18 @@ public class GameManager : MonoBehaviour
             if (slotData.currentCard != null)
                 Destroy(slotData.currentCard);
 
-            GameObject newCard = Instantiate(deckPrefabs[indices[i]], slot.position, Quaternion.identity, slot);
+            // Instanciar desde deckGO si existe, si no desde la posición del slot
+            Vector3 spawnPos = deckGO != null ? deckGO.position : slot.position;
+            GameObject newCard = Instantiate(deckPrefabs[indices[i]], spawnPos, Quaternion.identity, slot);
             slotData.currentCard = newCard;
+
+            // Animación: vuela desde el mazo hasta el slot
+            if (deckGO != null)
+            {
+                newCard.transform.DORotate(Vector3.forward * 20f, 0.2f).SetEase(Ease.InBack);
+                newCard.transform.DOMove(slot.position, 0.5f)
+                    .OnComplete(() => newCard.transform.DORotate(Vector3.zero, 0.2f).SetEase(Ease.OutBack));
+            }
 
             // Colocar boca abajo
             DragDrop drag = newCard.GetComponent<DragDrop>();

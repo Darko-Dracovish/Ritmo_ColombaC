@@ -43,7 +43,7 @@ public class ArrowControl : MonoBehaviour
             GameManager.instance.ObjectiveScoreFail();
             GameManager.instance.CheckCompletion();
             GameManager.instance.ResetGame();
-            GameManager.instance.ChangeState(GameManager.GameState.Dialogue);
+            GameManager.instance.ChangeState(GameManager.GameState.Hub);
         }
     }
 
