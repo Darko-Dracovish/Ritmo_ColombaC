@@ -7066,12 +7066,12 @@ MonoBehaviour:
   objectiveText: {fileID: 950347960}
   messageText: {fileID: 226222461}
   collectionCards:
-  - {fileID: 4628378887485878479, guid: 0f0b976a437241c4f98e3ae528ba554b, type: 3}
+  - {fileID: 4628378887485878479, guid: 98dc8175d35760d4ea876158c4738137, type: 3}
   - {fileID: 4628378887485878479, guid: 3596adef27e140f4db9fb536ee709c48, type: 3}
   - {fileID: 4628378887485878479, guid: bc8528e33f2a68c4a9535d0e929c1636, type: 3}
   - {fileID: 4628378887485878479, guid: b76f6e63bbef67242bc53d32a2bf422a, type: 3}
   totalcollectionCards:
-  - {fileID: 4628378887485878479, guid: 0f0b976a437241c4f98e3ae528ba554b, type: 3}
+  - {fileID: 4628378887485878479, guid: 98dc8175d35760d4ea876158c4738137, type: 3}
   - {fileID: 4628378887485878479, guid: 3596adef27e140f4db9fb536ee709c48, type: 3}
   - {fileID: 4628378887485878479, guid: bc8528e33f2a68c4a9535d0e929c1636, type: 3}
   - {fileID: 4628378887485878479, guid: b76f6e63bbef67242bc53d32a2bf422a, type: 3}
@@ -7093,7 +7093,7 @@ MonoBehaviour:
   - {fileID: 1859705546}
   - {fileID: 1343257591}
   deckPrefabs:
-  - {fileID: 4628378887485878479, guid: 0f0b976a437241c4f98e3ae528ba554b, type: 3}
+  - {fileID: 4628378887485878479, guid: 98dc8175d35760d4ea876158c4738137, type: 3}
   - {fileID: 4628378887485878479, guid: 3596adef27e140f4db9fb536ee709c48, type: 3}
   - {fileID: 4628378887485878479, guid: bc8528e33f2a68c4a9535d0e929c1636, type: 3}
   - {fileID: 4628378887485878479, guid: b76f6e63bbef67242bc53d32a2bf422a, type: 3}
@@ -7113,7 +7113,7 @@ MonoBehaviour:
   - {fileID: 119539320}
   hiddenCardCount: 4
   hiddenCardPool:
-  - {fileID: 4628378887485878479, guid: 0f0b976a437241c4f98e3ae528ba554b, type: 3}
+  - {fileID: 4628378887485878479, guid: 98dc8175d35760d4ea876158c4738137, type: 3}
   - {fileID: 4628378887485878479, guid: 3596adef27e140f4db9fb536ee709c48, type: 3}
   - {fileID: 4628378887485878479, guid: bc8528e33f2a68c4a9535d0e929c1636, type: 3}
   - {fileID: 4628378887485878479, guid: b76f6e63bbef67242bc53d32a2bf422a, type: 3}
@@ -8089,9 +8089,9 @@ MonoBehaviour:
   collectionContent: {fileID: 229288063}
   activeDeckContent: {fileID: 773814905}
   cardSpacingX: 3
-  cardSpacingY: 3
+  cardSpacingY: 3.75
   cardsPerRow: 2
-  previewScale: 0.3
+  previewScale: 0.4
 --- !u!1 &1057866838
 GameObject:
   m_ObjectHideFlags: 0
