@@ -9,14 +9,35 @@ public class CardSlot : MonoBehaviour
     public Transform gameplaypoint;
 
     [Header("Carta oculta del sistema")]
-    // Sprite o GameObject que cubre la carta cuando está boca abajo.
-    // Créalo como hijo del CardSlot en el prefab/escena y asígnalo aquí.
     public GameObject cardBackCover;
+
+    [Header("Visual de tipo (combo)")]
+    public SpriteRenderer slotTypeIndicator; // El marco/indicador de color del slot
+    public Color lockedColor  = Color.black;
+    public Color unlockedColor = Color.white; // Ajusta al color original de tu marco
 
     private GameObject spawnedCard;
     private GameObject hiddenCardPrefab;   // prefab guardado hasta revelar
     private bool isFaceDown = false;
 
+
+    void Start()
+    {
+        RefreshVisual();
+    }
+
+    public void RefreshVisual()
+    {
+        if (slotTypeIndicator == null) return;
+        slotTypeIndicator.color = GameManager.instance.comboUnlocked ? unlockedColor : lockedColor;
+    }
+
+    // Llamado desde GameManager al desbloquear el combo
+    public static void RefreshAllSlotVisuals()
+    {
+        foreach (CardSlot slot in FindObjectsByType<CardSlot>(FindObjectsSortMode.None))
+            slot.RefreshVisual();
+    }
 
     public bool CanAcceptCard()
     {
@@ -132,7 +153,7 @@ public class CardSlot : MonoBehaviour
         {
             nuevaCarta.noteScore = originalCarta.noteScore;
 
-            if (card.CompareTag(gameObject.tag))
+            if (GameManager.instance.comboUnlocked && card.CompareTag(gameObject.tag))
             {
                 nuevaCarta.noteScore *= 2;
                 Debug.Log("Bonus aplicado: " + nuevaCarta.noteScore);

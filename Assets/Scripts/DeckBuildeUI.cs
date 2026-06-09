@@ -18,6 +18,9 @@ public class DeckBuilderUI : MonoBehaviour
 
     public void InitializeUI()
     {
+        Debug.Log($"[DeckBuilderUI] InitializeUI — collectionContent: {(collectionContent != null ? collectionContent.name : "NULL")}, activeDeckContent: {(activeDeckContent != null ? activeDeckContent.name : "NULL")}");
+        Debug.Log($"[DeckBuilderUI] collectionCards: {GameManager.instance.collectionCards.Count}, deckPrefabs: {GameManager.instance.deckPrefabs.Count}");
+        Debug.Log($"[DeckBuilderUI] collectionContent es Canvas: {(collectionContent != null ? (collectionContent.GetComponentInParent<Canvas>() != null).ToString() : "N/A")}");
         RefreshPanel(collectionContent, GameManager.instance.collectionCards, collectionPool, false);
         RefreshPanel(activeDeckContent, GameManager.instance.deckPrefabs, deckPool, true);
     }

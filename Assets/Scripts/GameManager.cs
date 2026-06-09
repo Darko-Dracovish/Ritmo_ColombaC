@@ -88,6 +88,9 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public SessionType currentSession = SessionType.Ninguna;
     [HideInInspector] public NPCDialogue activeNPC;
 
+    [Header("Mecánicas desbloqueables")]
+    public bool comboUnlocked = false; // Se activa al completar el primer Nivel
+
     void Awake()
     {
         instance = this;
@@ -255,7 +258,10 @@ public class GameManager : MonoBehaviour
         musicStart = true;
         if (beatScroll != null) beatScroll.scrollStart = true;
         if (music != null) music.Play();
-        objectiveText.text = "Objective: " + objectiveScore;
+
+        int displayObjective = currentSession == SessionType.Desafio ? challengeObjectiveScore : objectiveScore;
+        if (objectiveText != null)
+            objectiveText.text = "Objective: " + displayObjective;
     }
 
     public void NoteHit(int puntaje)
@@ -334,9 +340,10 @@ public class GameManager : MonoBehaviour
             // Animación: vuela desde el mazo hasta el slot
             if (deckGO != null)
             {
-                newCard.transform.DORotate(Vector3.forward * 20f, 0.2f).SetEase(Ease.InBack);
-                newCard.transform.DOMove(slot.position, 0.5f)
-                    .OnComplete(() => newCard.transform.DORotate(Vector3.zero, 0.2f).SetEase(Ease.OutBack));
+                newCard.transform.DOKill();
+                newCard.transform.DORotate(Vector3.forward * 20f, 0.2f).SetEase(Ease.InBack).SetLink(newCard);
+                newCard.transform.DOMove(slot.position, 0.5f).SetLink(newCard)
+                    .OnComplete(() => { if (newCard != null) newCard.transform.DORotate(Vector3.zero, 0.2f).SetEase(Ease.OutBack).SetLink(newCard); });
             }
 
             // Colocar boca abajo
@@ -430,6 +437,12 @@ public class GameManager : MonoBehaviour
         {
             if (currentScore >= objectiveScore)
             {
+                if (!comboUnlocked)
+                {
+                    comboUnlocked = true;
+                    CardSlot.RefreshAllSlotVisuals();
+                    Debug.Log("¡Combo desbloqueado!");
+                }
                 activeNPC?.UnlockNext();
                 Debug.Log("Nivel completado — progresión desbloqueada.");
             }
@@ -472,7 +485,12 @@ public class GameManager : MonoBehaviour
     {
         CardSlot[] allSlots = FindObjectsByType<CardSlot>(FindObjectsSortMode.None);
         foreach (CardSlot slot in allSlots)
+        {
+            // Matar tweens activos en hijos antes de destruirlos
+            foreach (Transform child in slot.transform)
+                child.DOKill();
             slot.ClearSlot();
+        }
     }
 
     // Coloca cartas al azar boca abajo en slots libres al entrar a Build
