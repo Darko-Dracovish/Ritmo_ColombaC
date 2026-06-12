@@ -1226,6 +1226,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd9886b69ff634a4da7148ede0204b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DragDrop
+  cardBack: {fileID: 0}
+  isFaceDown: 0
 --- !u!1 &4707961400752857564
 GameObject:
   m_ObjectHideFlags: 0

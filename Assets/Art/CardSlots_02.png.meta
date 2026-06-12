@@ -1,10 +1,61 @@
 fileFormatVersion: 2
-guid: 63e9ffb82f12f1642b77dd044b1c61b2
+guid: cc80a6e15c58c1e43ab0c6b112e21220
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6777991731750845896
-    second: MazoHover_0
+      213: 7067855463122512922
+    second: CardSlots_02_0
+  - first:
+      213: -5188035968908544602
+    second: CardSlots_02_1
+  - first:
+      213: -2696466659097896330
+    second: CardSlots_02_2
+  - first:
+      213: 4496052717970251504
+    second: CardSlots_02_3
+  - first:
+      213: -2901840467997062684
+    second: CardSlots_02_4
+  - first:
+      213: -4844482818505938244
+    second: CardSlots_02_5
+  - first:
+      213: 3089532960561084765
+    second: CardSlots_02_6
+  - first:
+      213: 688335407120595454
+    second: CardSlots_02_7
+  - first:
+      213: 9141612702679186291
+    second: CardSlots_02_8
+  - first:
+      213: -8280079743362535402
+    second: CardSlots_02_9
+  - first:
+      213: 9036245379755629566
+    second: CardSlots_02_10
+  - first:
+      213: 4058460707423361264
+    second: CardSlots_02_11
+  - first:
+      213: -3026921042800735943
+    second: CardSlots_02_12
+  - first:
+      213: 4652001858550103143
+    second: CardSlots_02_13
+  - first:
+      213: 3323502116571406139
+    second: CardSlots_02_14
+  - first:
+      213: -4399566450891803397
+    second: CardSlots_02_15
+  - first:
+      213: -7375870442178177903
+    second: CardSlots_02_16
+  - first:
+      213: 8948576165783554176
+    second: CardSlots_02_17
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +151,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MazoHover_0
+      name: CardSlotVerde
       rect:
         serializedVersion: 2
-        x: 307
-        y: 12
-        width: 1573
-        height: 1999
+        x: 7
+        y: 191
+        width: 223
+        height: 305
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 832c47a6e6cbfe1a0800000000000000
-      internalID: -6777991731750845896
+      spriteID: a1ca83bb811161260800000000000000
+      internalID: 7067855463122512922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardSlotAzul
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 192
+        width: 225
+        height: 304
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fedb0a3020356e30800000000000000
+      internalID: 4496052717970251504
       vertices: []
       indices: 
       edges: []
@@ -125,7 +198,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 4e02f1bcde0a49e4f8ff12edf656450f
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +208,24 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MazoHover_0: -6777991731750845896
+      CardSlotAzul: 4496052717970251504
+      CardSlotVerde: 7067855463122512922
+      CardSlots_02_1: -5188035968908544602
+      CardSlots_02_10: 9036245379755629566
+      CardSlots_02_11: 4058460707423361264
+      CardSlots_02_12: -3026921042800735943
+      CardSlots_02_13: 4652001858550103143
+      CardSlots_02_14: 3323502116571406139
+      CardSlots_02_15: -4399566450891803397
+      CardSlots_02_16: -7375870442178177903
+      CardSlots_02_17: 8948576165783554176
+      CardSlots_02_2: -2696466659097896330
+      CardSlots_02_4: -2901840467997062684
+      CardSlots_02_5: -4844482818505938244
+      CardSlots_02_6: 3089532960561084765
+      CardSlots_02_7: 688335407120595454
+      CardSlots_02_8: 9141612702679186291
+      CardSlots_02_9: -8280079743362535402
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

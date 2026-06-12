@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 63e9ffb82f12f1642b77dd044b1c61b2
+guid: 202f431a039dcd74eb7e261560d72b8d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6777991731750845896
-    second: MazoHover_0
+      213: -5544690792303785295
+    second: AssetSheet_03_0
+  - first:
+      213: -6616263263926525056
+    second: AssetSheet_03_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +103,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MazoHover_0
+      name: DIalogoCajaNombre
       rect:
         serializedVersion: 2
-        x: 307
-        y: 12
-        width: 1573
-        height: 1999
+        x: 88
+        y: 1076
+        width: 1872
+        height: 943
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 832c47a6e6cbfe1a0800000000000000
-      internalID: -6777991731750845896
+      spriteID: 1ba8a57f91d4d03b0800000000000000
+      internalID: -5544690792303785295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DialogoBurbuja
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 53
+        width: 1279
+        height: 972
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 083613dad9f4e24a0800000000000000
+      internalID: -6616263263926525056
       vertices: []
       indices: 
       edges: []
@@ -125,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6a885f6ace781804bb141e9052634127
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MazoHover_0: -6777991731750845896
+      DIalogoCajaNombre: -5544690792303785295
+      DialogoBurbuja: -6616263263926525056
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

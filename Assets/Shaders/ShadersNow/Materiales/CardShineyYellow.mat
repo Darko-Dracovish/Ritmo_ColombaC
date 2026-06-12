@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CardShineBase
-  m_Shader: {fileID: -6465566751694194690, guid: 29045b76e9447ae46ab551563a72f418, type: 3}
+  m_Name: CardShineyYellow
+  m_Shader: {fileID: -6465566751694194690, guid: af350222661642e49a71d49db7aad2da, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -23,24 +23,16 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _SampleTexture2D_1a2d1ac5e4444a4b821fca05a2c2b099_Texture_1_Texture2D:
-<<<<<<<< HEAD:Assets/Assets/Shaders/Materiales/CardShineBase.mat
-        m_Texture: {fileID: 2800000, guid: 0b9a3acacf319d645a189881ba7001d5, type: 3}
-========
+    - _SampleTexture2D_4606e5f949b1462cba142060de947e8a_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 8e72fc2c75896724e9a9a11e803c99c9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_8c73f1bdda4346609e131b4fe5a2d36f_Texture_1_Texture2D:
         m_Texture: {fileID: 2800000, guid: cba69139a1ac8e745a024328b0f8ccad, type: 3}
->>>>>>>> f140b304b1c2d867008760cf1b599796a120b348:Assets/Shaders/ShadersNow/Materiales/CardShineBase.mat
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_384da06c52b746c8a25544aae06b62fc_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 6c7a245251213e649ab943d9cdf68be9, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_e45ffe2724a742ac90f75a1398f1449a_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 6c7a245251213e649ab943d9cdf68be9, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_ff53ae7e18244ba79e5aa0d2e4612b74_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 6c7a245251213e649ab943d9cdf68be9, type: 3}
+    - _SampleTexture2D_94074a97d2b443a0a51e6649741323e0_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 8e72fc2c75896724e9a9a11e803c99c9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -57,13 +49,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BlendTotal: 0.83
-    - _HoloPotencia: 0
-    - _PotenciaBrillo: 0
+    - _BlendTotal: 0.5
+    - _HoloShine: 0.5
     m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &3235411193172759129
+--- !u!114 &1968035837217795588
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

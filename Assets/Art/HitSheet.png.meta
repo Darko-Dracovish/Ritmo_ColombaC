@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 63e9ffb82f12f1642b77dd044b1c61b2
+guid: 61e8c61a029b8264b99098e8a3b54136
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6777991731750845896
-    second: MazoHover_0
+      213: 2919649386127651155
+    second: HitSheet_0
+  - first:
+      213: 3447875546059415837
+    second: HitSheet_1
+  - first:
+      213: -4031922871933941976
+    second: HitSheet_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +106,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MazoHover_0
+      name: React_Hit
       rect:
         serializedVersion: 2
-        x: 307
-        y: 12
-        width: 1573
-        height: 1999
+        x: 136
+        y: 391
+        width: 248
+        height: 91
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 832c47a6e6cbfe1a0800000000000000
-      internalID: -6777991731750845896
+      spriteID: 35173d0d5ada48820800000000000000
+      internalID: 2919649386127651155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: React_Miss
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 269
+        width: 372
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d11a0a0aa8059df20800000000000000
+      internalID: 3447875546059415837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: React_Perfect
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 142
+        width: 496
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 827ca90928bbb08c0800000000000000
+      internalID: -4031922871933941976
       vertices: []
       indices: 
       edges: []
@@ -125,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b265ba2e726207e43b0131baa6d1ee7f
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MazoHover_0: -6777991731750845896
+      React_Hit: 2919649386127651155
+      React_Miss: 3447875546059415837
+      React_Perfect: -4031922871933941976
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

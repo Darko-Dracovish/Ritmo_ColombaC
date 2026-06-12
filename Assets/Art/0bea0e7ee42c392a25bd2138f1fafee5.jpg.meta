@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 63e9ffb82f12f1642b77dd044b1c61b2
+guid: cba69139a1ac8e745a024328b0f8ccad
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6777991731750845896
-    second: MazoHover_0
+      213: -455742635790714676
+    second: 0bea0e7ee42c392a25bd2138f1fafee5_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MazoHover_0
+      name: 0bea0e7ee42c392a25bd2138f1fafee5_0
       rect:
         serializedVersion: 2
-        x: 307
-        y: 12
-        width: 1573
-        height: 1999
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 832c47a6e6cbfe1a0800000000000000
-      internalID: -6777991731750845896
+      spriteID: cc8b1b4cc70eca9f0800000000000000
+      internalID: -455742635790714676
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MazoHover_0: -6777991731750845896
+      0bea0e7ee42c392a25bd2138f1fafee5_0: -455742635790714676
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
