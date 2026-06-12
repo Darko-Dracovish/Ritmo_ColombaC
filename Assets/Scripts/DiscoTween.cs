@@ -8,7 +8,7 @@ public class DiscoTween : MonoBehaviour
 
     void Start()
     {
-        transform.DOMoveY(movdisco, movetime).SetEase(Ease.OutBack);
+        transform.DOLocalMoveY(movdisco, movetime).SetEase(Ease.OutBack);
     }
 
     void Update()
