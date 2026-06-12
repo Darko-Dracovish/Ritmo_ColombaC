@@ -7117,6 +7117,17 @@ MonoBehaviour:
   - {fileID: 4628378887485878479, guid: 3596adef27e140f4db9fb536ee709c48, type: 3}
   - {fileID: 4628378887485878479, guid: bc8528e33f2a68c4a9535d0e929c1636, type: 3}
   - {fileID: 4628378887485878479, guid: b76f6e63bbef67242bc53d32a2bf422a, type: 3}
+  deckGO: {fileID: 0}
+  reactScale: 1.2
+  reactTime: 0.3
+  reactTextScale: 1.2
+  reactTextTime: 0.3
+  corYell: {fileID: 0}
+  corPink: {fileID: 0}
+  corGre: {fileID: 0}
+  angry: {fileID: 0}
+  hit: {fileID: 0}
+  miss: {fileID: 0}
   challengeRewards:
   - {fileID: 4628378887485878479, guid: 21eef9586144d064e9c88f080299baaa, type: 3}
   - {fileID: 4628378887485878479, guid: e304b113ec5526848b6d9393e26a1fb7, type: 3}
@@ -11524,10 +11535,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -13716,10 +13727,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
