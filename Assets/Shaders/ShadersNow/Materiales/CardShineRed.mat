@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CardShineBase
-  m_Shader: {fileID: -6465566751694194690, guid: 29045b76e9447ae46ab551563a72f418, type: 3}
+  m_Name: CardShineRed
+  m_Shader: {fileID: -6465566751694194690, guid: a381f1442dba9674ba4b976b32c3ae8b, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -23,16 +23,16 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _SampleTexture2D_1a2d1ac5e4444a4b821fca05a2c2b099_Texture_1_Texture2D:
-        m_Texture: {fileID: 0}
+    - _SampleTexture2D_7457292649bf4d48a5c63086532fc682_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: bb2535bf11c20934bbf5d9eb368f3d4e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_384da06c52b746c8a25544aae06b62fc_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 6c7a245251213e649ab943d9cdf68be9, type: 3}
+    - _SampleTexture2D_d55a53be654944668331abb361750b77_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: bb2535bf11c20934bbf5d9eb368f3d4e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_ff53ae7e18244ba79e5aa0d2e4612b74_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 6c7a245251213e649ab943d9cdf68be9, type: 3}
+    - _SampleTexture2D_e35757fc7a664e20822c52ffe3cdced8_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: cba69139a1ac8e745a024328b0f8ccad, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -48,11 +48,13 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - _BlendTotal: 0.5
+    - _HoloShine: 0.5
     m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &3235411193172759129
+--- !u!114 &1103265138096669182
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
