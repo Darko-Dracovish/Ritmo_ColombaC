@@ -6179,7 +6179,7 @@ MonoBehaviour:
   - {fileID: 4628378887485878479, guid: 3596adef27e140f4db9fb536ee709c48, type: 3}
   - {fileID: 4628378887485878479, guid: bc8528e33f2a68c4a9535d0e929c1636, type: 3}
   - {fileID: 4628378887485878479, guid: b76f6e63bbef67242bc53d32a2bf422a, type: 3}
-  deckGO: {fileID: 0}
+  deckGO: {fileID: 1588114431}
   reactScale: 1.2
   reactTime: 0.3
   reactTextScale: 1.2
