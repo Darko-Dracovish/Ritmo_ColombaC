@@ -1,0 +1,233 @@
+fileFormatVersion: 2
+guid: cc80a6e15c58c1e43ab0c6b112e21220
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7067855463122512922
+    second: CardSlots_02_0
+  - first:
+      213: -5188035968908544602
+    second: CardSlots_02_1
+  - first:
+      213: -2696466659097896330
+    second: CardSlots_02_2
+  - first:
+      213: 4496052717970251504
+    second: CardSlots_02_3
+  - first:
+      213: -2901840467997062684
+    second: CardSlots_02_4
+  - first:
+      213: -4844482818505938244
+    second: CardSlots_02_5
+  - first:
+      213: 3089532960561084765
+    second: CardSlots_02_6
+  - first:
+      213: 688335407120595454
+    second: CardSlots_02_7
+  - first:
+      213: 9141612702679186291
+    second: CardSlots_02_8
+  - first:
+      213: -8280079743362535402
+    second: CardSlots_02_9
+  - first:
+      213: 9036245379755629566
+    second: CardSlots_02_10
+  - first:
+      213: 4058460707423361264
+    second: CardSlots_02_11
+  - first:
+      213: -3026921042800735943
+    second: CardSlots_02_12
+  - first:
+      213: 4652001858550103143
+    second: CardSlots_02_13
+  - first:
+      213: 3323502116571406139
+    second: CardSlots_02_14
+  - first:
+      213: -4399566450891803397
+    second: CardSlots_02_15
+  - first:
+      213: -7375870442178177903
+    second: CardSlots_02_16
+  - first:
+      213: 8948576165783554176
+    second: CardSlots_02_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CardSlotVerde
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 191
+        width: 223
+        height: 305
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1ca83bb811161260800000000000000
+      internalID: 7067855463122512922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardSlotAzul
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 192
+        width: 225
+        height: 304
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fedb0a3020356e30800000000000000
+      internalID: 4496052717970251504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 4e02f1bcde0a49e4f8ff12edf656450f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CardSlotAzul: 4496052717970251504
+      CardSlotVerde: 7067855463122512922
+      CardSlots_02_1: -5188035968908544602
+      CardSlots_02_10: 9036245379755629566
+      CardSlots_02_11: 4058460707423361264
+      CardSlots_02_12: -3026921042800735943
+      CardSlots_02_13: 4652001858550103143
+      CardSlots_02_14: 3323502116571406139
+      CardSlots_02_15: -4399566450891803397
+      CardSlots_02_16: -7375870442178177903
+      CardSlots_02_17: 8948576165783554176
+      CardSlots_02_2: -2696466659097896330
+      CardSlots_02_4: -2901840467997062684
+      CardSlots_02_5: -4844482818505938244
+      CardSlots_02_6: 3089532960561084765
+      CardSlots_02_7: 688335407120595454
+      CardSlots_02_8: 9141612702679186291
+      CardSlots_02_9: -8280079743362535402
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
