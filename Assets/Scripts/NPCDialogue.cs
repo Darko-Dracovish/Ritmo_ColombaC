@@ -2,17 +2,34 @@ using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
 
+[System.Serializable]
+public class DialogueLine
+{
+    public string speaker;
+    [TextArea(2, 5)] public string text;
+}
+
+[System.Serializable]
+public class DialogueSequence
+{
+    public string sequenceId;
+    public NPCDialogue.InteractionType interactionType = NPCDialogue.InteractionType.Solo;
+    public List<DialogueLine> lines = new List<DialogueLine>();
+}
+
 public class NPCDialogue : MonoBehaviour
 {
-    public enum InteractionType { Desafio, Nivel }
+    public enum InteractionType { Desafio, Nivel, Solo }
 
     [Header("Tipo de interacción")]
     public InteractionType interactionType = InteractionType.Desafio;
 
-    [Header("Diálogo")]
-    public GameObject dialoguePanel;
-    public TextMeshProUGUI dialogueText;
-    public string dialogue;
+    [Header("Panel de diálogo")]
+    public DialoguePanelUI dialoguePanelUI;
+
+    [Header("Diálogos (el juego elige cuál mostrar con dialogueIndex)")]
+    public List<DialogueSequence> dialogues = new List<DialogueSequence>();
+    [HideInInspector] public int dialogueIndex = 0;
 
     [Header("Desafío (secuencia prehecha)")]
     public List<GameObject> challengeCards;
@@ -23,8 +40,10 @@ public class NPCDialogue : MonoBehaviour
     public int levelObjective;
 
     [Header("Desbloqueo al completar")]
-    // NPCs que se desbloquean cuando el jugador completa este desafío/nivel
     public List<NPCDialogue> unlockOnComplete = new List<NPCDialogue>();
+
+    [Header("NPCs que avanzan su diálogo al completar esta sesión")]
+    public List<NPCDialogue> advanceDialogueOnComplete = new List<NPCDialogue>();
 
     [Header("Bloqueo")]
     public bool isLocked = false;
@@ -32,85 +51,133 @@ public class NPCDialogue : MonoBehaviour
     public GameObject lockedPanel;
     public TextMeshProUGUI lockedText;
 
+    // Estado interno de la conversación
+    [HideInInspector] public int currentLine = 0;
+
+    public static NPCDialogue currentOpen;
+
     void OnMouseDown()
     {
+        Debug.Log($"[NPCDialogue] Click en {gameObject.name} | isLocked: {isLocked} | diálogos: {dialogues.Count}");
+
         if (currentOpen != null && currentOpen != this)
-        {
-            currentOpen.dialoguePanel.SetActive(false);
-            if (currentOpen.lockedPanel != null)
-                currentOpen.lockedPanel.SetActive(false);
-        }
+            currentOpen = null;
 
         currentOpen = this;
 
         if (isLocked)
             OpenLockedPanel();
         else
-            OpenDialogue();
-
-        Debug.Log("Click en NPC: " + gameObject.name);
+            StartDialogue();
     }
 
-    void OpenDialogue()
+    void StartDialogue()
     {
-        if (dialogueText != null)
-            dialogueText.text = dialogue;
+        currentLine = 0;
 
-        dialoguePanel.SetActive(true);
+        if (dialoguePanelUI == null)
+        {
+            Debug.LogError($"[{gameObject.name}] dialoguePanelUI no asignado en el Inspector.");
+            return;
+        }
+
+        if (dialogues == null || dialogues.Count == 0 || dialogueIndex >= dialogues.Count)
+        {
+            Debug.LogWarning($"[{gameObject.name}] Sin diálogos configurados.");
+            return;
+        }
+
+        dialoguePanelUI.ShowLine(GetCurrentLine());
+        dialoguePanelUI.SetButtons(isLastLine());
     }
 
-    void OpenLockedPanel()
+    public void NextLine()
     {
-        if (lockedText != null)
-            lockedText.text = lockedMessage;
+        currentLine++;
 
-        lockedPanel.SetActive(true);
+        if (currentLine >= GetCurrentSequence().lines.Count)
+        {
+            // No debería llegar aquí — el botón Next se oculta en la última línea
+            return;
+        }
+
+        dialoguePanelUI?.ShowLine(GetCurrentLine());
+        dialoguePanelUI?.SetButtons(isLastLine());
     }
 
-    public void CloseLockedPanel()
-    {
-        lockedPanel.SetActive(false);
-        currentOpen = null;
-    }
-
-    // Botón Aceptar del panel de diálogo
     public void OnAccept()
     {
         Debug.Log($"[{gameObject.name}] OnAccept — tipo: {interactionType}");
 
-        dialoguePanel.SetActive(false);
+        dialoguePanelUI?.Hide();
         currentOpen = null;
 
-        if (interactionType == InteractionType.Desafio)
-        {
+        var tipo = GetCurrentSequence().interactionType;
+
+        if (tipo == InteractionType.Desafio)
             GameManager.instance.StartChallenge(challengeCards, challengeRewards, challengeObjective, this);
-        }
-        else
+        else if (tipo == InteractionType.Nivel)
         {
             GameManager.instance.StartLevel(levelObjective, this);
-            // Mostrar confirmación brevemente en pantalla
             GameManager.instance.ShowMessage($"Nuevo objetivo: {levelObjective} puntos");
         }
+        // Solo: solo cierra el panel, no hace nada más
     }
 
     public void OnReject()
     {
-        dialoguePanel.SetActive(false);
+        dialoguePanelUI?.Hide();
         currentOpen = null;
     }
 
-    // Desbloquea los NPCs enlazados
+    void OpenLockedPanel()
+    {
+        if (lockedText != null) lockedText.text = lockedMessage;
+        if (lockedPanel != null) lockedPanel.SetActive(true);
+    }
+
+    public void CloseLockedPanel()
+    {
+        if (lockedPanel != null) lockedPanel.SetActive(false);
+        currentOpen = null;
+    }
+
+    public void AdvanceDialogue()
+    {
+        if (dialogueIndex < dialogues.Count - 1)
+            dialogueIndex++;
+    }
+
     public void UnlockNext()
     {
         foreach (NPCDialogue npc in unlockOnComplete)
+            if (npc != null) npc.isLocked = false;
+
+        Debug.Log($"[{gameObject.name}] UnlockNext — advanceDialogueOnComplete: {advanceDialogueOnComplete.Count}");
+        foreach (NPCDialogue npc in advanceDialogueOnComplete)
         {
             if (npc != null)
             {
-                npc.isLocked = false;
-                Debug.Log($"NPC desbloqueado: {npc.gameObject.name}");
+                Debug.Log($"[{gameObject.name}] Avanzando diálogo de {npc.gameObject.name} (antes: {npc.dialogueIndex})");
+                npc.AdvanceDialogue();
+                Debug.Log($"[{gameObject.name}] Diálogo de {npc.gameObject.name} ahora: {npc.dialogueIndex}");
             }
         }
     }
 
-    public static NPCDialogue currentOpen;
+    DialogueSequence GetCurrentSequence()
+    {
+        return dialogues[Mathf.Clamp(dialogueIndex, 0, dialogues.Count - 1)];
+    }
+
+    DialogueLine GetCurrentLine()
+    {
+        var seq = GetCurrentSequence();
+        return seq.lines[Mathf.Clamp(currentLine, 0, seq.lines.Count - 1)];
+    }
+
+    public bool isLastLine()
+    {
+        return currentLine >= GetCurrentSequence().lines.Count - 1;
+    }
 }

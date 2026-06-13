@@ -426,6 +426,7 @@ public class GameManager : MonoBehaviour
                     UnlockCard(reward);
 
                 activeNPC?.UnlockNext();
+                activeNPC?.AdvanceDialogue();
                 Debug.Log("Desafío completado — cartas desbloqueadas y NPCs siguientes habilitados.");
             }
             else
@@ -444,6 +445,7 @@ public class GameManager : MonoBehaviour
                     Debug.Log("¡Combo desbloqueado!");
                 }
                 activeNPC?.UnlockNext();
+                activeNPC?.AdvanceDialogue();
                 Debug.Log("Nivel completado — progresión desbloqueada.");
             }
             else

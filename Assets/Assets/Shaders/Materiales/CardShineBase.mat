@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: CardShineBase
-  m_Shader: {fileID: -6465566751694194690, guid: 29045b76e9447ae46ab551563a72f418, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 551068deeda397445b736748b98481b8, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -24,11 +24,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _SampleTexture2D_1a2d1ac5e4444a4b821fca05a2c2b099_Texture_1_Texture2D:
-<<<<<<<< HEAD:Assets/Assets/Shaders/Materiales/CardShineBase.mat
-        m_Texture: {fileID: 2800000, guid: 0b9a3acacf319d645a189881ba7001d5, type: 3}
-========
         m_Texture: {fileID: 2800000, guid: cba69139a1ac8e745a024328b0f8ccad, type: 3}
->>>>>>>> f140b304b1c2d867008760cf1b599796a120b348:Assets/Shaders/ShadersNow/Materiales/CardShineBase.mat
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_384da06c52b746c8a25544aae06b62fc_Texture_1_Texture2D:
