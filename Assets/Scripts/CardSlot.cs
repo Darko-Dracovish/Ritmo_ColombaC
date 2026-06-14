@@ -1,4 +1,5 @@
 using UnityEngine;
+using DG.Tweening;
 
 public class CardSlot : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class CardSlot : MonoBehaviour
     private GameObject spawnedCard;
     private GameObject hiddenCardPrefab;   // prefab guardado hasta revelar
     private bool isFaceDown = false;
+
+    
 
 
     void Start()
@@ -73,6 +76,7 @@ public class CardSlot : MonoBehaviour
 
         // Instanciar la carta en el slot igual que SetCard, pero cubierta
         GameObject visual = Instantiate(cardPrefab, transform.position, Quaternion.identity, transform);
+       
 
         // Deshabilitar arrastre — el jugador no puede moverla
         DragDrop drag = visual.GetComponent<DragDrop>();
