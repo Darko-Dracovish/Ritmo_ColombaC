@@ -80,4 +80,9 @@ public class SettingsPanel : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene(mainMenuScene);
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

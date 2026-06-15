@@ -45,6 +45,11 @@ public class NPCDialogue : MonoBehaviour
     [Header("NPCs que avanzan su diálogo al completar esta sesión")]
     public List<NPCDialogue> advanceDialogueOnComplete = new List<NPCDialogue>();
 
+    [Header("Bailarines")]
+    public DancerSlot[] dancers;
+    public string danceTrigger = "Dance";
+    public string idleTrigger = "Idle";
+
     [Header("Bloqueo")]
     public bool isLocked = false;
     public string lockedMessage = "Aún no puedes enfrentarte a este pájaro.";
@@ -141,6 +146,18 @@ public class NPCDialogue : MonoBehaviour
     {
         if (lockedPanel != null) lockedPanel.SetActive(false);
         currentOpen = null;
+    }
+
+    public void StartDance()
+    {
+        foreach (var dancer in dancers)
+            dancer?.Activate(danceTrigger);
+    }
+
+    public void StopDance()
+    {
+        foreach (var dancer in dancers)
+            dancer?.Deactivate(idleTrigger);
     }
 
     public void AdvanceDialogue()

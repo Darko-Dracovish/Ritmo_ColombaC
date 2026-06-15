@@ -226,6 +226,13 @@ MonoBehaviour:
   - {fileID: 396312267}
   advanceDialogueOnComplete:
   - {fileID: 1158628224}
+  dancers:
+  - spawnPoint: {fileID: 435372954}
+    birdPrefab: {fileID: 7344980803132021287, guid: 9b6c16b569ca39b439a87d918ce58197, type: 3}
+  - spawnPoint: {fileID: 1954700889}
+    birdPrefab: {fileID: 828415460842082898, guid: aa4c9e5967ddcde45a9044c6adca93fd, type: 3}
+  danceTrigger: Dance
+  idleTrigger: Idle
   isLocked: 1
   lockedMessage: Pierdete loser
   lockedPanel: {fileID: 728402183}
@@ -320,7 +327,7 @@ Transform:
   m_GameObject: {fileID: 28361443}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.9, y: -4.71, z: 0}
+  m_LocalPosition: {x: 3.56, y: 2.09, z: 0}
   m_LocalScale: {x: 0.27, y: 0.27, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1931,8 +1938,8 @@ Transform:
   m_GameObject: {fileID: 208599197}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.59, y: -2.66, z: 0}
-  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
+  m_LocalPosition: {x: -10.02, y: -2.19, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 268463639}
@@ -2083,6 +2090,13 @@ MonoBehaviour:
   unlockOnComplete:
   - {fileID: 997561914}
   advanceDialogueOnComplete: []
+  dancers:
+  - spawnPoint: {fileID: 435372954}
+    birdPrefab: {fileID: 1372966604254345504, guid: a7a77d83818aec54e8afe23d62b96064, type: 3}
+  - spawnPoint: {fileID: 1954700889}
+    birdPrefab: {fileID: 8515955451985851201, guid: e000ac44600492b44b145e15df7c7a43, type: 3}
+  danceTrigger: Dance
+  idleTrigger: Idle
   isLocked: 0
   lockedMessage: "A\xFAn no puedes enfrentarte a este p\xE1jaro."
   lockedPanel: {fileID: 728402183}
@@ -3719,6 +3733,13 @@ MonoBehaviour:
   levelObjective: 0
   unlockOnComplete: []
   advanceDialogueOnComplete: []
+  dancers:
+  - spawnPoint: {fileID: 435372954}
+    birdPrefab: {fileID: 8515955451985851201, guid: e000ac44600492b44b145e15df7c7a43, type: 3}
+  - spawnPoint: {fileID: 1954700889}
+    birdPrefab: {fileID: 828415460842082898, guid: 28bd8ca485241864faee2c1b3712c9f0, type: 3}
+  danceTrigger: Dance
+  idleTrigger: Idle
   isLocked: 1
   lockedMessage: No estoy interesada
   lockedPanel: {fileID: 728402183}
@@ -3813,8 +3834,8 @@ Transform:
   m_GameObject: {fileID: 396312265}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.01, y: -4.72, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.33568314}
+  m_LocalPosition: {x: 6.31, y: 2.04, z: 0}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.20980196}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 268463639}
@@ -4118,7 +4139,7 @@ GameObject:
   - component: {fileID: 435372956}
   - component: {fileID: 435372955}
   m_Layer: 0
-  m_Name: Monal Play
+  m_Name: RendererPrincipal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4147,7 +4168,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 435372953}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 48a51b48929783f488e43d6d207881a1, type: 2}
   m_CullingMode: 0
@@ -4168,7 +4189,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 435372953}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -7343,7 +7364,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4048768362935639763, guid: dee39dc6e0381834e9d26b2cedec7aea, type: 3}
+  m_Sprite: {fileID: -4195959552909295376, guid: 4e345cde22d8bca41aa0094057a507a0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8311,7 +8332,7 @@ Transform:
   m_GameObject: {fileID: 977499801}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.27, y: 7.8533, z: 0}
+  m_LocalPosition: {x: 0.05, y: 6.71, z: 0}
   m_LocalScale: {x: 0.46713322, y: 0.46824378, z: 0.46273723}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8463,9 +8484,9 @@ Transform:
   m_GameObject: {fileID: 997561911}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.42, y: -2.21, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -5.9, y: 0.31, z: 0}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 268463639}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8554,6 +8575,13 @@ MonoBehaviour:
   - {fileID: 1158628224}
   advanceDialogueOnComplete:
   - {fileID: 208599201}
+  dancers:
+  - spawnPoint: {fileID: 435372954}
+    birdPrefab: {fileID: 1372966604254345504, guid: a7a77d83818aec54e8afe23d62b96064, type: 3}
+  - spawnPoint: {fileID: 1954700889}
+    birdPrefab: {fileID: 828415460842082898, guid: 91cd55c89185f264f9cbca77abb5e603, type: 3}
+  danceTrigger: Dance
+  idleTrigger: Idle
   isLocked: 1
   lockedMessage: "No podr\xE1s conmigo"
   lockedPanel: {fileID: 728402183}
@@ -8630,7 +8658,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6e8f55b4baa88f842ada436f4b7179c9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 17.51, y: 22.095182}
@@ -9256,7 +9284,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f93d80ce42138d84bb13f53ae6a899eb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 17.51, y: 22.095182}
@@ -9274,9 +9302,9 @@ Transform:
   m_GameObject: {fileID: 1158628219}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.91, y: -4.31, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 10.54, y: -3.32, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 268463639}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9396,6 +9424,13 @@ MonoBehaviour:
   unlockOnComplete:
   - {fileID: 28361445}
   advanceDialogueOnComplete: []
+  dancers:
+  - spawnPoint: {fileID: 435372954}
+    birdPrefab: {fileID: 7344980803132021287, guid: 9b6c16b569ca39b439a87d918ce58197, type: 3}
+  - spawnPoint: {fileID: 1954700889}
+    birdPrefab: {fileID: 8515955451985851201, guid: e000ac44600492b44b145e15df7c7a43, type: 3}
+  danceTrigger: Dance
+  idleTrigger: Idle
   isLocked: 1
   lockedMessage: No eres rival para Fuego
   lockedPanel: {fileID: 728402183}
@@ -11975,7 +12010,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2627271415919595349, guid: 6593185ad44979e449828e7a79eea23e, type: 3}
+  m_Sprite: {fileID: 914195520554853198, guid: 349840a1f2f0e7e41bec79fea40e0ec4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -13913,7 +13948,7 @@ GameObject:
   - component: {fileID: 1954700891}
   - component: {fileID: 1954700890}
   m_Layer: 0
-  m_Name: Pajara3  (1)
+  m_Name: RendererSecundario
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13942,7 +13977,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1954700888}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: c90fcf82bc6ee97489707749b1e1fe04, type: 2}
   m_CullingMode: 0
@@ -13963,7 +13998,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1954700888}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -14736,7 +14771,7 @@ MonoBehaviour:
     CustomLookAtTarget: 0
   Lens:
     FieldOfView: 60
-    OrthographicSize: 7.0994744
+    OrthographicSize: 7.275
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0

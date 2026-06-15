@@ -174,12 +174,14 @@ public class GameManager : MonoBehaviour
             case GameState.Playing:
                 gameplayCanvas.SetActive(true);
                 RevealHiddenCards();
+                activeNPC?.StartDance();
                 break;
             case GameState.Dialogue:
                 dialogueCanvas.SetActive(true);
                 break;
             case GameState.Result:
                 if (resultCanvas != null) resultCanvas.SetActive(true);
+                activeNPC?.StopDance();
                 break;
             case GameState.Deck:
                 StartCoroutine(OpenDeckWithDelay());
@@ -393,6 +395,7 @@ public class GameManager : MonoBehaviour
     // Inicia un desafío: secuencia prehecha, el jugador la toca para ganar cartas
     public void StartChallenge(List<GameObject> cards, List<GameObject> rewards, int objective, NPCDialogue npc)
     {
+        activeNPC?.StopDance();
         currentSession = SessionType.Desafio;
         activeNPC = npc;
         challengeRewards = rewards;
@@ -415,6 +418,7 @@ public class GameManager : MonoBehaviour
     // El NPC de nivel fija el objetivo — el jugador decide cuándo ir a Build
     public void StartLevel(int objective, NPCDialogue npc)
     {
+        activeNPC?.StopDance();
         currentSession = SessionType.Nivel;
         activeNPC = npc;
         objectiveScore = objective;
@@ -464,6 +468,7 @@ public class GameManager : MonoBehaviour
         lastScore = currentScore;
         lastObjective = currentSession == SessionType.Desafio ? challengeObjectiveScore : objectiveScore;
         currentSession = SessionType.Ninguna;
+        activeNPC?.StopDance();
         activeNPC = null;
         ResetGame();
         OpenResult();
