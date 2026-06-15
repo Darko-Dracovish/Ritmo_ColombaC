@@ -39,11 +39,7 @@ public class ArrowControl : MonoBehaviour
         if (other.CompareTag("Ender"))
         {
             scrollStart = false;
-            GameManager.instance.ObjectiveScore();
-            GameManager.instance.ObjectiveScoreFail();
             GameManager.instance.CheckCompletion();
-            GameManager.instance.ResetGame();
-            GameManager.instance.ChangeState(GameManager.GameState.Hub);
         }
     }
 

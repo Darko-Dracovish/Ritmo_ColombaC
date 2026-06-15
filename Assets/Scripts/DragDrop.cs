@@ -9,12 +9,15 @@ public class DragDrop : MonoBehaviour
     public GameObject cardBack;  // Arrastra aquí el GameObject que representa el dorso de la carta
 
     [HideInInspector] public bool isFaceDown = false;
+    [HideInInspector] public HandSlot myHandSlot;
 
     Vector2 difference = Vector2.zero;
 
     Vector3 startPosition;
     Transform startParent;
     private CardSlot originSlot;
+    private HandSlot originHandSlot;
+    private bool isDragging = false;
 
     public void SetFaceDown(bool faceDown)
     {
@@ -25,29 +28,34 @@ public class DragDrop : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (SettingsPanel.isOpen) return;
+        isDragging = false;
+
         if (isFaceDown)
         {
             SetFaceDown(false);
             return;
         }
 
+        isDragging = true;
         difference = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - (Vector2)transform.position;
 
         startPosition = transform.position;
         startParent = transform.parent;
         originSlot = transform.GetComponentInParent<CardSlot>();
-        Debug.Log("originSlot: " + (originSlot != null ? originSlot.name : "NULL"));
+        originHandSlot = (myHandSlot != null && myHandSlot.currentCard == gameObject) ? myHandSlot : null;
     }
 
     private void OnMouseDrag()
     {
-        if (isFaceDown) return;
+        if (!isDragging) return;
         transform.position = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - difference;
     }
 
     private void OnMouseUp()
     {
-        if (isFaceDown) return;
+        if (!isDragging) return;
+        isDragging = false;
         TryPlaceCard();
     }
 
@@ -56,6 +64,7 @@ public class DragDrop : MonoBehaviour
         Descarte discard = FindClosestDiscard();
         if (discard != null)
         {
+            Debug.Log($"[DragDrop] Descartando carta — originSlot: {(originSlot != null ? originSlot.name : "NULL")}");
             discard.DiscardCard(gameObject, originSlot);
             return;
         }
@@ -64,12 +73,23 @@ public class DragDrop : MonoBehaviour
 
         if (closestSlot != null && closestSlot.CanAcceptCard())
         {
+            Debug.Log($"[DragDrop] Colocando en slot: {closestSlot.name}");
             closestSlot.SetCard(gameObject);
         }
         else
         {
-            transform.position = startPosition;
-            transform.SetParent(startParent);
+            Debug.Log($"[DragDrop] Volviendo a posición original — startParent: {(startParent != null ? startParent.name : "NULL")}");
+            if (originHandSlot != null)
+            {
+                transform.SetParent(originHandSlot.transform);
+                transform.position = startPosition;
+                originHandSlot.currentCard = gameObject;
+            }
+            else
+            {
+                transform.position = startPosition;
+                transform.SetParent(startParent);
+            }
         }
     }
 

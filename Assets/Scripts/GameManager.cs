@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
     public enum GameState
     {
-        Hub, Build, Playing, Dialogue, SongSelect, Deck
+        Hub, Build, Playing, Dialogue, Result, Deck
     }
 
     public GameState currentState;
@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     public CinemachineVirtualCameraBase cardCamera;
     public CinemachineVirtualCameraBase hubCamera;
     public CinemachineVirtualCameraBase deckCamera;
+    public CinemachineVirtualCameraBase resultCamera;
 
     [Header("Score")]
     public int currentScore;
@@ -55,7 +56,7 @@ public class GameManager : MonoBehaviour
     public GameObject dialogueCanvas;
     public GameObject hubCanvas;
     public GameObject buildCanvas;
-    public GameObject songCanvas;
+    public GameObject resultCanvas;
     public DeckBuilderUI deckUI;
 
     [Header("Hand")]
@@ -78,6 +79,9 @@ public class GameManager : MonoBehaviour
     public GameObject angry;
     public GameObject hit;
     public GameObject miss;
+
+    [HideInInspector] public int lastScore;
+    [HideInInspector] public int lastObjective;
 
     [Header("Sesión activa")]
     public List<GameObject> challengeRewards = new List<GameObject>();
@@ -119,7 +123,6 @@ public class GameManager : MonoBehaviour
             case GameState.Build: DeckInput(); break;
             case GameState.Playing: PlayingInput(); break;
             case GameState.Dialogue: DialogueInput(); break;
-            case GameState.SongSelect: SongSelectInput(); break;
         }
     }
 
@@ -131,6 +134,7 @@ public class GameManager : MonoBehaviour
         cardCamera.Priority = 0;
         hubCamera.Priority = 0;
         deckCamera.Priority = 0;
+        resultCamera.Priority = 0;
 
         switch (currentState)
         {
@@ -138,7 +142,7 @@ public class GameManager : MonoBehaviour
             case GameState.Build: cardCamera.Priority = 10; break;
             case GameState.Playing: mainCamera.Priority = 10; break;
             case GameState.Dialogue: hubCamera.Priority = 10; break;
-            case GameState.SongSelect: hubCamera.Priority = 10; break;
+            case GameState.Result: resultCamera.Priority = 10; break;
             case GameState.Deck: deckCamera.Priority = 10; break;
         }
 
@@ -153,7 +157,7 @@ public class GameManager : MonoBehaviour
         dialogueCanvas.SetActive(false);
         if (hubCanvas != null) hubCanvas.SetActive(false);
         if (buildCanvas != null) buildCanvas.SetActive(false);
-        if (songCanvas != null) songCanvas.SetActive(false);
+        if (resultCanvas != null) resultCanvas.SetActive(false);
 
         switch (currentState)
         {
@@ -174,8 +178,8 @@ public class GameManager : MonoBehaviour
             case GameState.Dialogue:
                 dialogueCanvas.SetActive(true);
                 break;
-            case GameState.SongSelect:
-                if (songCanvas != null) songCanvas.SetActive(true);
+            case GameState.Result:
+                if (resultCanvas != null) resultCanvas.SetActive(true);
                 break;
             case GameState.Deck:
                 StartCoroutine(OpenDeckWithDelay());
@@ -251,7 +255,7 @@ public class GameManager : MonoBehaviour
     }
 
     void DialogueInput() { }
-    void SongSelectInput() { }
+  
 
     public void StartSong()
     {
@@ -346,10 +350,13 @@ public class GameManager : MonoBehaviour
                     .OnComplete(() => { if (newCard != null) newCard.transform.DORotate(Vector3.zero, 0.2f).SetEase(Ease.OutBack).SetLink(newCard); });
             }
 
-            // Colocar boca abajo
+            // Colocar boca abajo y registrar HandSlot de origen
             DragDrop drag = newCard.GetComponent<DragDrop>();
             if (drag != null)
+            {
                 drag.SetFaceDown(true);
+                drag.myHandSlot = slotData;
+            }
         }
     }
 
@@ -454,9 +461,12 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        lastScore = currentScore;
+        lastObjective = currentSession == SessionType.Desafio ? challengeObjectiveScore : objectiveScore;
         currentSession = SessionType.Ninguna;
         activeNPC = null;
-        OpenHub();
+        ResetGame();
+        OpenResult();
     }
 
     public void ShowMessage(string msg, float duration = 3f)
@@ -479,7 +489,7 @@ public class GameManager : MonoBehaviour
     public void OpenDeckBuilder() => ChangeState(GameState.Deck);
     public void OpenGameplay() => ChangeState(GameState.Playing);
     public void OpenDialogue() => ChangeState(GameState.Dialogue);
-    public void OpenSongSelect() => ChangeState(GameState.SongSelect);
+    public void OpenResult() => ChangeState(GameState.Result);
     public void OpenBuild() => ChangeState(GameState.Build);
 
     // Limpia todos los CardSlots al iniciar una nueva ronda de construcción

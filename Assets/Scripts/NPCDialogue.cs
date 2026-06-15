@@ -58,6 +58,7 @@ public class NPCDialogue : MonoBehaviour
 
     void OnMouseDown()
     {
+        if (SettingsPanel.isOpen) return;
         Debug.Log($"[NPCDialogue] Click en {gameObject.name} | isLocked: {isLocked} | diálogos: {dialogues.Count}");
 
         if (currentOpen != null && currentOpen != this)
