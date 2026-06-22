@@ -1788,6 +1788,9 @@ MonoBehaviour:
   slotTypeIndicator: {fileID: 1934413235}
   lockedColor: {r: 0, g: 0, b: 0, a: 1}
   unlockedColor: {r: 1, g: 1, b: 1, a: 1}
+  comboRot: {x: 0, y: 0, z: 3}
+  comboStart: {x: 0, y: 0, z: 0}
+  rotTime: 5
 --- !u!61 &162058029
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2687,6 +2690,9 @@ MonoBehaviour:
   slotTypeIndicator: {fileID: 168847933}
   lockedColor: {r: 0, g: 0, b: 0, a: 1}
   unlockedColor: {r: 1, g: 1, b: 1, a: 1}
+  comboRot: {x: 0, y: 0, z: 3}
+  comboStart: {x: 0, y: 0, z: 0}
+  rotTime: 5
 --- !u!1 &268463638
 GameObject:
   m_ObjectHideFlags: 0
@@ -3089,6 +3095,9 @@ MonoBehaviour:
   slotTypeIndicator: {fileID: 399055047}
   lockedColor: {r: 0, g: 0, b: 0, a: 1}
   unlockedColor: {r: 1, g: 1, b: 1, a: 1}
+  comboRot: {x: 0, y: 0, z: 3}
+  comboStart: {x: 0, y: 0, z: 0}
+  rotTime: 5
 --- !u!1 &339937284
 GameObject:
   m_ObjectHideFlags: 0
@@ -5619,6 +5628,9 @@ MonoBehaviour:
   slotTypeIndicator: {fileID: 425876524}
   lockedColor: {r: 0, g: 0, b: 0, a: 1}
   unlockedColor: {r: 1, g: 1, b: 1, a: 1}
+  comboRot: {x: 0, y: 0, z: 3}
+  comboStart: {x: 0, y: 0, z: 0}
+  rotTime: 5
 --- !u!1001 &636778957
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5746,6 +5758,9 @@ MonoBehaviour:
   slotTypeIndicator: {fileID: 1680225386}
   lockedColor: {r: 0, g: 0, b: 0, a: 1}
   unlockedColor: {r: 1, g: 1, b: 1, a: 1}
+  comboRot: {x: 0, y: 0, z: 3}
+  comboStart: {x: 0, y: 0, z: 0}
+  rotTime: 5
 --- !u!61 &680976317
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8365,6 +8380,9 @@ MonoBehaviour:
   slotTypeIndicator: {fileID: 729852624}
   lockedColor: {r: 0, g: 0, b: 0, a: 1}
   unlockedColor: {r: 1, g: 1, b: 1, a: 1}
+  comboRot: {x: 0, y: 0, z: 3}
+  comboStart: {x: 0, y: 0, z: 0}
+  rotTime: 5
 --- !u!1 &977499801
 GameObject:
   m_ObjectHideFlags: 0
@@ -9983,6 +10001,9 @@ MonoBehaviour:
   slotTypeIndicator: {fileID: 893295538}
   lockedColor: {r: 0, g: 0, b: 0, a: 1}
   unlockedColor: {r: 1, g: 1, b: 1, a: 1}
+  comboRot: {x: 0, y: 0, z: 3}
+  comboStart: {x: 0, y: 0, z: 0}
+  rotTime: 5
 --- !u!1 &1345619380
 GameObject:
   m_ObjectHideFlags: 0
@@ -12408,6 +12429,9 @@ MonoBehaviour:
   slotTypeIndicator: {fileID: 1931495970}
   lockedColor: {r: 0, g: 0, b: 0, a: 1}
   unlockedColor: {r: 1, g: 1, b: 1, a: 1}
+  comboRot: {x: 0, y: 0, z: 3}
+  comboStart: {x: 0, y: 0, z: 0}
+  rotTime: 5
 --- !u!1 &1629941215
 GameObject:
   m_ObjectHideFlags: 0
@@ -12854,6 +12878,9 @@ MonoBehaviour:
   slotTypeIndicator: {fileID: 2008315227}
   lockedColor: {r: 0, g: 0, b: 0, a: 1}
   unlockedColor: {r: 1, g: 1, b: 1, a: 1}
+  comboRot: {x: 0, y: 0, z: 3}
+  comboStart: {x: 0, y: 0, z: 0}
+  rotTime: 5
 --- !u!1 &1737106012
 GameObject:
   m_ObjectHideFlags: 0
@@ -12985,6 +13012,9 @@ MonoBehaviour:
   slotTypeIndicator: {fileID: 898538690}
   lockedColor: {r: 0, g: 0, b: 0, a: 1}
   unlockedColor: {r: 1, g: 1, b: 1, a: 1}
+  comboRot: {x: 0, y: 0, z: 3}
+  comboStart: {x: 0, y: 0, z: 0}
+  rotTime: 5
 --- !u!1 &1800255280
 GameObject:
   m_ObjectHideFlags: 0
@@ -13221,6 +13251,9 @@ MonoBehaviour:
   slotTypeIndicator: {fileID: 1401529377}
   lockedColor: {r: 0, g: 0, b: 0, a: 1}
   unlockedColor: {r: 1, g: 1, b: 1, a: 1}
+  comboRot: {x: 0, y: 0, z: 3}
+  comboStart: {x: 0, y: 0, z: 0}
+  rotTime: 5
 --- !u!1 &1806918307
 GameObject:
   m_ObjectHideFlags: 0
@@ -13555,6 +13588,9 @@ MonoBehaviour:
   slotTypeIndicator: {fileID: 159534007}
   lockedColor: {r: 0, g: 0, b: 0, a: 1}
   unlockedColor: {r: 1, g: 1, b: 1, a: 1}
+  comboRot: {x: 0, y: 0, z: 3}
+  comboStart: {x: 0, y: 0, z: 0}
+  rotTime: 5
 --- !u!61 &1859705547
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13925,6 +13961,9 @@ MonoBehaviour:
   slotTypeIndicator: {fileID: 1876608400}
   lockedColor: {r: 0, g: 0, b: 0, a: 1}
   unlockedColor: {r: 1, g: 1, b: 1, a: 1}
+  comboRot: {x: 0, y: 0, z: 3}
+  comboStart: {x: 0, y: 0, z: 0}
+  rotTime: 5
 --- !u!1 &1931495968
 GameObject:
   m_ObjectHideFlags: 0
@@ -14972,6 +15011,9 @@ MonoBehaviour:
   slotTypeIndicator: {fileID: 291026477}
   lockedColor: {r: 0, g: 0, b: 0, a: 1}
   unlockedColor: {r: 1, g: 1, b: 1, a: 1}
+  comboRot: {x: 0, y: 0, z: 3}
+  comboStart: {x: 0, y: 0, z: 0}
+  rotTime: 5
 --- !u!61 &2082453276
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -21,6 +21,12 @@ public class CardSlot : MonoBehaviour
     private GameObject hiddenCardPrefab;   // prefab guardado hasta revelar
     private bool isFaceDown = false;
 
+    [Header("TweenSlots")]
+  //  public Transform flipGo;
+    public Vector3 comboRot;
+    public Vector3 comboStart;
+    public float rotTime;
+  
     
 
 
@@ -75,8 +81,11 @@ public class CardSlot : MonoBehaviour
         if (cardPrefab == null) return;
 
         // Instanciar la carta en el slot igual que SetCard, pero cubierta
+
+         Vector3 flipPos = cardPrefab.transform.position; 
         GameObject visual = Instantiate(cardPrefab, transform.position, Quaternion.identity, transform);
-       
+        //GameObject visual = Instantiate(cardPrefab, flipGo.position, Quaternion.identity, transform); ANIM INTENTO
+        //visual.transform.DOMove(flipPos, 1f); ANIM INTENTO
 
         // Deshabilitar arrastre — el jugador no puede moverla
         DragDrop drag = visual.GetComponent<DragDrop>();
@@ -88,7 +97,12 @@ public class CardSlot : MonoBehaviour
 
         // Activar la cubierta encima de la carta
         if (cardBackCover != null)
+        {
             cardBackCover.SetActive(true);
+            //cardBackCover.transform.DOMove(flipPos, 1f); Sale volando hacia la derecha x alguna razón? 
+        }
+  
+
         else
             Debug.LogWarning($"[{name}] cardBackCover no asignado — la carta es visible aunque debería estar oculta.");
 
@@ -160,7 +174,10 @@ public class CardSlot : MonoBehaviour
             if (GameManager.instance.comboUnlocked && card.CompareTag(gameObject.tag))
             {
                 nuevaCarta.noteScore *= 2;
+                // nuevaCarta.transform.DORotate(comboRot, rotTime).OnComplete(() => transform.DORotate(comboStart, rotTime)); LOS ROTA DURANTE RITMO?? Y SOLO ALGUNOS
+                //La idea es q hace un "shake", rota hacia un lado y se devuelve
                 Debug.Log("Bonus aplicado: " + nuevaCarta.noteScore);
+                
             }
         }
     }
