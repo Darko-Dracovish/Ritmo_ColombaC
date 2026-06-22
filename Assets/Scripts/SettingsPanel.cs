@@ -52,6 +52,7 @@ public class SettingsPanel : MonoBehaviour
         StopAllCoroutines();
         settingsPanel.SetActive(true);
         isOpen = true;
+        UIBlocker.Open();
         StartCoroutine(PauseWithDelay());
     }
 
@@ -59,6 +60,7 @@ public class SettingsPanel : MonoBehaviour
     {
         if (settingsPanel == null) return;
         settingsPanel.SetActive(false);
+        UIBlocker.Close();
         StartCoroutine(ResumeWithDelay());
     }
 

@@ -28,6 +28,7 @@ public class DialoguePanelUI : MonoBehaviour, IPointerClickHandler
 
     public void ShowLine(DialogueLine line)
     {
+        if (!dialoguePanel.activeSelf) UIBlocker.Open();
         dialoguePanel.SetActive(true);
         if (speakerText != null)
         {
@@ -50,6 +51,7 @@ public class DialoguePanelUI : MonoBehaviour, IPointerClickHandler
 
     public void Hide()
     {
+        if (dialoguePanel.activeSelf) UIBlocker.Close();
         dialoguePanel.SetActive(false);
     }
 

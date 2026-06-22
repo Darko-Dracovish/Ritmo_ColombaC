@@ -7,16 +7,15 @@ public class PanelToggle : MonoBehaviour
 
     void OnMouseDown()
     {
-        Debug.Log($"[PanelToggle] Click en {gameObject.name} | isOpen: {SettingsPanel.isOpen} | panel: {(panel != null ? panel.name : "NULL")}");
-        if (SettingsPanel.isOpen) return;
-        if (panel != null) panel.SetActive(true);
+        if (UIBlocker.isBlocking) return;
+        if (panel != null) { panel.SetActive(true); UIBlocker.Open(); }
         if (comboPanel != null && GameManager.instance != null && GameManager.instance.comboUnlocked)
             comboPanel.SetActive(true);
     }
 
     public void ClosePanel()
     {
-        if (panel != null) panel.SetActive(false);
+        if (panel != null && panel.activeSelf) { panel.SetActive(false); UIBlocker.Close(); }
         if (comboPanel != null) comboPanel.SetActive(false);
     }
 }

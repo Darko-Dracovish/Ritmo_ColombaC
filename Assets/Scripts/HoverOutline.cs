@@ -1,38 +1,56 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
+using DG.Tweening;
 
-public class HoverOutline : MonoBehaviour
+public class HoverOutline : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public Color outlineColor = Color.white;
-    public float outlineScale = 1.08f;
+    public float hoverScale = 1.1f;
+    public float duration = 0.15f;
 
-    private SpriteRenderer outlineRenderer;
+    private Vector3 originalScale;
+    private bool isUI;
 
     void Start()
     {
-        SpriteRenderer original = GetComponent<SpriteRenderer>();
-        if (original == null) return;
-
-        GameObject outline = new GameObject("Outline");
-        outline.transform.SetParent(transform);
-        outline.transform.localPosition = Vector3.zero;
-        outline.transform.localScale = Vector3.one * outlineScale;
-
-        outlineRenderer = outline.gameObject.AddComponent<SpriteRenderer>();
-        outlineRenderer.sprite = original.sprite;
-        outlineRenderer.color = outlineColor;
-        outlineRenderer.sortingLayerName = original.sortingLayerName;
-        outlineRenderer.sortingOrder = original.sortingOrder - 1;
-        outlineRenderer.enabled = false;
+        originalScale = transform.localScale;
+        isUI = GetComponent<RectTransform>() != null;
     }
 
     void OnMouseEnter()
     {
-        if (SettingsPanel.isOpen) return;
-        if (outlineRenderer != null) outlineRenderer.enabled = true;
+        if (isUI) return;
+        if (UIBlocker.isBlocking) return;
+        ScaleUp();
     }
 
     void OnMouseExit()
     {
-        if (outlineRenderer != null) outlineRenderer.enabled = false;
+        if (isUI) return;
+        ScaleDown();
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (!isUI) return;
+        if (UIBlocker.isBlocking) return;
+        ScaleUp();
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (!isUI) return;
+        ScaleDown();
+    }
+
+    void ScaleUp()
+    {
+        transform.DOKill();
+        transform.DOScale(originalScale * hoverScale, duration).SetEase(Ease.OutBack).SetLink(gameObject);
+    }
+
+    void ScaleDown()
+    {
+        transform.DOKill();
+        transform.DOScale(originalScale, duration).SetEase(Ease.OutBack).SetLink(gameObject);
     }
 }

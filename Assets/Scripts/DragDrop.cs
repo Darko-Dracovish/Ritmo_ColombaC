@@ -28,7 +28,7 @@ public class DragDrop : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (SettingsPanel.isOpen) return;
+        if (UIBlocker.isBlocking) return;
         isDragging = false;
 
         if (isFaceDown)

@@ -6,7 +6,7 @@ public class HubButtons : MonoBehaviour
 
     public void OnMouseDown()
     {
-        if (SettingsPanel.isOpen) return;
+        if (UIBlocker.isBlocking) return;
         GameManager.instance.ChangeState(targetState);
         Debug.Log("Click en bot�n: " + gameObject.name + " | Target: " + targetState);
     }

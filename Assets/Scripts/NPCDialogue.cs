@@ -63,7 +63,7 @@ public class NPCDialogue : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (SettingsPanel.isOpen) return;
+        if (UIBlocker.isBlocking) return;
         Debug.Log($"[NPCDialogue] Click en {gameObject.name} | isLocked: {isLocked} | diálogos: {dialogues.Count}");
 
         if (currentOpen != null && currentOpen != this)
@@ -139,12 +139,12 @@ public class NPCDialogue : MonoBehaviour
     void OpenLockedPanel()
     {
         if (lockedText != null) lockedText.text = lockedMessage;
-        if (lockedPanel != null) lockedPanel.SetActive(true);
+        if (lockedPanel != null) { lockedPanel.SetActive(true); UIBlocker.Open(); }
     }
 
     public void CloseLockedPanel()
     {
-        if (lockedPanel != null) lockedPanel.SetActive(false);
+        if (lockedPanel != null && lockedPanel.activeSelf) { lockedPanel.SetActive(false); UIBlocker.Close(); }
         currentOpen = null;
     }
 
