@@ -1523,6 +1523,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DragDrop
   cardBack: {fileID: 0}
   isFaceDown: 0
+  myHandSlot: {fileID: 0}
 --- !u!1 &4707961400752857564
 GameObject:
   m_ObjectHideFlags: 0
@@ -2029,7 +2030,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 83275ac38b403d7469593f129ec5fae2, type: 3}
+  - {fileID: 2100000, guid: 948478ec8a5142e4cb78177a48150962, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
