@@ -8167,6 +8167,7 @@ GameObject:
   m_Component:
   - component: {fileID: 956972444}
   - component: {fileID: 956972447}
+  - component: {fileID: 956972448}
   - component: {fileID: 956972446}
   - component: {fileID: 956972445}
   m_Layer: 0
@@ -8185,8 +8186,8 @@ Transform:
   m_GameObject: {fileID: 956972443}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.13, y: -3.09, z: -0.1}
-  m_LocalScale: {x: 0.7048, y: 0.8619, z: 1}
+  m_LocalPosition: {x: -1.83, y: -3.1, z: -0.1}
+  m_LocalScale: {x: 0.7048, y: 0.73364925, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 113554404}
@@ -8297,7 +8298,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1911243785194378353, guid: a46e6f49fa1b6864ea32cec929441c04, type: 3}
+  m_Sprite: {fileID: -151443891996961220, guid: 3b6ae8f9d3c16164282d6ab8f1424929, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8308,6 +8309,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &956972448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956972443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 388837591d898fe47a214754800ea015, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MouseActions
+  onMouseOver:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 956972447}
+        m_TargetAssemblyTypeName: UnityEngine.SpriteRenderer, UnityEngine
+        m_MethodName: set_sprite
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: -2441219670728239429, guid: 3b6ae8f9d3c16164282d6ab8f1424929, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onMouseExit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 956972447}
+        m_TargetAssemblyTypeName: UnityEngine.SpriteRenderer, UnityEngine
+        m_MethodName: set_sprite
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: -151443891996961220, guid: 3b6ae8f9d3c16164282d6ab8f1424929, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onMouseEnter:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &959608294
 PrefabInstance:
   m_ObjectHideFlags: 0
