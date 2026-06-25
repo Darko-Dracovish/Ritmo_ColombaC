@@ -94,21 +94,23 @@ public class NPCDialogue : MonoBehaviour
         }
 
         dialoguePanelUI.ShowLine(GetCurrentLine());
-        dialoguePanelUI.SetButtons(isLastLine());
+        dialoguePanelUI.SetButtons(isLastLine(), isFirstLine());
     }
 
     public void NextLine()
     {
         currentLine++;
-
-        if (currentLine >= GetCurrentSequence().lines.Count)
-        {
-            // No debería llegar aquí — el botón Next se oculta en la última línea
-            return;
-        }
-
+        if (currentLine >= GetCurrentSequence().lines.Count) return;
         dialoguePanelUI?.ShowLine(GetCurrentLine());
-        dialoguePanelUI?.SetButtons(isLastLine());
+        dialoguePanelUI?.SetButtons(isLastLine(), isFirstLine());
+    }
+
+    public void PreviousLine()
+    {
+        if (currentLine <= 0) return;
+        currentLine--;
+        dialoguePanelUI?.ShowLine(GetCurrentLine());
+        dialoguePanelUI?.SetButtons(isLastLine(), isFirstLine());
     }
 
     public void OnAccept()
@@ -194,8 +196,6 @@ public class NPCDialogue : MonoBehaviour
         return seq.lines[Mathf.Clamp(currentLine, 0, seq.lines.Count - 1)];
     }
 
-    public bool isLastLine()
-    {
-        return currentLine >= GetCurrentSequence().lines.Count - 1;
-    }
+    public bool isLastLine() => currentLine >= GetCurrentSequence().lines.Count - 1;
+    public bool isFirstLine() => currentLine <= 0;
 }

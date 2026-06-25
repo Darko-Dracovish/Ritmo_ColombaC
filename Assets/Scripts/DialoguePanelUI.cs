@@ -12,9 +12,10 @@ public class DialoguePanelUI : MonoBehaviour, IPointerClickHandler
     public TextMeshProUGUI dialogueText;
 
     [Header("Botones")]
-    public GameObject nextButton;       // Avanza a la siguiente línea
-    public GameObject acceptButton;     // Aparece solo en la última línea
-    public GameObject rejectButton;     // Aparece solo en la última línea
+    public GameObject nextButton;
+    public GameObject backButton;
+    public GameObject acceptButton;
+    public GameObject rejectButton;
 
     void Awake()
     {
@@ -42,11 +43,11 @@ public class DialoguePanelUI : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    // isLast: si es la última línea muestra Aceptar/Rechazar, si no muestra Siguiente
-    public void SetButtons(bool isLast)
+    public void SetButtons(bool isLast, bool isFirst)
     {
         if (acceptButton != null) acceptButton.SetActive(isLast);
         if (rejectButton != null) rejectButton.SetActive(isLast);
+        if (backButton != null) backButton.SetActive(!isFirst);
     }
 
     public void Hide()
@@ -55,17 +56,7 @@ public class DialoguePanelUI : MonoBehaviour, IPointerClickHandler
         dialoguePanel.SetActive(false);
     }
 
-    // Se llama al hacer clic en cualquier parte del panel
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        // Ignorar si el click fue sobre un botón
-        if (eventData.pointerCurrentRaycast.gameObject != null)
-        {
-            var btn = eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<UnityEngine.UI.Button>();
-            if (btn != null) return;
-        }
-        OnNext();
-    }
+    public void OnPointerClick(PointerEventData eventData) { }
 
     public void OnNext()
     {
@@ -81,7 +72,12 @@ public class DialoguePanelUI : MonoBehaviour, IPointerClickHandler
             NPCDialogue.currentOpen.OnAccept();
     }
 
-    // Conectar al botón "Rechazar"
+    public void OnBack()
+    {
+        if (NPCDialogue.currentOpen != null)
+            NPCDialogue.currentOpen.PreviousLine();
+    }
+
     public void OnReject()
     {
         if (NPCDialogue.currentOpen != null)

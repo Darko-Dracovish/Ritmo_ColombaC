@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     public int objectiveScore = 30;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI objectiveText;
+    public TextMeshProUGUI buildObjectiveText;
     public TextMeshProUGUI messageText; // Texto temporal para notificaciones (ej. "Nuevo objetivo")
 
     [Header("Colección desbloqueada")]
@@ -170,6 +171,8 @@ public class GameManager : MonoBehaviour
                 ShuffleDeck();
                 DrawHand();
                 PlaceHiddenCards();
+                int buildObj = currentSession == SessionType.Desafio ? challengeObjectiveScore : objectiveScore;
+                if (buildObjectiveText != null) buildObjectiveText.text = "Objetivo: " + buildObj;
                 break;
             case GameState.Playing:
                 gameplayCanvas.SetActive(true);
@@ -268,6 +271,8 @@ public class GameManager : MonoBehaviour
         int displayObjective = currentSession == SessionType.Desafio ? challengeObjectiveScore : objectiveScore;
         if (objectiveText != null)
             objectiveText.text = "Objective: " + displayObjective;
+        if (buildObjectiveText != null)
+            buildObjectiveText.text = "Objetivo: " + displayObjective;
     }
 
     public void NoteHit(int puntaje)
