@@ -22,7 +22,6 @@ public class CardSlot : MonoBehaviour
     private bool isFaceDown = false;
 
     [Header("TweenSlots")]
-  //  public Transform flipGo;
     public Vector3 comboRot;
     public Vector3 comboStart;
     public float rotTime;
@@ -84,8 +83,7 @@ public class CardSlot : MonoBehaviour
 
          Vector3 flipPos = cardPrefab.transform.position; 
         GameObject visual = Instantiate(cardPrefab, transform.position, Quaternion.identity, transform);
-        //GameObject visual = Instantiate(cardPrefab, flipGo.position, Quaternion.identity, transform); ANIM INTENTO
-        //visual.transform.DOMove(flipPos, 1f); ANIM INTENTO
+  
 
         // Deshabilitar arrastre — el jugador no puede moverla
         DragDrop drag = visual.GetComponent<DragDrop>();
@@ -99,7 +97,7 @@ public class CardSlot : MonoBehaviour
         if (cardBackCover != null)
         {
             cardBackCover.SetActive(true);
-            //cardBackCover.transform.DOMove(flipPos, 1f); Sale volando hacia la derecha x alguna razón? 
+           
         }
   
 
@@ -174,8 +172,7 @@ public class CardSlot : MonoBehaviour
             if (GameManager.instance.comboUnlocked && card.CompareTag(gameObject.tag))
             {
                 nuevaCarta.noteScore *= 2;
-                // nuevaCarta.transform.DORotate(comboRot, rotTime).OnComplete(() => transform.DORotate(comboStart, rotTime)); LOS ROTA DURANTE RITMO?? Y SOLO ALGUNOS
-                //La idea es q hace un "shake", rota hacia un lado y se devuelve
+                originalCarta.transform.DOPunchRotation(comboRot, rotTime);
                 Debug.Log("Bonus aplicado: " + nuevaCarta.noteScore);
                 
             }
