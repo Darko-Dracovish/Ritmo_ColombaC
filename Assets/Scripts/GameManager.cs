@@ -84,6 +84,11 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public int lastScore;
     [HideInInspector] public int lastObjective;
 
+    [Header("Tutoriales (imágenes en secuencia, se muestran solo la primera vez)")]
+    public Sprite[] tutorialBuild;
+    public Sprite[] tutorialPlaying;
+    public Sprite[] tutorialDeck;
+
     [Header("Sesión activa")]
     public List<GameObject> challengeRewards = new List<GameObject>();
     public int challengeObjectiveScore;
@@ -174,11 +179,13 @@ public class GameManager : MonoBehaviour
                 PlaceHiddenCards();
                 int buildObj = currentSession == SessionType.Desafio ? challengeObjectiveScore : objectiveScore;
                 if (buildObjectiveText != null) buildObjectiveText.text = "Objetivo: " + buildObj;
+                TutorialPanel.instance?.TryShow("tut_build", tutorialBuild);
                 break;
             case GameState.Playing:
                 gameplayCanvas.SetActive(true);
                 RevealHiddenCards();
                 activeNPC?.StartDance();
+                TutorialPanel.instance?.TryShow("tut_playing", tutorialPlaying);
                 break;
             case GameState.Dialogue:
                 dialogueCanvas.SetActive(true);
@@ -198,6 +205,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(0f);
         if (deckCanvas != null) deckCanvas.SetActive(true);
         if (deckUI != null) deckUI.InitializeUI();
+        TutorialPanel.instance?.TryShow("tut_deck", tutorialDeck);
     }
 
     void DebugStateInputs()
