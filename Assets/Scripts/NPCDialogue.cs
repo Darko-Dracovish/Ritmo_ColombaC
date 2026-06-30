@@ -56,10 +56,16 @@ public class NPCDialogue : MonoBehaviour
     public GameObject lockedPanel;
     public TextMeshProUGUI lockedText;
 
+    [Header("Indicador")]
+    public GameObject exclamationMark;
+
     // Estado interno de la conversación
     [HideInInspector] public int currentLine = 0;
+    private bool hasNewDialogue = false;
 
     public static NPCDialogue currentOpen;
+
+    void Start() => RefreshExclamation();
 
     void OnMouseDown()
     {
@@ -79,6 +85,8 @@ public class NPCDialogue : MonoBehaviour
 
     void StartDialogue()
     {
+        hasNewDialogue = false;
+        RefreshExclamation();
         currentLine = 0;
 
         if (dialoguePanelUI == null)
@@ -165,13 +173,25 @@ public class NPCDialogue : MonoBehaviour
     public void AdvanceDialogue()
     {
         if (dialogueIndex < dialogues.Count - 1)
+        {
             dialogueIndex++;
+            hasNewDialogue = true;
+            RefreshExclamation();
+        }
+    }
+
+    void RefreshExclamation()
+    {
+        if (exclamationMark == null) return;
+        exclamationMark.SetActive(hasNewDialogue);
     }
 
     public void UnlockNext()
     {
         foreach (NPCDialogue npc in unlockOnComplete)
-            if (npc != null) npc.isLocked = false;
+        {
+            if (npc != null) { npc.isLocked = false; npc.hasNewDialogue = true; npc.RefreshExclamation(); }
+        }
 
         Debug.Log($"[{gameObject.name}] UnlockNext — advanceDialogueOnComplete: {advanceDialogueOnComplete.Count}");
         foreach (NPCDialogue npc in advanceDialogueOnComplete)
@@ -180,6 +200,7 @@ public class NPCDialogue : MonoBehaviour
             {
                 Debug.Log($"[{gameObject.name}] Avanzando diálogo de {npc.gameObject.name} (antes: {npc.dialogueIndex})");
                 npc.AdvanceDialogue();
+                npc.RefreshExclamation();
                 Debug.Log($"[{gameObject.name}] Diálogo de {npc.gameObject.name} ahora: {npc.dialogueIndex}");
             }
         }

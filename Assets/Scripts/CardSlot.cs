@@ -169,6 +169,11 @@ public class CardSlot : MonoBehaviour
 
         spawnedCard = Instantiate(card, gameplaypoint.position, Quaternion.identity);
 
+        foreach (var col in spawnedCard.GetComponentsInChildren<Collider2D>())
+            col.enabled = true;
+        foreach (var col in spawnedCard.GetComponentsInChildren<Collider>())
+            col.enabled = true;
+
         Carta originalCarta = card.GetComponent<Carta>();
         Carta nuevaCarta = spawnedCard.GetComponent<Carta>();
 
