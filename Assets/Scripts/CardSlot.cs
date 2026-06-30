@@ -68,6 +68,9 @@ public class CardSlot : MonoBehaviour
         card.transform.position = transform.position;
         card.transform.SetParent(transform);
 
+        foreach (var drag in card.GetComponentsInChildren<DragDrop>())
+            drag.enabled = false;
+
         isOccupied = true;
         isFaceDown = false;
 
@@ -85,9 +88,13 @@ public class CardSlot : MonoBehaviour
         GameObject visual = Instantiate(cardPrefab, transform.position, Quaternion.identity, transform);
   
 
-        // Deshabilitar arrastre — el jugador no puede moverla
-        DragDrop drag = visual.GetComponent<DragDrop>();
-        if (drag != null) drag.enabled = false;
+        // Deshabilitar arrastre e interacción — el jugador no puede moverla ni clickearla
+        foreach (var drag in visual.GetComponentsInChildren<DragDrop>())
+            drag.enabled = false;
+        foreach (var col in visual.GetComponentsInChildren<Collider2D>())
+            col.enabled = false;
+        foreach (var col in visual.GetComponentsInChildren<Collider>())
+            col.enabled = false;
 
         hiddenCardPrefab = cardPrefab;
         isOccupied = true;

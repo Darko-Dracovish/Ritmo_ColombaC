@@ -129,6 +129,7 @@ public class GameManager : MonoBehaviour
 
     public void ChangeState(GameState newState)
     {
+        UIBlocker.ForceClose();
         currentState = newState;
 
         mainCamera.Priority = 0;
@@ -340,8 +341,10 @@ public class GameManager : MonoBehaviour
             Transform slot = handSlots[i];
             HandSlot slotData = slot.GetComponent<HandSlot>();
 
-            if (slotData.currentCard != null)
-                Destroy(slotData.currentCard);
+            // Limpiar cualquier carta remanente en el slot (currentCard puede ser null si fue movida a un CardSlot)
+            for (int c = slot.childCount - 1; c >= 0; c--)
+                Destroy(slot.GetChild(c).gameObject);
+            slotData.currentCard = null;
 
             // Instanciar desde deckGO si existe, si no desde la posición del slot
             Vector3 spawnPos = deckGO != null ? deckGO.position : slot.position;
@@ -357,13 +360,10 @@ public class GameManager : MonoBehaviour
                     .OnComplete(() => { if (newCard != null) newCard.transform.DORotate(Vector3.zero, 0.2f).SetEase(Ease.OutBack).SetLink(newCard); });
             }
 
-            // Colocar boca abajo y registrar HandSlot de origen
+            // Registrar HandSlot de origen
             DragDrop drag = newCard.GetComponent<DragDrop>();
             if (drag != null)
-            {
-                drag.SetFaceDown(true);
                 drag.myHandSlot = slotData;
-            }
         }
     }
 
