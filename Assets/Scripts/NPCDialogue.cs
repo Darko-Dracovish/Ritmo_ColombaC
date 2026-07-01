@@ -45,6 +45,10 @@ public class NPCDialogue : MonoBehaviour
     [Header("NPCs que avanzan su diálogo al completar esta sesión")]
     public List<NPCDialogue> advanceDialogueOnComplete = new List<NPCDialogue>();
 
+    [Header("GameObjects a activar/desactivar al completar")]
+    public List<GameObject> activateOnComplete = new List<GameObject>();
+    public List<GameObject> deactivateOnComplete = new List<GameObject>();
+
     [Header("Bailarines")]
     public DancerSlot[] dancers;
     public string danceTrigger = "Dance";
@@ -65,7 +69,12 @@ public class NPCDialogue : MonoBehaviour
 
     public static NPCDialogue currentOpen;
 
-    void Start() => RefreshExclamation();
+    void Start()
+    {
+        if (!isLocked && dialogues != null && dialogues.Count > 0)
+            hasNewDialogue = true;
+        RefreshExclamation();
+    }
 
     void OnMouseDown()
     {
@@ -192,6 +201,12 @@ public class NPCDialogue : MonoBehaviour
         {
             if (npc != null) { npc.isLocked = false; npc.hasNewDialogue = true; npc.RefreshExclamation(); }
         }
+
+        foreach (GameObject go in activateOnComplete)
+            if (go != null) go.SetActive(true);
+
+        foreach (GameObject go in deactivateOnComplete)
+            if (go != null) go.SetActive(false);
 
         Debug.Log($"[{gameObject.name}] UnlockNext — advanceDialogueOnComplete: {advanceDialogueOnComplete.Count}");
         foreach (NPCDialogue npc in advanceDialogueOnComplete)

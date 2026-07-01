@@ -306,6 +306,12 @@ public class GameManager : MonoBehaviour
     {
         if (scoreText != null)
             scoreText.text = "Score: " + currentScore;
+
+        int displayObjective = currentSession == SessionType.Desafio ? challengeObjectiveScore : objectiveScore;
+        if (objectiveText != null)
+            objectiveText.text = "Objective: " + displayObjective;
+        if (buildObjectiveText != null)
+            buildObjectiveText.text = "Objetivo: " + displayObjective;
     }
 
     public void ObjectiveScore()

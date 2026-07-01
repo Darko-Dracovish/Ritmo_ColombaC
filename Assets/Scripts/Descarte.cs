@@ -3,7 +3,7 @@ using UnityEngine;
 public class Descarte : MonoBehaviour
 {
     [Header("Penalización")]
-    public int scorePenalty = 5;
+    public int objectivePenalty = 5;
 
     public void DiscardCard(GameObject card, CardSlot originSlot)
     {
@@ -12,10 +12,10 @@ public class Descarte : MonoBehaviour
         else
             Object.Destroy(card);
 
-        GameManager.instance.currentScore -= scorePenalty;
+        GameManager.instance.objectiveScore += objectivePenalty;
         GameManager.instance.UpdateScoreUI();
 
-        Debug.Log("Carta descartada, penalización: " + scorePenalty);
+        Debug.Log("Carta descartada, objetivo aumentado en: " + objectivePenalty);
     }
 
     private void OnDrawGizmos()
