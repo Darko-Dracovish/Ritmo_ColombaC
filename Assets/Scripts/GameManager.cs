@@ -83,6 +83,7 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector] public int lastScore;
     [HideInInspector] public int lastObjective;
+    private List<GameObject> pendingNewCards = new List<GameObject>();
 
     [Header("Tutoriales (imágenes en secuencia, se muestran solo la primera vez)")]
     public Sprite[] tutorialBuild;
@@ -170,6 +171,11 @@ public class GameManager : MonoBehaviour
         {
             case GameState.Hub:
                 if (hubCanvas != null) hubCanvas.SetActive(true);
+                if (pendingNewCards.Count > 0)
+                {
+                    RewardPanel.instance?.Show(new List<GameObject>(pendingNewCards));
+                    pendingNewCards.Clear();
+                }
                 break;
             case GameState.Build:
                 if (buildCanvas != null) buildCanvas.SetActive(true);
@@ -407,6 +413,7 @@ public class GameManager : MonoBehaviour
         if (!collectionCards.Contains(cardPrefab))
         {
             collectionCards.Add(cardPrefab);
+            pendingNewCards.Add(cardPrefab);
             Debug.Log("Carta desbloqueada: " + cardPrefab.name);
         }
     }
@@ -490,6 +497,7 @@ public class GameManager : MonoBehaviour
         activeNPC?.StopDance();
         activeNPC = null;
         ResetGame();
+
         OpenResult();
     }
 

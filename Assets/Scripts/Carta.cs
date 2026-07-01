@@ -9,6 +9,7 @@ public class Carta : MonoBehaviour
     [Header("Info")]
     public string cardName;
     public int noteScore;
+    public Sprite cardSprite;
     public List<ArrowObject> notes;
 
     void Start()
