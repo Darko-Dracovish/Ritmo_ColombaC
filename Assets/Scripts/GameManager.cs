@@ -84,11 +84,13 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public int lastScore;
     [HideInInspector] public int lastObjective;
     private List<GameObject> pendingNewCards = new List<GameObject>();
+    private bool pendingComboTutorial = false;
 
     [Header("Tutoriales (imágenes en secuencia, se muestran solo la primera vez)")]
     public Sprite[] tutorialBuild;
     public Sprite[] tutorialPlaying;
     public Sprite[] tutorialDeck;
+    public Sprite[] tutorialCombo;
 
     [Header("Sesión activa")]
     public List<GameObject> challengeRewards = new List<GameObject>();
@@ -185,7 +187,15 @@ public class GameManager : MonoBehaviour
                 PlaceHiddenCards();
                 int buildObj = currentSession == SessionType.Desafio ? challengeObjectiveScore : objectiveScore;
                 if (buildObjectiveText != null) buildObjectiveText.text = "Objetivo: " + buildObj;
-                TutorialPanel.instance?.TryShow("tut_build", tutorialBuild);
+                if (pendingComboTutorial)
+                {
+                    pendingComboTutorial = false;
+                    TutorialPanel.instance?.ShowAgain("tut_combo", tutorialCombo);
+                }
+                else
+                {
+                    TutorialPanel.instance?.TryShow("tut_build", tutorialBuild);
+                }
                 break;
             case GameState.Playing:
                 gameplayCanvas.SetActive(true);
@@ -479,6 +489,7 @@ public class GameManager : MonoBehaviour
                 {
                     comboUnlocked = true;
                     CardSlot.RefreshAllSlotVisuals();
+                    pendingComboTutorial = true;
                     Debug.Log("¡Combo desbloqueado!");
                 }
                 activeNPC?.UnlockNext();

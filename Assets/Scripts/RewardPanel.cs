@@ -13,7 +13,6 @@ public class RewardPanel : MonoBehaviour
 
     [Header("Layout")]
     public float cardSpacingX = 5f;
-    public int cardsPerRow = 4;
     public float previewScale = 0.4f;
 
     private readonly List<GameObject> spawnedCards = new List<GameObject>();
@@ -26,15 +25,15 @@ public class RewardPanel : MonoBehaviour
 
         Clear();
 
+        float totalWidth = (newCards.Count - 1) * cardSpacingX;
+
         for (int i = 0; i < newCards.Count; i++)
         {
-            GameObject card = Instantiate(newCards[i], cardContainer);
-            card.transform.localRotation = Quaternion.identity;
-            card.transform.localScale = Vector3.one * previewScale;
+            Vector3 worldPos = cardContainer.position
+                + new Vector3(i * cardSpacingX - totalWidth * 0.5f, 0f, 0f);
 
-            int col = i % cardsPerRow;
-            int row = i / cardsPerRow;
-            card.transform.localPosition = new Vector3(col * cardSpacingX, -row * cardSpacingX, 0f);
+            GameObject card = Instantiate(newCards[i], worldPos, Quaternion.identity);
+            card.transform.localScale = Vector3.one * previewScale;
 
             foreach (var drag in card.GetComponentsInChildren<DragDrop>())
                 drag.enabled = false;
